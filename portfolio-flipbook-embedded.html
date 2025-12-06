@@ -7,7 +7,7 @@
     <style>
         :root {
             --primary: #2C5F7C;
-            --accent: #17A2B8;       /* Bright teal */
+            --accent: #17A2B8;
             --light: #f8f9fa;
             --dark: #212529;
             --gray: #6c757d;
@@ -19,90 +19,77 @@
             box-sizing: border-box;
         }
 
-        html, body {
-            height: 100%;
-            min-height: 1800px;
-        }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: var(--dark);
             line-height: 1.6;
+            height: 100%;
         }
 
-        .flipbook-wrapper {
-            display: grid;
-            grid-template-rows: auto 1fr;
-            gap: 1rem;
-            height: 2400px;
+        /* Main Container */
+        .flipbook-container {
+            height: 1800px;
+            display: flex;
+            flex-direction: column;
             background: white;
             border-radius: 10px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            overflow: hidden;
         }
 
-        /* Table of Contents - Horizontal */
-        .toc {
+        /* TOC Header Section */
+        .toc-header {
             background: var(--light);
-            padding: 1rem;
+            padding: 1.5rem;
             border-bottom: 2px solid #dee2e6;
+        }
+
+        .toc-header h3 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 0.5rem;
+        }
+
+        /* 4 Column Grid */
+        .toc-boxes {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: 1fr 1fr 1fr 1fr;
             gap: 1rem;
         }
 
-        .toc h3 {
-            grid-column: 1 / -1;
-            color: var(--primary);
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid var(--accent);
-            text-align: center;
-        }
-
-        .toc-section {
+        .toc-box {
             background: white;
-            padding: 0.75rem;
+            padding: 1rem;
             border-radius: 8px;
             border-top: 4px solid var(--accent);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        .toc-section:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transform: translateY(-2px);
-        }
-
-        .toc-section h4 {
+        .toc-box h4 {
             color: var(--primary);
-            font-size: 0.75rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
             text-align: center;
+            font-weight: 700;
             padding-bottom: 0.5rem;
             border-bottom: 1px solid var(--light);
         }
 
-        .toc-items {
+        .toc-box-items {
             display: flex;
             flex-direction: column;
-            gap: 0.25rem;
+            gap: 0.4rem;
         }
 
         .toc-item {
-            padding: 0.4rem 0.5rem;
+            padding: 0.5rem;
             cursor: pointer;
             border-radius: 4px;
-            transition: all 0.2s ease;
-            font-size: 0.75rem;
-            line-height: 1.3;
+            font-size: 0.8rem;
+            transition: all 0.2s;
             color: var(--dark);
-            text-align: left;
         }
 
         .toc-item:hover {
@@ -117,27 +104,29 @@
         }
 
         /* Main Content Area */
-        .content-area {
+        .main-content {
+            flex: 1;
             display: flex;
             flex-direction: column;
-            height: 100%;
+            min-height: 0;
         }
 
-        /* Page Display */
-        .page-display {
+        .content-display {
             flex: 1;
             padding: 2rem;
-            overflow-y: auto;
-            background: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
         }
 
-        .page-header {
+        .content-header {
             margin-bottom: 1.5rem;
             padding-bottom: 1rem;
             border-bottom: 2px solid var(--light);
+            flex-shrink: 0;
         }
 
-        .page-header .section-title {
+        .content-header .section-label {
             color: var(--gray);
             font-size: 0.9rem;
             font-weight: 600;
@@ -146,103 +135,63 @@
             margin-bottom: 0.5rem;
         }
 
-        .page-header h2 {
+        .content-header h2 {
             color: var(--primary);
             font-size: 1.6rem;
             margin-bottom: 0.5rem;
         }
 
-        .page-header .caption {
+        .content-header .caption {
             color: var(--accent);
             font-style: italic;
-            font-size: 1rem;
         }
 
-        .page-content {
-            animation: fadeIn 0.4s ease;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(15px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .content-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
         }
 
         .blurb {
-            color: var(--dark);
             margin-bottom: 1rem;
             line-height: 1.7;
+            flex-shrink: 0;
         }
 
-        .why-matters {
+        .why-box {
             background: var(--light);
             padding: 1rem;
             border-radius: 5px;
             border-left: 4px solid var(--accent);
             margin-bottom: 1.5rem;
             font-size: 0.95rem;
+            flex-shrink: 0;
         }
 
-        .why-matters strong {
+        .why-box strong {
             color: var(--primary);
         }
 
-        /* PDF Embed */
-        .pdf-container {
-            width: 100%;
+        /* PDF Viewer */
+        .pdf-viewer {
             flex: 1;
-            min-height: 800px;
+            min-height: 1000;
             border: 2px solid var(--light);
             border-radius: 8px;
             overflow: hidden;
             background: #f5f5f5;
         }
 
-        .pdf-container iframe {
+        .pdf-viewer object,
+        .pdf-viewer iframe {
             width: 100%;
             height: 100%;
             border: none;
         }
 
-        .pdf-fallback {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .pdf-fallback p {
-            color: var(--gray);
-            margin-bottom: 1rem;
-        }
-
-        .view-pdf-btn {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 0.75rem 2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .view-pdf-btn:hover {
-            background: var(--primary);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        /* Navigation Controls */
-        .nav-controls {
+        /* Navigation */
+        .nav-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -250,6 +199,7 @@
             background: var(--primary);
             color: white;
             border-top: 3px solid var(--accent);
+            flex-shrink: 0;
         }
 
         .nav-btn {
@@ -260,11 +210,10 @@
             border-radius: 5px;
             cursor: pointer;
             font-weight: 600;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 0.95rem;
         }
 
         .nav-btn:hover:not(:disabled) {
@@ -278,118 +227,77 @@
             cursor: not-allowed;
         }
 
-        .page-counter {
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        /* Responsive Design */
+        /* Mobile */
         @media (max-width: 968px) {
-            .flipbook-wrapper {
-                grid-template-rows: auto 1fr;
+            .toc-boxes {
+                grid-template-columns: 1fr;
+            }
+            
+            .flipbook-container {
                 height: auto;
             }
-
-            .toc {
-                grid-template-columns: 1fr;
-                border-bottom: 2px solid #dee2e6;
-            }
-
-            .page-display {
-                padding: 1.5rem;
-            }
-
-            .pdf-container {
-                min-height: 400px;
-            }
-
-            .nav-controls {
-                flex-wrap: wrap;
-                gap: 0.5rem;
-            }
-        }
-
-        /* Custom Scrollbar */
-        .toc::-webkit-scrollbar,
-        .page-display::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .toc::-webkit-scrollbar-track,
-        .page-display::-webkit-scrollbar-track {
-            background: var(--light);
-        }
-
-        .toc::-webkit-scrollbar-thumb,
-        .page-display::-webkit-scrollbar-thumb {
-            background: var(--accent);
-            border-radius: 4px;
         }
     </style>
 </head>
 <body>
-    <div class="flipbook-wrapper">
-        <!-- Table of Contents -->
-        <aside class="toc">
+    <div class="flipbook-container">
+        <!-- TOC Section -->
+        <div class="toc-header">
             <h3>Portfolio Samples</h3>
+            <div class="toc-boxes">
+                <!-- Box 1 -->
+                <div class="toc-box">
+                    <h4>🎓 Facilitator Guides</h4>
+                    <div class="toc-box-items">
+                        <div class="toc-item" data-page="0">Instructor Guide</div>
+                        <div class="toc-item" data-page="1">Learner Expectations</div>
+                    </div>
+                </div>
+
+                <!-- Box 2 -->
+                <div class="toc-box">
+                    <h4>🌿 Curriculum Design</h4>
+                    <div class="toc-box-items">
+                        <div class="toc-item" data-page="2">Outcomes Map</div>
+                        <div class="toc-item" data-page="3">Learning Structure</div>
+                        <div class="toc-item" data-page="4">Weekly Overviews</div>
+                    </div>
+                </div>
+
+                <!-- Box 3 -->
+                <div class="toc-box">
+                    <h4>📝 Assessment Design</h4>
+                    <div class="toc-box-items">
+                        <div class="toc-item" data-page="5">Diagnostic</div>
+                        <div class="toc-item" data-page="6">Writing Rubric</div>
+                        <div class="toc-item" data-page="7">Growth Tracking</div>
+                    </div>
+                </div>
+
+                <!-- Box 4 -->
+                <div class="toc-box">
+                    <h4>💻 Digital Literacy</h4>
+                    <div class="toc-box-items">
+                        <div class="toc-item" data-page="8">Worksheets</div>
+                        <div class="toc-item" data-page="9">Project Showcase</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="content-display" id="contentDisplay"></div>
             
-            <div class="toc-section">
-                <h4>🎓 Facilitator Guides</h4>
-                <div class="toc-items">
-                    <div class="toc-item" data-page="0">Instructor Guide: Digital Literacy</div>
-                    <div class="toc-item" data-page="1">Learner Expectations & Policies</div>
-                </div>
-            </div>
-
-            <div class="toc-section">
-                <h4>🌿 Curriculum Design</h4>
-                <div class="toc-items">
-                    <div class="toc-item" data-page="2">Learning Outcomes Map</div>
-                    <div class="toc-item" data-page="3">Weekly Learning Structure</div>
-                    <div class="toc-item" data-page="4">Weekly Overview Sheets</div>
-                </div>
-            </div>
-
-            <div class="toc-section">
-                <h4>📝 Assessment Design</h4>
-                <div class="toc-items">
-                    <div class="toc-item" data-page="5">Competency-Based Diagnostic</div>
-                    <div class="toc-item" data-page="6">Reflective Writing Rubric</div>
-                    <div class="toc-item" data-page="7">Growth-Tracking System</div>
-                </div>
-            </div>
-
-            <div class="toc-section">
-                <h4>💻 Digital Literacy</h4>
-                <div class="toc-items">
-                    <div class="toc-item" data-page="8">Worksheets & Handouts</div>
-                    <div class="toc-item" data-page="9">Final Project Showcase</div>
-                </div>
-            </div>
-        </aside>
-
-        <!-- Content Area -->
-        <div class="content-area">
-            <div class="page-display" id="pageDisplay">
-                <!-- Content will be loaded here by JavaScript -->
-            </div>
-
-            <div class="nav-controls">
-                <button class="nav-btn" id="prevBtn">
-                    <span>←</span> Previous
-                </button>
-                <div class="page-counter">
-                    <span id="currentPage">1</span> / <span id="totalPages">10</span>
-                </div>
-                <button class="nav-btn" id="nextBtn">
-                    Next <span>→</span>
-                </button>
+            <div class="nav-bar">
+                <button class="nav-btn" id="prevBtn">← Previous</button>
+                <div><span id="currentPage">1</span> / <span id="totalPages">10</span></div>
+                <button class="nav-btn" id="nextBtn">Next →</button>
             </div>
         </div>
     </div>
 
     <script>
-        // Portfolio Data
         const pages = [
             {
                 section: "🎓 Facilitator Guides & Support Materials",
@@ -397,7 +305,7 @@
                 file: "https://itsmekitb.github.io/itsmekitb/PortSamp6.pdf",
                 caption: "A trauma-informed, facilitator-ready guide for true beginners in digital skills.",
                 blurb: "This guide demonstrates how I create accessible lessons for adults with little or no digital experience. It includes minute-by-minute pacing, facilitator language, troubleshooting support, and instructional cues rooted in psychological safety. My focus is always on reducing anxiety and building early confidence.",
-                why: "Highlights your ability to design instructor-facing materials that support effective teaching and learner dignity."
+                why: "Highlights my ability to design instructor-facing materials that support effective teaching and learner dignity."
             },
             {
                 section: "🎓 Facilitator Guides & Support Materials",
@@ -405,7 +313,7 @@
                 file: "https://itsmekitb.github.io/itsmekitb/PortSamp2.pdf",
                 caption: "Warm, clear communication that sets structure without shame.",
                 blurb: "These learner-facing pages show how I communicate expectations with clarity and compassion. The tone is supportive rather than punitive and reinforces belonging, accountability, and mutual respect in the learning environment.",
-                why: "Demonstrates your mastery of learner-facing microcopy and tone — one of your strongest skills."
+                why: "Demonstrates my mastery of learner-facing microcopy and tone — one of my strongest skills."
             },
             {
                 section: "🌿 Curriculum & Learning Design",
@@ -413,7 +321,7 @@
                 file: "https://itsmekitb.github.io/itsmekitb/PortSamp1.pdf",
                 caption: "A backward-designed outcomes map aligning an interdisciplinary adult-education program.",
                 blurb: "This outcomes map demonstrates backward design across three domains of learning. I created layered knowledge, skill, and application outcomes to guide a 12-week program. These outcomes ensured instructional alignment between lessons, assessments, and each learner's developmental arc.",
-                why: "Shows your ability to architect multi-domain learning experiences using clear, measurable outcomes."
+                why: "Shows my ability to architect multi-domain learning experiences using clear, measurable outcomes."
             },
             {
                 section: "🌿 Curriculum & Learning Design",
@@ -429,7 +337,7 @@
                 file: "https://itsmekitb.github.io/itsmekitb/PortSamp4.pdf",
                 caption: "Clear, learner-centered week plans supporting confidence and preparedness.",
                 blurb: "These weekly overview sheets show how I organize instruction across multiple topics while keeping expectations transparent and manageable. Each overview blends pacing, learning goals, and homework guidance to help learners stay oriented and confident.",
-                why: "Shows your ability to design navigable, supportive structures for adult learners."
+                why: "Shows my ability to design navigable, supportive structures for adult learners."
             },
             {
                 section: "📝 Assessment & Evaluation Design",
@@ -445,7 +353,7 @@
                 file: "https://itsmekitb.github.io/itsmekitb/PortSamp3.pdf",
                 caption: "An emotionally intelligent rubric that supports depth and authentic reflection.",
                 blurb: "This rubric was designed to encourage thoughtful, vulnerable, and growth-oriented reflection. It rewards engagement rather than perfection and gives learners a clear, compassionate structure for talking about their development.",
-                why: "Shows your ability to design assessments that honor the emotional dimensions of learning."
+                why: "Shows my ability to design assessments that honor the emotional dimensions of learning."
             },
             {
                 section: "📝 Assessment & Evaluation Design",
@@ -461,7 +369,7 @@
                 file: "https://itsmekitb.github.io/itsmekitb/PortSamp9.pdf",
                 caption: "Friendly, plain-language materials that help digital beginners build confidence.",
                 blurb: "These worksheets reflect my approach to making technical learning feel accessible and doable. Each handout blends clear instructions, practical skill-building, and psychologically supportive framing. The design is simple, visual, and welcoming for learners who are new to computers.",
-                why: "Shows your ability to reduce cognitive load and design for learners who may feel intimidated by technology."
+                why: "Shows my ability to reduce cognitive load and design for learners who may feel intimidated by technology."
             },
             {
                 section: "💻 Digital Literacy Learning Materials",
@@ -469,94 +377,59 @@
                 file: "https://itsmekitb.github.io/itsmekitb/PortSamp8.pdf",
                 caption: "A supportive scaffold for preparing and presenting a learner's final project.",
                 blurb: "This planning guide helps learners articulate their progress, organize their work, and present their learning in a structured, confidence-building way. It supports both metacognition and communication skills without adding pressure or complexity.",
-                why: "Demonstrates your ability to design capstone experiences and reflection activities for adult learners."
+                why: "Demonstrates my ability to design capstone experiences and reflection activities for adult learners."
             }
         ];
 
-        let currentPageIndex = 0;
+        let currentPage = 0;
 
-        // Initialize
-        document.getElementById('totalPages').textContent = pages.length;
-        loadPage(0);
-
-        // Navigation Functions
         function loadPage(index) {
             const page = pages[index];
-            const pageDisplay = document.getElementById('pageDisplay');
+            const display = document.getElementById('contentDisplay');
             
-            pageDisplay.innerHTML = `
-                <div class="page-content">
-                    <div class="page-header">
-                        <div class="section-title">${page.section}</div>
-                        <h2>${page.title}</h2>
-                        <p class="caption">${page.caption}</p>
-                    </div>
-                    
+            display.innerHTML = `
+                <div class="content-header">
+                    <div class="section-label">${page.section}</div>
+                    <h2>${page.title}</h2>
+                    <p class="caption">${page.caption}</p>
+                </div>
+                <div class="content-body">
                     <p class="blurb">${page.blurb}</p>
-                    
-                    <div class="why-matters">
-                        <strong>Why this matters:</strong> ${page.why}
-                    </div>
-                    
-                    <div class="pdf-container">
-                        <object data="${page.file}" type="application/pdf" width="100%" height="100%">
-                            <iframe src="${page.file}" width="100%" height="100%" style="border: none;">
-                                <div class="pdf-fallback">
-                                    <p>PDF preview not available in your browser.</p>
-                                    <a href="${page.file}" class="view-pdf-btn" target="_blank">Open PDF in New Tab →</a>
-                                </div>
-                            </iframe>
+                    <div class="why-box"><strong>Why this matters:</strong> ${page.why}</div>
+                    <div class="pdf-viewer">
+                        <object data="${page.file}" type="application/pdf">
+                            <iframe src="${page.file}"></iframe>
                         </object>
                     </div>
                 </div>
             `;
-
-            currentPageIndex = index;
+            
+            currentPage = index;
             document.getElementById('currentPage').textContent = index + 1;
-
-            // Update navigation buttons
             document.getElementById('prevBtn').disabled = index === 0;
             document.getElementById('nextBtn').disabled = index === pages.length - 1;
-
-            // Update TOC active state
-            document.querySelectorAll('.toc-item').forEach(item => {
-                item.classList.remove('active');
-            });
+            
+            document.querySelectorAll('.toc-item').forEach(item => item.classList.remove('active'));
             document.querySelector(`[data-page="${index}"]`).classList.add('active');
-
-            // Scroll to top of page display
-            pageDisplay.scrollTop = 0;
         }
 
-        // Button Navigation
+        document.getElementById('totalPages').textContent = pages.length;
+        
         document.getElementById('prevBtn').addEventListener('click', () => {
-            if (currentPageIndex > 0) {
-                loadPage(currentPageIndex - 1);
-            }
+            if (currentPage > 0) loadPage(currentPage - 1);
         });
-
+        
         document.getElementById('nextBtn').addEventListener('click', () => {
-            if (currentPageIndex < pages.length - 1) {
-                loadPage(currentPageIndex + 1);
-            }
+            if (currentPage < pages.length - 1) loadPage(currentPage + 1);
         });
-
-        // TOC Navigation
+        
         document.querySelectorAll('.toc-item').forEach(item => {
             item.addEventListener('click', () => {
-                const pageIndex = parseInt(item.getAttribute('data-page'));
-                loadPage(pageIndex);
+                loadPage(parseInt(item.dataset.page));
             });
         });
-
-        // Keyboard Navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft' && currentPageIndex > 0) {
-                loadPage(currentPageIndex - 1);
-            } else if (e.key === 'ArrowRight' && currentPageIndex < pages.length - 1) {
-                loadPage(currentPageIndex + 1);
-            }
-        });
+        
+        loadPage(0);
     </script>
 </body>
 </html>
