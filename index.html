@@ -281,6 +281,74 @@
             white-space: nowrap;
             border: 0;
         }
+    <style>
+.competency-group {
+    margin-bottom: 2rem;
+}
+
+.competency-group h3 {
+    color: var(--primary);
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.competency-group ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.competency-group ul li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.competency-group ul li:before {
+    content: "▸";
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.skill-category h3 {
+    color: var(--primary);
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.skill-category ul li {
+    padding-left: 1.25rem;
+    position: relative;
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+}
+
+.skill-category ul li:before {
+    content: "•";
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+</style>
     </style>
 </head>
 <body>
@@ -353,64 +421,111 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2>Skills & Expertise</h2>
-            
-            <div class="skills-grid">
-                
-                <div class="skill-category">
-                    <h3>Instructional Design</h3>
-                    <ul>
-                        <li>Curriculum Development</li>
-                        <li>Learning Objectives & Outcomes</li>
-                        <li>Assessment Design</li>
-                        <li>ADDIE & SAM Models</li>
-                        <li>Backward Design</li>
-                        <li>Adult Learning Theory</li>
-                    </ul>
-                </div>
+   <section id="skills">
+    <div class="container">
+        <h2>Core Competencies</h2>
+        
+        <div class="competency-group">
+            <h3>Instructional Design and Learning Experience Creation</h3>
+            <ul>
+                <li>Designing online, hybrid, and live training that supports skill-building and confidence</li>
+                <li>Structuring content for clarity, momentum, and learner engagement</li>
+                <li>Co-creating courses with SMEs through research, consultation, and iteration</li>
+                <li>Refreshing and elevating existing content for improved impact</li>
+            </ul>
+        </div>
 
-                <div class="skill-category">
-                    <h3>Tools & Technology</h3>
-                    <ul>
-                        <li>H5P (Interactive Content)</li>
-                        <li>Canvas LMS</li>
-                        <li>Google Workspace</li>
-                        <li>Canva</li>
-                        <li>SCORM Packages</li>
-                        <li>Multimedia Content Creation</li>
-                    </ul>
-                </div>
+        <div class="competency-group">
+            <h3>Writing, Editing, and Instructional Storytelling</h3>
+            <ul>
+                <li>Writing scripts, guides, microlearning, and learner-facing materials</li>
+                <li>Editing content for flow, clarity, tone, and accessibility</li>
+                <li>Turning complex or technical concepts into relatable learning experiences</li>
+                <li>Maintaining voice, emotional clarity, and narrative cohesion across materials</li>
+            </ul>
+        </div>
 
-                <div class="skill-category">
-                    <h3>Accessibility & Inclusion</h3>
-                    <ul>
-                        <li>Universal Design for Learning (UDL)</li>
-                        <li>WCAG 2.2 Standards</li>
-                        <li>Accessible Document Design</li>
-                        <li>Differentiated Instruction</li>
-                        <li>Trauma-Informed Pedagogy</li>
-                        <li>Equity-Centered Design</li>
-                    </ul>
-                </div>
+        <div class="competency-group">
+            <h3>Multimedia and Visual Content Development</h3>
+            <ul>
+                <li>Creating visuals, slide decks, and short-form multimedia assets</li>
+                <li>Designing content that supports both live facilitation and self-paced learning</li>
+                <li>Developing interactive elements that spark curiosity and retention</li>
+                <li>Ensuring visual accessibility and user-friendly design</li>
+            </ul>
+        </div>
 
-                <div class="skill-category">
-                    <h3>Collaboration & Leadership</h3>
-                    <ul>
-                        <li>SME Collaboration</li>
-                        <li>Faculty Support & Training</li>
-                        <li>Stakeholder Management</li>
-                        <li>Project Management</li>
-                        <li>Workshop Facilitation</li>
-                        <li>Team Leadership</li>
-                    </ul>
-                </div>
+        <div class="competency-group">
+            <h3>Learning Technologies and Platforms</h3>
+            <ul>
+                <li>Building, organizing, and maintaining LMS course content</li>
+                <li>Supporting technology adoption and troubleshooting learning tools</li>
+                <li>Coordinating updates within digital learning ecosystems</li>
+                <li>Using project management platforms to track development cycles</li>
+                <li>Leveraging AI ethically for drafting, refinement, and iterative content development</li>
+            </ul>
+        </div>
 
+        <div class="competency-group">
+            <h3>Evaluation and Continuous Improvement</h3>
+            <ul>
+                <li>Creating assessments and learning checks that drive performance</li>
+                <li>Using learner feedback and data to refine content</li>
+                <li>Conducting quality reviews for accuracy, consistency, and learner experience</li>
+                <li>Iterating strategically to improve outcomes across formats</li>
+            </ul>
+        </div>
+
+        <div class="competency-group">
+            <h3>Collaboration, Communication, and Leadership</h3>
+            <ul>
+                <li>Working closely with SMEs, facilitators, and cross-functional partners</li>
+                <li>Communicating clearly with technical and non-technical teams</li>
+                <li>Managing timelines, priorities, and production schedules</li>
+                <li>Supporting teams through clear expectations and actionable guidance</li>
+            </ul>
+        </div>
+
+        <h2 style="margin-top: 3rem;">Skills</h2>
+        
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Learning & Development Technology</h3>
+                <ul>
+                    <li>H5P interactive authoring</li>
+                    <li>Articulate Rise 360</li>
+                    <li>Canvas, Moodle, Google Classroom</li>
+                    <li>SCORM, xAPI, LTI familiarity</li>
+                    <li>LMS course building & organization</li>
+                    <li>Zoom, Teams, Google Meet</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Instructional Design Skills & Methods</h3>
+                <ul>
+                    <li>Curriculum design & module development</li>
+                    <li>Backward design</li>
+                    <li>SAM methodology</li>
+                    <li>Assessment design & alignment</li>
+                    <li>Content refresh & revision</li>
+                    <li>Adult-learning theory application</li>
+                    <li>Accessibility & UDL principles</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Multimedia Content Production</h3>
+                <ul>
+                    <li>Canva, Adobe Express, Photoshop</li>
+                    <li>Slide deck creation & visual communication</li>
+                    <li>Video recording & editing (OBS Studio, OpenShot)</li>
+                    <li>Copywriting & instructional writing</li>
+                </ul>
             </div>
         </div>
-    </section>
-
+    </div>
+</section>
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
