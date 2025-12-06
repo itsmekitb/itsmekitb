@@ -206,6 +206,45 @@
         .skill-category li:last-child {
             border-bottom: none;
         }
+        /* Custom styling for Core Competencies boxes */
+.skill-category.competency h3 {
+    color: var(--primary);
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
+}
+
+.skill-category.competency h3::before {
+    content: "";
+    margin-right: 0;
+}
+
+.skill-category.competency ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.skill-category.competency li {
+    padding-left: 1.25rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    border-bottom: none;
+    padding: 0;
+    padding-left: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.skill-category.competency li:before {
+    content: "▸";
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
 
         /* Contact Section */
         #contact {
@@ -404,7 +443,7 @@
        <h2>Core Competencies</h2>
         
         <div class="skills-grid">
-    <div class="skill-category">
+    <div class="skill-category competency">
                 <h3>Instructional Design and Learning Experience Creation</h3>
                 <ul>
                     <li>Designing online, hybrid, and live training that supports skill-building and confidence</li>
@@ -469,7 +508,7 @@
         <h2 style="margin-top: 3rem;">Skills</h2>
         
         <div class="skills-grid">
-            <div class="skill-category">
+            <div class="skill-category competency">
                 <h3>Learning & Development Technology</h3>
                 <ul>
                     <li>H5P interactive authoring</li>
@@ -481,7 +520,7 @@
                 </ul>
             </div>
 
-            <div class="skill-category">
+            <div class="skill-category competency">
                 <h3>Instructional Design Skills & Methods</h3>
                 <ul>
                     <li>Curriculum design & module development</li>
@@ -494,7 +533,7 @@
                 </ul>
             </div>
 
-            <div class="skill-category">
+            <div class="skill-category competency">
                 <h3>Multimedia Content Production</h3>
                 <ul>
                     <li>Canva, Adobe Express, Photoshop</li>
