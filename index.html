@@ -282,11 +282,23 @@
             border: 0;
         }
     <style>
-div.competencies-grid {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+.competencies-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-top: 1.5rem;
+}
+
+@media (max-width: 968px) {
+    .competencies-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .competencies-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .competency-category h3 {
