@@ -423,46 +423,13 @@
     
     <!-- EMBEDDED MODULE -->
     <iframe 
-    id="h5pFrame"
     src="https://itsmekitb.github.io/itsmekitb/BranchingScenario.html" 
     width="100%" 
+    height="800" 
     style="border: 2px solid #e9ecef; border-radius: 8px; margin-top: 1.5rem; display: block;"
     title="Everything Is Due Yesterday Interactive Module"
     allow="fullscreen">
 </iframe>
-
-    <script>
-  function resizeH5PFrame() {
-    const iframe = document.getElementById('h5pFrame');
-    if (!iframe || !iframe.contentWindow) return;
-
-    try {
-      const doc = iframe.contentWindow.document;
-      if (!doc) return;
-
-      const newHeight = Math.max(
-        doc.body.scrollHeight,
-        doc.documentElement.scrollHeight
-      );
-
-      if (newHeight && !isNaN(newHeight)) {
-        iframe.style.height = newHeight + 'px';
-      }
-    } catch (e) {
-      // If there were cross-origin issues (shouldn't be, but just in case)
-      console.warn('Could not resize H5P iframe:', e);
-    }
-  }
-
-  const h5pFrame = document.getElementById('h5pFrame');
-  if (h5pFrame) {
-    h5pFrame.addEventListener('load', () => {
-      resizeH5PFrame();
-      // Re-check periodically in case H5P content changes height later
-      setInterval(resizeH5PFrame, 800);
-    });
-  }
-</script>
 
     
     <p style="margin-top: 1rem; font-size: 0.9rem; color: #6c757d;">
