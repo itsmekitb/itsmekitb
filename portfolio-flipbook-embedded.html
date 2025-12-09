@@ -57,12 +57,13 @@
         padding-bottom: 0.5rem;
     }
 
-    /* 4 Column Grid */
-    .toc-boxes {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 1rem;
-    }
+    /* Responsive grid for TOC category boxes */
+.toc-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
 
     .toc-box {
         background: white;
@@ -241,15 +242,16 @@
     }
 
     /* Mobile */
-    @media (max-width: 968px) {
-        .toc-boxes {
-            grid-template-columns: 1fr;
-        }
-
-        .flipbook-container {
-            height: auto;
-        }
+   @media (max-width: 600px) {
+    .toc-boxes {
+        grid-template-columns: 1fr;
     }
+
+    .flipbook-container {
+        height: auto;
+    }
+}
+
 
 /* --- TOC layout override: make items horizontal pills --- */
 .toc-box-items {
