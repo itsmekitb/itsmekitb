@@ -366,6 +366,56 @@
     font-weight: bold;
 }
 </style>
+
+/* Case study accordion styling */
+.case-study-accordion details {
+    border-top: 1px solid #e9ecef;
+    padding: 0.75rem 0;
+}
+
+.case-study-accordion details:last-child {
+    border-bottom: 1px solid #e9ecef;
+}
+
+.case-study-accordion summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--primary);
+    list-style: none;
+}
+
+.case-study-accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+.case-study-accordion summary::before {
+    content: "▸";
+    display: inline-block;
+    margin-right: 0.5rem;
+    color: var(--accent);
+    transition: transform 0.2s ease;
+}
+
+.case-study-accordion details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+.case-study-accordion p,
+.case-study-accordion ul {
+    margin-top: 0.5rem;
+    color: var(--gray);
+    font-size: 0.97rem;
+}
+
+.case-study-accordion ul {
+    padding-left: 1.25rem;
+}
+
+.case-study-accordion li {
+    margin-bottom: 0.25rem;
+}
+
+    
     </style>
 </head>
 <body>
@@ -395,7 +445,404 @@
             
             <div class="portfolio-grid">
 
-                                <!-- RISE 360 EMAIL COURSE -->
+                               
+                                <!-- L4L CASE STUDY -->
+                <div class="portfolio-item" style="grid-column: 1 / -1;">
+                    <h3>📚 Case Study: Building L4L (Leadership for Life)</h3>
+                    <div class="tags">
+                        <span class="tag">Program Architecture</span>
+                        <span class="tag">Trauma-Informed Design</span>
+                        <span class="tag">Full-Time Learning Ecosystem</span>
+                    </div>
+
+                    <p>
+                        L4L was a 12-week, full-time (40 hrs/week) foundational program for formerly incarcerated adults
+                        entering a year-long tech career pathway. I designed the entire instructional ecosystem for Pillar 1 —
+                        daily pacing, outcomes, assessments, trauma-informed frameworks, SME alignment, and cross-Pillar
+                        architecture — and built the emotional, cognitive, and digital foundations learners needed to succeed.
+                    </p>
+
+                    <p style="font-size: 0.9rem; color: var(--gray); margin-bottom: 1rem;">
+                        Expand each section below to read the full case study directly on this page.
+                    </p>
+
+                    <div class="case-study-accordion">
+
+                        <!-- 1. Context -->
+                        <details>
+                            <summary>1. Context: The “We Have a Dream” Phase</summary>
+                            <p>CROP hired me at a moment when they had:</p>
+                            <ul>
+                                <li>a three-day seminar</li>
+                                <li>extremely passionate goals</li>
+                                <li>a full-time year-long “Pillar program” sketched mostly in spirit</li>
+                                <li>no actual curriculum (outside of the three-day seminar)</li>
+                            </ul>
+                            <p>They essentially said,<br>
+                            “We want to teach leadership, digital literacy, financial wellness, mindset, professional skills, reading, writing, sales, and UX Design — all of it — to formerly incarcerated adults trying to rebuild their lives.”</p>
+                            <p>I said,<br>
+                            “Okay… so basically you want to teach DREAMS right now?”</p>
+                            <p>Laughter was exchanged. Then I built it anyway.</p>
+                            <p>SMEs were brought in for Pillars 2, 3, and 4. I led the development of Pillar 1, and oversaw the management of educational cohesion and instructional design across the entire year-long program for all Pillars.</p>
+                            <p>This was, objectively, a senior-level scope. I was fresh enough not to know that — which may be why it worked: I didn’t know it was supposed to be impossible.</p>
+                            <p>And for what it's worth: I can never again hear “We’re building the plane as we fly it” without thinking of the founders who trusted me to figure out how to build their plane.</p>
+                        </details>
+
+                        <!-- 2. Translating Vision Into Structure -->
+                        <details>
+                            <summary>2. Translating Vision Into Structure</summary>
+                            <p>My first job was taking a big, glowing cloud of aspiration and turning it into:</p>
+                            <ul>
+                                <li>concrete learning outcomes</li>
+                                <li>a real sequence</li>
+                                <li>an actual instructional plan that human beings could complete without collapsing under cognitive load</li>
+                            </ul>
+                            <p>This meant:</p>
+                            <ul>
+                                <li>identifying the through-line of the entire year-long program</li>
+                                <li>defining the purpose of Pillar 1</li>
+                                <li>deciding what success looks like at the 12-week mark</li>
+                                <li>carving the mountain of content into climbable hills</li>
+                            </ul>
+                            <p>L4L needed to be the foundation where learners could build stability, skill, and confidence.</p>
+                        </details>
+
+                        <!-- 3. Learners -->
+                        <details>
+                            <summary>3. Learners: Adults With Complex Lives and Incredible Potential</summary>
+                            <p>My learners were adults reentering society after incarceration who often faced:</p>
+                            <ul>
+                                <li>disrupted or incomplete formal education</li>
+                                <li>limited digital literacy</li>
+                                <li>unstable housing or employment</li>
+                                <li>trauma histories</li>
+                                <li>extremely practical and emotional needs</li>
+                            </ul>
+                            <p>So the curriculum had to be:</p>
+                            <ul>
+                                <li>trauma-informed</li>
+                                <li>confidence-building</li>
+                                <li>flexible</li>
+                                <li>low-barrier with a high-bar</li>
+                                <li>immediately applicable</li>
+                                <li>human-centered rather than content-centered</li>
+                            </ul>
+                            <p>This is why I structured everything around small wins and learner agency.</p>
+                        </details>
+
+                        <!-- 4. Program Architecture -->
+                        <details>
+                            <summary>4. Program Architecture: Does Anybody Know How to Fly This Thing?</summary>
+                            <p>L4L wasn’t a “once-a-week” program. It was a full-time, immersive learning environment:
+                            9am to 4pm, five days a week, for three months.</p>
+                            <p>That meant I wasn’t creating a set of lessons — I was building an entire daily learning ecosystem that could hold real humans, with real pasts, for 40 hours a week, without breaking them or burning them out.</p>
+                            <p>The structure had to be:</p>
+                            <ul>
+                                <li>digestible</li>
+                                <li>consistent</li>
+                                <li>scaffolded</li>
+                                <li>emotionally safe</li>
+                                <li>cognitively sustainable</li>
+                                <li>something instructors could realistically facilitate</li>
+                                <li>something learners could survive, grow inside, and not collapse under</li>
+                            </ul>
+                            <p>The 12-week build emerged from what learners needed and what the full-time format demanded. Instead of treating each topic as discrete, I designed L4L as a three-part instructional architecture, each part reinforcing the others and supporting the daily schedule.</p>
+
+                            <p><strong>A. Digital Literacy (Foundational Competence)</strong><br>
+                            “Let’s get your hands on the tools and build confidence.”</p>
+                            <p>At 40 hours a week, tech exposure wasn’t a one-off activity — it needed to be built into the daily rhythm so that comfort accumulated naturally.</p>
+                            <p><em>Daily examples:</em></p>
+                            <ul>
+                                <li>guided device setup and digital safety practice</li>
+                                <li>multi-hour hands-on productivity labs (Docs, Drive, Sheets, file structure)</li>
+                                <li>micro-tasks designed for low-stakes repetition throughout the day</li>
+                            </ul>
+                            <p>Digital Literacy had to go first because learners needed tech fluency to participate in the other Pillars — and because confidence with tools stabilizes emotional bandwidth for everything else.</p>
+
+                            <p><strong>B. Financial Wellness (Practical Stability)</strong><br>
+                            “Let’s demystify money and build agency.”</p>
+                            <p>At full-time intensity, financial content couldn’t be overwhelming or shame-inducing. It had to be paced, revisited, and integrated into daily structure.</p>
+                            <p><em>Daily examples:</em></p>
+                            <ul>
+                                <li>iterative budgeting work (learn → apply → refine)</li>
+                                <li>values-based conversations embedded as warm-ups or cool-downs</li>
+                                <li>scenario activities that mirrored real-life decision points</li>
+                            </ul>
+                            <p>Financial literacy grounded learners in real-world stability, giving them clarity and agency in an otherwise high-cognitive-load environment.</p>
+
+                            <p><strong>C. Leadership Development (The Core of the Program)</strong><br>
+                            “Let’s turn knowledge, mindset, and skills into self-direction.”</p>
+                            <p>This part carried the emotional center of the program. It also carried the most hours.</p>
+                            <p>Leadership Development included:</p>
+                            <ul>
+                                <li>Professional communication → writing and rewriting emails, tone calibration</li>
+                                <li>Mindset + motivation → task management, resilience, habit formation</li>
+                                <li>Reading + writing practice → discussions, summaries, expressive writing</li>
+                                <li>Life-navigation strategies → decision-making, time management, values alignment</li>
+                                <li>Agency + radical accountability → learning to hold oneself as responsible for their own choices without collapsing</li>
+                            </ul>
+                            <p>Because this content was emotionally heavy, I had to design daily pacing that pushed learners without allowing them to break. On a full-time schedule, this meant building a rhythm that alternated between cognitive load, emotional depth, structured practice, and recovery time.</p>
+                            <p><em>Daily examples:</em></p>
+                            <ul>
+                                <li>90-minute mindset workshops with follow-up reflection periods</li>
+                                <li>professional communication practice embedded between heavier sessions</li>
+                                <li>reading and writing blocks designed to build stamina without overwhelm</li>
+                                <li>leadership circles that balanced vulnerability with safety</li>
+                            </ul>
+                            <p>This category got the most hours because it built both job readiness and personal autonomy — and because learners needed a steady, containered environment for this kind of growth.</p>
+
+                            <p><strong>System-Level Architecture (What Held the Whole Program Together)</strong></p>
+                            <p>Designing 12 weeks of full-time instruction meant designing the entire infrastructure around the content:</p>
+                            <ul>
+                                <li>rubrics for consistent evaluation across instructors and days</li>
+                                <li>daily instructor guides with pacing, timing, scripts, trauma-informed notes, and troubleshooting</li>
+                                <li>performance + formative assessments embedded in the weekly structure</li>
+                                <li>trauma-informed design baked into lesson flow, timing, activity choice, and facilitation language</li>
+                                <li>learner support systems to stabilize navigation through full-time intensity</li>
+                                <li>integration of accessible tools (Google Classroom, Digital Skills courses, etc.) to maintain continuity</li>
+                                <li>badge-based microcredentials that gave daily and weekly wins</li>
+                                <li>learner analytics to catch disengagement before it escalated</li>
+                                <li>scenario-based communication practice integrated throughout the week</li>
+                                <li>asynchronous modules for differentiated pacing and makeup learning</li>
+                            </ul>
+                            <p>Cross-Pillar alignment was also part of the architecture. I learned the tech content taught in later Pillars, then reverse-engineered the competencies students needed by the time they arrived there.</p>
+                            <p>That meant taking some learners from “I have never used a smartphone” to building their own websites in Figma and learning basic code within a single full-time quarter.</p>
+                            <p>This wasn’t accidental. It was the product of an intentional, coherent system designed to build capacity, confidence, and stability at scale.</p>
+
+                            <p><strong>Putting It All Together</strong></p>
+                            <p>Everything was sequenced so:</p>
+                            <ul>
+                                <li>each component built on the last</li>
+                                <li>each skill connected to a real, higher-level outcome</li>
+                                <li>each day had structure, pacing, and emotional logic</li>
+                                <li>instructors had what they needed to facilitate sustainably</li>
+                                <li>learners had what they needed to grow without breaking</li>
+                            </ul>
+                            <p>The result wasn’t just a 12-week program. It was a daily instructional ecosystem, built to hold people through real transformation on a real schedule with real stakes.</p>
+                        </details>
+
+                        <!-- 4.5 Backward Design -->
+                        <details>
+                            <summary>4.5 Backward Design in Action: Preparing Learners for the Reality of Tech Careers</summary>
+                            <p>The ultimate goal of the program was clear: by the end of Pillar 3, learners needed to secure and sustain a job in the tech industry.</p>
+                            <p>Not just get a job — function within it, navigate its demands, withstand its pressure, and maintain it long-term after a lifetime of incarceration, instability, or interrupted education.</p>
+
+                            <p><strong>Pillar 3 (Job Search + Career Stability): What Learners Needed</strong></p>
+                            <p>To survive the brutality of the tech job search — and later, the realities of a tech work environment — learners needed:</p>
+                            <ul>
+                                <li>emotional stability</li>
+                                <li>communication clarity</li>
+                                <li>consistent follow-through</li>
+                                <li>confidence under rejection</li>
+                                <li>the ability to self-regulate under pressure</li>
+                                <li>resilience after years of institutionalization and trauma</li>
+                            </ul>
+                            <p>These aren’t “nice to have” skills. They are survival skills.</p>
+
+                            <p><strong>Pillar 2 (UX Design + Technical Fluency): What Learners Needed</strong></p>
+                            <p>Before they even touched UX tools, learners needed:</p>
+                            <ul>
+                                <li>foundational digital literacy</li>
+                                <li>file management fluency</li>
+                                <li>comfort navigating multiple platforms</li>
+                                <li>the stamina to learn complex concepts full-time</li>
+                                <li>the ability to troubleshoot independently</li>
+                                <li>the confidence to experiment, fail, and try again</li>
+                            </ul>
+                            <p>Otherwise, the entire UX sequence would collapse under cognitive overload. The tech instruction SMEs were brilliant — but their content assumed a level of digital fluency many learners simply did not have.</p>
+
+                            <p><strong>What Pillar 1 HAD to Do</strong></p>
+                            <p>To make Pillars 2 and 3 possible, Pillar 1 needed to produce learners who were:</p>
+                            <ul>
+                                <li>digitally competent enough to enter a UX design bootcamp environment</li>
+                                <li>emotionally aware enough to withstand the intensity of technical learning</li>
+                                <li>resilient enough to face the job search without collapsing</li>
+                                <li>regulated enough to survive the transition into full-time employment</li>
+                                <li>confident enough to see themselves as someone who belongs in tech</li>
+                            </ul>
+                            <p>This meant Pillar 1 was not “introductory.” It was foundational, structural, and non-negotiable for the success of the entire year-long program.</p>
+                            <p>Every digital literacy lab, mindset exercise, leadership session, communication task, and reflective practice was designed with these end goals in mind.</p>
+                            <p>Pillar 1 wasn’t just “first.” It was the launchpad — emotionally, cognitively, and technically.</p>
+
+                            <p><strong>The Result</strong></p>
+                            <p>By reverse-engineering the competencies of Pillars 2 and 3 into Pillar 1, we were able to take learners who entered the program with:</p>
+                            <ul>
+                                <li>no digital skills</li>
+                                <li>no experience with professional writing</li>
+                                <li>no emotional scaffolding</li>
+                                <li>no familiarity with tech tools</li>
+                                <li>no internal or external stability</li>
+                            </ul>
+                            <p>…and prepare them for:</p>
+                            <ul>
+                                <li>full-time UX training</li>
+                                <li>intensive job search preparation</li>
+                                <li>eventually, life-changing work in the tech industry</li>
+                            </ul>
+                            <p>This is Backward Design not as a classroom strategy, but as an architectural backbone for human transformation.</p>
+                        </details>
+
+                        <!-- 5. SME Collaboration -->
+                        <details>
+                            <summary>5. SME Collaboration: Instructional Designer as Interpreter, Editor, Therapist, Air-Traffic Controller</summary>
+                            <p>CROP’s instructors and leaders had incredible content expertise — but not instructional architecture, and definitely not for a full-time learning environment that required daily pacing, emotional containment, and cross-Pillar alignment.</p>
+                            <p>My role expanded quickly into something much larger than “ID support.” It became:</p>
+                            <ul>
+                                <li>pulling ideas out of their heads</li>
+                                <li>translating jargon into teachable steps</li>
+                                <li>cutting content that didn’t align to outcomes</li>
+                                <li>running Backward Design sessions to define competencies for all Pillars</li>
+                                <li>reverse-engineering Pillar 1 to prepare learners for the tech intensity of Pillar 2</li>
+                                <li>creating templates for lessons, assessments, and instructor scripts</li>
+                                <li>coaching SMEs through scope creep and emotional overload</li>
+                                <li>ensuring coherence across wildly different teaching styles</li>
+                                <li>teaching instructors how to coach learners through heavy leadership content without flooding them</li>
+                            </ul>
+
+                            <p><strong>Pillar 2 (Tech Instruction)</strong></p>
+                            <p>The SMEs were brilliant — deeply skilled in UX, coding, and digital design. What they needed wasn’t “fixing”; they needed curricular architecture.</p>
+                            <p>I helped them:</p>
+                            <ul>
+                                <li>map their expert knowledge to teachable sequences</li>
+                                <li>integrate their content with the outcomes of Pillar 1</li>
+                                <li>define daily pacing that matched a full-time learning environment</li>
+                                <li>maintain rigor without overwhelming learners still stabilizing</li>
+                            </ul>
+
+                            <p><strong>Pillar 3 (Professional Development)</strong></p>
+                            <p>This Pillar needed something different: real instructional design rescue. The instructor had strong intentions but no idea how to build or teach a structured curriculum.</p>
+                            <p>We reworked her entire Pillar together, including:</p>
+                            <ul>
+                                <li>creating learning outcomes</li>
+                                <li>sequencing content</li>
+                                <li>writing assessments</li>
+                                <li>designing learner-centered activities</li>
+                                <li>building her confidence as a facilitator</li>
+                            </ul>
+
+                            <p><strong>Coaching SMEs to Coach Learners</strong></p>
+                            <p>Because the leadership content was emotionally loaded and practiced daily, I also supported SMEs in:</p>
+                            <ul>
+                                <li>facilitating vulnerable work without retraumatizing learners</li>
+                                <li>pacing heavy content inside a full-time schedule</li>
+                                <li>maintaining emotional safety while still challenging learners</li>
+                                <li>responding when learners began practicing agency in messy, real ways</li>
+                            </ul>
+                            <p>This was instructional design as diplomacy. And also project management. And also therapy. I am not a therapist. But I held us all together.</p>
+                        </details>
+
+                        <!-- 6. Design Frameworks -->
+                        <details>
+                            <summary>6. Design Frameworks I Used Without Calling Them That</summary>
+                            <p>I drew on:</p>
+                            <ul>
+                                <li>ADDIE for overall structure</li>
+                                <li>Backward Design for outcomes mapping</li>
+                                <li>UDL for accessibility and choice</li>
+                                <li>Trauma-informed pedagogy for emotional safety</li>
+                                <li>Mayer’s Principles for cognitive load</li>
+                                <li>Adult Learning Theory for relevance and autonomy</li>
+                            </ul>
+                            <p>If you wanted the fancy version, I could rewrite this like an academic citation list. Back then, when I started using these principles, I didn't even know what they were called.</p>
+                            <p>But the truth is: I built something that actually works for real people. That's what matters.</p>
+                        </details>
+
+                        <!-- 7. Development Highlights -->
+                        <details>
+                            <summary>7. Development Highlights: The Actual Making of the Thing</summary>
+                            <p>This included creating:</p>
+                            <ul>
+                                <li>a full 12-week, full-time instructional sequence (40 hours/week)</li>
+                                <li>daily facilitator scripts with pacing, timing, trauma-informed notes</li>
+                                <li>slide decks for lessons, labs, workshops, and leadership circles</li>
+                                <li>learner handouts, practice tasks, and activity flows</li>
+                                <li>troubleshooting plans for both tech failures and emotional dysregulation</li>
+                                <li>performance + formative assessments aligned to cross-Pillar outcomes</li>
+                                <li>learner reflection tools designed to build emotional awareness and agency</li>
+                                <li>cross-lesson scaffolding to maintain coherence across domains</li>
+                                <li>integration points with Pillar 2 (UX design) and Pillar 3 (career readiness)</li>
+                                <li>alignment documents, rubrics, and program-wide templates</li>
+                                <li>asynchronous modules for reinforcement and differentiated pacing</li>
+                                <li>analytics tools to track progress and support instructors</li>
+                                <li>badge-based microcredentials to make daily growth visible</li>
+                            </ul>
+                            <p>All of this had to function inside a daily, full-time learning environment where emotional safety, cognitive load, and stamina mattered as much as content.</p>
+                            <p>This is the point in the story where most IDs would say, “And that was a lot.”</p>
+                            <p>But honestly? I loved it.</p>
+                            <p>There is nothing quite like designing forty hours of learning a week to teach you what really matters in instructional design.</p>
+                        </details>
+
+                        <!-- 8. Challenges -->
+                        <details>
+                            <summary>8. Challenges and How I Solved Them (The Fun Part)</summary>
+                            <p><strong>Challenge:</strong> “We want to teach EVERYTHING.”<br>
+                            <strong>Solution:</strong> I built outcome-aligned boundaries so “everything” became the right things, at the right time, for the right reasons.</p>
+
+                            <p><strong>Challenge:</strong> Learners arrived with wildly different skill levels — from “never used a smartphone” to “already tech-curious.”<br>
+                            <strong>Solution:</strong> I designed modular activities, layered scaffolds, differentiation pathways, and daily instructor notes that allowed everyone to move while still feeling successful.</p>
+
+                            <p><strong>Challenge:</strong> The program was full-time (40 hours/week). Learners needed growth without burnout.<br>
+                            <strong>Solution:</strong> I structured each day with cognitive pacing, emotional logic, and trauma-informed flow: challenge → support → practice → recovery → repeat.</p>
+
+                            <p><strong>Challenge:</strong> Leadership content was emotionally heavy and practiced daily.<br>
+                            <strong>Solution:</strong> I coached instructors on how to coach learners — how to facilitate vulnerability, regulate group energy, and build agency without sending anyone into overwhelm.</p>
+
+                            <p><strong>Challenge:</strong> Pillar 2 SMEs were brilliant but needed coherence with the rest of the program.<br>
+                            <strong>Solution:</strong> I used Backward Design to align Pillar 1 with their UX competencies and built structural bridges into their curriculum.</p>
+
+                            <p><strong>Challenge:</strong> Pillar 3 needed a complete instructional rebuild.<br>
+                            <strong>Solution:</strong> I partnered with the instructor to redesign her entire Pillar — outcomes, sequencing, activities, assessments, everything — so it could actually prepare learners for the job search.</p>
+
+                            <p><strong>Challenge:</strong> Instructor confidence varied wildly.<br>
+                            <strong>Solution:</strong> I created scripts, flexible pacing guides, troubleshooting notes, and built-in reflection tools so every instructor could facilitate skillfully, regardless of background.</p>
+
+                            <p><strong>Challenge:</strong> No pre-existing materials.<br>
+                            <strong>Solution:</strong> I made the materials. All of them.</p>
+
+                            <p><strong>Challenge:</strong> The whole program needed to function as a coherent, emotionally safe, multi-Pillar ecosystem.<br>
+                            <strong>Solution:</strong> I designed Pillar 1 as the backbone — building the emotional, technical, and cognitive stability required for learners to survive and thrive in Pillars 2 and 3.</p>
+                        </details>
+
+                        <!-- 9. A Note on Impact: Stan -->
+                        <details>
+                            <summary>9. A Note on Impact: Stan</summary>
+                            <p>Some outcomes can’t be captured in metrics, but they live vividly in the people who moved through the program. Stan was one of them.</p>
+                            <p>When he entered Pillar 1, his digital literacy was in the negatives. He was a kind, gentle man — the sort of person who should have been retired on a beach in Hawaii — but instead had spent most of his life behind bars. Starting from scratch would have been overwhelming for many people.</p>
+                            <p>Stan didn’t flinch.</p>
+                            <p>He showed up every day ready to learn, ready to try, ready to struggle, ready to try again. He embraced every challenge built into the program — not because it was easy, but because he refused to be anything other than fully alive in the chance he’d been given.</p>
+                            <p>By mid-Pillar 3, he pulled me aside with a quiet, glowing pride and showed me an app he’d built on his phone. The joy on his face — that moment of <em>I did this</em> — is the reason this kind of instructional design work matters.</p>
+                            <p>Before the end of Pillar 4, he landed a job. He moved into an apartment with another learner from his cohort. He started building a life that reflected the person he had always been, long before the system allowed him to show it.</p>
+                            <p>Stan passed away recently, on the ferry between San Francisco and the East Bay — his favorite place in the world. A couple of months before he died, he texted me to say he had started setting reminders on his phone to reach out to the people he cared about. I was one of those people.</p>
+                            <p>He thanked me for being a mentor. But the truth is: the honor was mine.</p>
+                            <p>Stan’s story is not an outlier — it is an example of what becomes possible when learners are met with systems built for their realities, their histories, their strengths, and their futures. He is one of the clearest reasons I do this work.</p>
+                        </details>
+
+                        <!-- 10. Reflection -->
+                        <details>
+                            <summary>10. Reflection: What I Learned + What Came Next</summary>
+                            <p>This project taught me:</p>
+                            <ul>
+                                <li>that I can build full instructional ecosystems from scratch — not just courses</li>
+                                <li>how to lead SMEs with clarity, kindness, and backbone</li>
+                                <li>how to design for adults whose skills, histories, and emotional worlds vary dramatically</li>
+                                <li>how to build emotional scaffolding into cognitive tasks in a full-time learning environment</li>
+                                <li>how to hold a classroom safely through vulnerability, identity shifts, and accelerated growth</li>
+                                <li>how to balance structure with flexibility on a daily, hourly, moment-to-moment level</li>
+                                <li>how to translate a dream into a system — and a system into real human transformation</li>
+                            </ul>
+                            <p>And the truth is: I didn’t walk away from this thinking about what I would do next time. I walked away knowing what I am capable of doing now.</p>
+                            <p>I expanded the program as it grew — building analytics, badge systems, scenario practice, instructor tools, alignment documents, and asynchronous modules — not because they were “nice additions,” but because the program needed them to function as the ecosystem it became.</p>
+                            <p>The next time I build something like this (and there will be a next time), I bring all of that with me: the architecture, the emotional logic, the pacing instincts, the systems thinking, the confidence, and the deep respect for what adult learners can accomplish when the design actually supports them.</p>
+                            <p>This project didn’t just teach me what instructional design is. It taught me what kind of instructional designer I am.</p>
+                            <p>And now, I'm ready to bring that same approach — strategic, human-centered, and unafraid of complexity — to the next challenge.</p>
+                        </details>
+
+                    </div>
+
+                </div>
+
+                
+                <!-- RISE 360 EMAIL COURSE -->
                 <div class="portfolio-item" style="grid-column: 1 / -1;">
                     <h3>📧 Write Emails People Actually Want to Read</h3>
                     <div class="tags">
