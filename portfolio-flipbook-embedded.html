@@ -83,20 +83,25 @@
     }
 
     .toc-box-items {
-        display: flex;
-        flex-direction: column;
-        gap: 0.4rem;
-    }
+    display: flex;
+    flex-wrap: wrap;              /* allow items to wrap */
+    gap: 0.4rem;                  /* space between pills */
+    justify-content: center;      /* center them in the box */
+}
 
-    .toc-item {
-        padding: 0.5rem;
-        cursor: pointer;
-        border-radius: 4px;
-        font-size: 0.8rem;
-        transition: all 0.2s;
-        color: var(--dark);
-        text-align: center;
-    }
+.toc-item {
+    padding: 0.35rem 0.75rem;
+    cursor: pointer;
+    border-radius: 999px;         /* pill shape */
+    font-size: 0.8rem;
+    transition: all 0.2s;
+    color: var(--dark);
+    text-align: center;
+    background: #f8f9fa;
+    border: 1px solid #e1e5ea;
+    flex: 0 1 auto;               /* shrink-to-fit pills */
+}
+
 
     .toc-item:hover {
         background: var(--light);
