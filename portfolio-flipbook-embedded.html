@@ -295,12 +295,10 @@
 <body>
     <div class="flipbook-container">
         <!-- TOC Section -->
-        <div class="toc-header">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                <h3 style="margin: 0; border: none; padding: 0;">Portfolio Samples</h3>
-                <button id="toggleTOC" style="background: var(--accent); color: white; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; font-weight: 600;">Hide TOC ▲</button>
-            </div>
-
+        <h3 style="margin: 0; border: none; padding: 0; text-align: center; margin-bottom: 1rem;">
+    Portfolio Samples
+</h3>
+        
             <div class="toc-boxes">
                 <!-- Box 1 -->
                 <div class="toc-box">
@@ -507,30 +505,6 @@
         
         loadPage(0);
 
-        // TOC Toggle functionality
-        const tocBoxes = document.querySelector('.toc-boxes');
-        const toggleBtn = document.getElementById('toggleTOC');
-        let tocVisible = true;
-
-        toggleBtn.addEventListener('click', () => {
-            tocVisible = !tocVisible;
-            if (tocVisible) {
-                tocBoxes.style.display = 'grid';
-                toggleBtn.textContent = 'Hide TOC ▲';
-            } else {
-                tocBoxes.style.display = 'none';
-                toggleBtn.textContent = 'Show TOC ▼';
-            }
-        });
-
-        // Auto-collapse when TOC item is clicked
-        document.querySelectorAll('.toc-item').forEach(item => {
-            item.addEventListener('click', () => {
-                tocVisible = false;
-                tocBoxes.style.display = 'none';
-                toggleBtn.textContent = 'Show TOC ▼';
-            });
-        });
     </script>
 </body>
 </html>
