@@ -405,6 +405,84 @@
 .site-nav a:hover {
     border-bottom-color: var(--accent);
 }
+
+       /* ===== Mobile tightening for main portfolio ===== */
+@media (max-width: 768px) {
+
+  /* Make the whole layout feel less "narrow" */
+  .container {
+    padding: 0 1rem; /* was 2rem */
+  }
+
+  /* HERO: less tall + less giant */
+  header {
+    padding: 2.5rem 1rem; /* was 4rem 2rem */
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+  header .subtitle {
+    font-size: 1.05rem;
+  }
+  header p {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  /* Section headings */
+  section {
+    padding: 2.5rem 0; /* was 4rem */
+  }
+  section h2 {
+    font-size: 1.6rem;
+  }
+
+  /* Cards: less padding = more room for content */
+  .portfolio-item {
+    padding: 1.25rem; /* was 2rem */
+    border-radius: 10px;
+  }
+  .portfolio-item h3 {
+    font-size: 1.25rem;
+  }
+  .portfolio-item p {
+    font-size: 0.98rem;
+  }
+
+  /* Tags: a little tighter */
+  .tag {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.65rem;
+  }
+
+  /* NAV: convert chunky wrapped block into a clean horizontal scroll row */
+  .site-nav .nav-inner {
+    flex-wrap: nowrap;            /* stop wrapping */
+    overflow-x: auto;             /* allow swipe */
+    -webkit-overflow-scrolling: touch;
+    gap: 0.75rem;
+    padding: 0.6rem 1rem;
+  }
+  .site-nav a {
+    white-space: nowrap;
+    font-size: 0.9rem;
+    padding: 0.35rem 0.25rem;
+  }
+
+  /* Embedded iframes: prevent absurd heights on phones */
+  #email-course iframe {
+    height: 70vh !important; /* your inline container is 90vh */
+  }
+  #task-module iframe {
+    height: 70vh !important; /* was 800px */
+  }
+
+  /* Work samples flipbook: also too tall on mobile */
+  #work-samples iframe {
+    height: 75vh !important; /* was 1800px */
+  }
+}
+
        
 </style>
 
