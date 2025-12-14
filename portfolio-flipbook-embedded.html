@@ -57,12 +57,12 @@
         padding-bottom: 0.5rem;
     }
 
-    /* 4 Column Grid */
-    .toc-boxes {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 1rem;
-    }
+    /* TOC grid: always 4, 2, or 1 columns (never 3+1) */
+.toc-boxes {
+    display: grid;
+    gap: 0.75rem;
+}
+
 
     .toc-box {
         background: white;
@@ -83,20 +83,25 @@
     }
 
     .toc-box-items {
-        display: flex;
-        flex-direction: column;
-        gap: 0.4rem;
-    }
+    display: flex;
+    flex-wrap: wrap;              /* allow items to wrap */
+    gap: 0.4rem;                  /* space between pills */
+    justify-content: center;      /* center them in the box */
+}
 
-    .toc-item {
-        padding: 0.5rem;
-        cursor: pointer;
-        border-radius: 4px;
-        font-size: 0.8rem;
-        transition: all 0.2s;
-        color: var(--dark);
-        text-align: center;
-    }
+.toc-item {
+    padding: 0.35rem 0.75rem;
+    cursor: pointer;
+    border-radius: 999px;         /* pill shape */
+    font-size: 0.8rem;
+    transition: all 0.2s;
+    color: var(--dark);
+    text-align: center;
+    background: #f8f9fa;
+    border: 1px solid #e1e5ea;
+    flex: 0 1 auto;               /* shrink-to-fit pills */
+}
+
 
     .toc-item:hover {
         background: var(--light);
@@ -181,7 +186,7 @@
 
     /* PDF Viewer */
     .pdf-viewer {
-        height: 70vh;                  /* adjust this number to taste */
+        height: 70vh;
         border: 2px solid var(--light);
         border-radius: 8px;
         overflow: hidden;
@@ -236,61 +241,102 @@
     }
 
     /* Mobile */
-    @media (max-width: 968px) {
-        .toc-boxes {
-            grid-template-columns: 1fr;
-        }
-
-        .flipbook-container {
-            height: auto;
-        }
+   /* Wide: 4 across */
+@media (min-width: 1100px) {
+    .toc-boxes {
+        grid-template-columns: repeat(4, 1fr);
     }
+}
+
+/* Medium: 2 across */
+@media (min-width: 700px) and (max-width: 1099px) {
+    .toc-boxes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Small: 1 per row */
+@media (max-width: 699px) {
+    .toc-boxes {
+        grid-template-columns: 1fr;
+    }
+
+    .flipbook-container {
+        height: auto;
+    }
+}
+
+
+
+/* --- TOC layout override: make items horizontal pills --- */
+.toc-box-items {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.4rem !important;
+    justify-content: center !important;
+}
+
+.toc-item {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem 0.75rem !important;
+    border-radius: 999px !important;  /* pill shape */
+    font-size: 0.8rem !important;
+    background: #f8f9fa !important;
+    border: 1px solid #e1e5ea !important;
+    color: var(--dark) !important;
+    text-align: center;
+    flex: 0 1 auto !important;
+}
+        
 </style>
 </head>
 <body>
     <div class="flipbook-container">
         <!-- TOC Section -->
         <div class="toc-header">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-        <h3 style="margin: 0; border: none; padding: 0;">Portfolio Samples</h3>
-        <button id="toggleTOC" style="background: var(--accent); color: white; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; font-weight: 600;">Hide TOC ▲</button>
-    </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h3 style="margin: 0; border: none; padding: 0;">Portfolio Samples</h3>
+                <button id="toggleTOC" style="background: var(--accent); color: white; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; font-weight: 600;">Hide TOC ▲</button>
+            </div>
+
             <div class="toc-boxes">
                 <!-- Box 1 -->
                 <div class="toc-box">
-                    <h4>🎓 Facilitator Guides</h4>
+                    <h4>🎓 Program & Session Design</h4>
                     <div class="toc-box-items">
                         <div class="toc-item" data-page="0">Instructor Guide</div>
-                        <div class="toc-item" data-page="1">Learner Expectations</div>
+                        <div class="toc-item" data-page="1">Weekly Structure & Pacing</div>
                     </div>
                 </div>
 
                 <!-- Box 2 -->
                 <div class="toc-box">
-                    <h4>🌿 Curriculum Design</h4>
+                    <h4>🗺️ Curriculum Maps & Overviews</h4>
                     <div class="toc-box-items">
-                        <div class="toc-item" data-page="2">Outcomes Map</div>
-                        <div class="toc-item" data-page="3">Learning Structure</div>
-                        <div class="toc-item" data-page="4">Weekly Overviews</div>
+                        <div class="toc-item" data-page="2">Learning Outcomes Map</div>
+                        <div class="toc-item" data-page="3">Weekly Overviews</div>
                     </div>
                 </div>
 
                 <!-- Box 3 -->
                 <div class="toc-box">
-                    <h4>📝 Assessment Design</h4>
+                    <h4>📊 Assessment & Evaluation</h4>
                     <div class="toc-box-items">
-                        <div class="toc-item" data-page="5">Diagnostic</div>
-                        <div class="toc-item" data-page="6">Writing Rubric</div>
-                        <div class="toc-item" data-page="7">Growth Tracking</div>
+                        <div class="toc-item" data-page="4">Diagnostic Assessment</div>
+                        <div class="toc-item" data-page="5">Writing Rubric</div>
+                        <div class="toc-item" data-page="6">Growth Tracking System</div>
                     </div>
                 </div>
 
                 <!-- Box 4 -->
                 <div class="toc-box">
-                    <h4>💻 Digital Literacy</h4>
+                    <h4>📎 Learner-Facing Materials</h4>
                     <div class="toc-box-items">
-                        <div class="toc-item" data-page="8">Worksheets</div>
-                        <div class="toc-item" data-page="9">Project Showcase</div>
+                        <div class="toc-item" data-page="7">Learner Expectations</div>
+                        <div class="toc-item" data-page="8">Worksheets & Handouts</div>
+                        <div class="toc-item" data-page="9">Final Project Planner</div>
                     </div>
                 </div>
             </div>
@@ -310,80 +356,99 @@
 
     <script>
         const pages = [
+            /* 0 – Instructor Guide */
             {
-                section: "🎓 Facilitator Guides & Support Materials",
+                section: "🎓 Program & Session Design",
                 title: "Instructor Guide: Introductory Digital Literacy Session",
                 file: "https://itsmekitb.github.io/itsmekitb/PortSamp6.pdf",
                 caption: "A trauma-informed, facilitator-ready guide for true beginners in digital skills.",
                 blurb: "This guide demonstrates how I create accessible lessons for adults with little or no digital experience. It includes minute-by-minute pacing, facilitator language, troubleshooting support, and instructional cues rooted in psychological safety. My focus is always on reducing anxiety and building early confidence.",
                 why: "Shows I can create instructor-facing materials that support both teaching effectiveness and learner dignity; critical for facilitator training, faculty development, and train-the-trainer programs."
             },
+
+            /* 1 – Weekly Structure & Pacing */
             {
-                section: "🎓 Facilitator Guides & Support Materials",
-                title: "Learner Expectations, Policies, and Success Supports",
-                file: "https://itsmekitb.github.io/itsmekitb/PortSamp2.pdf",
-                caption: "Warm, clear communication that sets structure without shame.",
-                blurb: "These learner-facing pages show how I communicate expectations with clarity and compassion. The tone is supportive rather than punitive and reinforces belonging, accountability, and mutual respect in the learning environment.",
-                why: "Demonstrates my mastery of learner-facing microcopy and tone — one of my strongest skills."
-            },
-            {
-                section: "🌿 Curriculum & Learning Design",
-                title: "Learning Outcomes Map",
-                file: "https://itsmekitb.github.io/itsmekitb/PortSamp1.pdf",
-                caption: "A backward-designed outcomes map aligning an interdisciplinary adult-education program.",
-                blurb: "This outcomes map demonstrates backward design across three domains of learning. I created layered knowledge, skill, and application outcomes to guide a 12-week program. These outcomes ensured instructional alignment between lessons, assessments, and each learner's developmental arc.",
-                why: "Demonstrates ability to architect multi-domain learning experiences with clear, measurable outcomes. Applicable to program design, curriculum mapping, and competency-based training across contexts."
-            },
-            {
-                section: "🌿 Curriculum & Learning Design",
+                section: "🎓 Program & Session Design",
                 title: "Weekly Learning Structure & Pacing Guide",
                 file: "https://itsmekitb.github.io/itsmekitb/PortSamp5.pdf",
                 caption: "A predictable weekly rhythm designed to balance cognitive and emotional load.",
                 blurb: "This weekly structure illustrates how I design a consistent, grounding learning rhythm across a multi-month program. The pacing supports cognitive load, emotional safety, and alignment of multiple content areas without overwhelming learners.",
                 why: "Demonstrates long-form curriculum planning and thoughtful sequencing."
             },
+
+            /* 2 – Learning Outcomes Map */
             {
-                section: "🌿 Curriculum & Learning Design",
+                section: "🗺️ Curriculum & Learning Design",
+                title: "Learning Outcomes Map",
+                file: "https://itsmekitb.github.io/itsmekitb/PortSamp1.pdf",
+                caption: "A backward-designed outcomes map aligning an interdisciplinary adult-education program.",
+                blurb: "This outcomes map demonstrates backward design across three domains of learning. I created layered knowledge, skill, and application outcomes to guide a 12-week program. These outcomes ensured instructional alignment between lessons, assessments, and each learner's developmental arc.",
+                why: "Demonstrates ability to architect multi-domain learning experiences with clear, measurable outcomes. Applicable to program design, curriculum mapping, and competency-based training across contexts."
+            },
+
+            /* 3 – Weekly Overview Sheets */
+            {
+                section: "🗺️ Curriculum & Learning Design",
                 title: "Weekly Overview Sheets (Instruction + Expectations)",
                 file: "https://itsmekitb.github.io/itsmekitb/PortSamp4.pdf",
                 caption: "Clear, learner-centered week plans supporting confidence and preparedness.",
                 blurb: "These weekly overview sheets show how I organize instruction across multiple topics while keeping expectations transparent and manageable. Each overview blends pacing, learning goals, and homework guidance to help learners stay oriented and confident.",
                 why: "Shows my ability to design navigable, supportive structures for adult learners."
             },
+
+            /* 4 – Diagnostic Assessment */
             {
-                section: "📝 Assessment & Evaluation Design",
+                section: "📊 Assessment & Evaluation Design",
                 title: "Competency-Based Diagnostic Assessment",
                 file: "https://itsmekitb.github.io/itsmekitb/PortSamp11.pdf",
                 caption: "A multi-domain diagnostic designed to meet learners where they are.",
                 blurb: "This diagnostic assessment evaluates reading comprehension, writing skills, digital literacy, and personal readiness in a calm, non-shaming framework. I created the competency definitions, item prompts, and rubric to support equitable, growth-centered evaluation for adults beginning a new learning journey.",
                 why: "Assessment design is a high-impact design skill. This demonstrates I can create evaluations that are both rigorous and compassionate. Applicable to pre-assessments, skills validation, placement testing, or onboarding diagnostics."
             },
+
+            /* 5 – Reflective Writing Rubric */
             {
-                section: "📝 Assessment & Evaluation Design",
+                section: "📊 Assessment & Evaluation Design",
                 title: "Reflective Writing Rubric",
                 file: "https://itsmekitb.github.io/itsmekitb/PortSamp3.pdf",
                 caption: "An emotionally intelligent rubric that supports depth and authentic reflection.",
                 blurb: "This rubric was designed to encourage thoughtful, vulnerable, and growth-oriented reflection. It rewards engagement rather than perfection and gives learners a clear, compassionate structure for talking about their development.",
                 why: "Shows my ability to design assessments that honor the emotional dimensions of learning."
             },
+
+            /* 6 – Weekly Growth-Tracking System */
             {
-                section: "📝 Assessment & Evaluation Design",
+                section: "📊 Assessment & Evaluation Design",
                 title: "Weekly Growth-Tracking & Portfolio Evaluation System",
                 file: "https://itsmekitb.github.io/itsmekitb/PortSamp7.pdf",
                 caption: "A holistic assessment system that documents progress rather than penalizing struggle.",
                 blurb: "This system combines weekly observational assessments, simple homework verification, and a portfolio-based final evaluation. It gives instructors an efficient framework for tracking progress, while offering learners a motivating, low-pressure way to see their growth over time.",
                 why: "Demonstrates full-cycle assessment design that's transparent, humane, and scalable. Applicable to learning journeys, performance tracking, competency progressions, or portfolio-based evaluation in any context."
             },
+
+            /* 7 – Learner Expectations */
             {
-                section: "💻 Digital Literacy Learning Materials",
+                section: "📎 Learner-Facing Materials",
+                title: "Learner Expectations, Policies, and Success Supports",
+                file: "https://itsmekitb.github.io/itsmekitb/PortSamp2.pdf",
+                caption: "Warm, clear communication that sets structure without shame.",
+                blurb: "These learner-facing pages show how I communicate expectations with clarity and compassion. The tone is supportive rather than punitive and reinforces belonging, accountability, and mutual respect in the learning environment.",
+                why: "Demonstrates my mastery of learner-facing microcopy and tone — one of my strongest skills."
+            },
+
+            /* 8 – Worksheets & Handouts */
+            {
+                section: "📎 Learner-Facing Materials",
                 title: "Digital Literacy Worksheets & Handouts (Selected Samples)",
                 file: "https://itsmekitb.github.io/itsmekitb/PortSamp9.pdf",
                 caption: "Friendly, plain-language materials that help digital beginners build confidence.",
                 blurb: "These worksheets reflect my approach to making technical learning feel accessible and doable. Each handout blends clear instructions, practical skill-building, and psychologically supportive framing. The design is simple, visual, and welcoming for learners who are new to computers.",
                 why: "Demonstrates ability to reduce cognitive load and design for learner anxiety. Applicable to tech training, software onboarding, digital tool adoption, or any context where new systems or skills create overwhelm."
             },
+
+            /* 9 – Final Project Planner */
             {
-                section: "💻 Digital Literacy Learning Materials",
+                section: "📎 Learner-Facing Materials",
                 title: "Final Project Showcase Planner & Presentation Guide",
                 file: "https://itsmekitb.github.io/itsmekitb/PortSamp8.pdf",
                 caption: "A supportive scaffold for preparing and presenting a learner's final project.",
@@ -443,31 +508,29 @@
         loadPage(0);
 
         // TOC Toggle functionality
-const tocHeader = document.querySelector('.toc-header');
-const tocBoxes = document.querySelector('.toc-boxes');
-const toggleBtn = document.getElementById('toggleTOC');
-let tocVisible = true;
+        const tocBoxes = document.querySelector('.toc-boxes');
+        const toggleBtn = document.getElementById('toggleTOC');
+        let tocVisible = true;
 
-toggleBtn.addEventListener('click', () => {
-    tocVisible = !tocVisible;
-    if (tocVisible) {
-        tocBoxes.style.display = 'grid';
-        toggleBtn.textContent = 'Hide TOC ▲';
-    } else {
-        tocBoxes.style.display = 'none';
-        toggleBtn.textContent = 'Show TOC ▼';
-    }
-});
+        toggleBtn.addEventListener('click', () => {
+            tocVisible = !tocVisible;
+            if (tocVisible) {
+                tocBoxes.style.display = 'grid';
+                toggleBtn.textContent = 'Hide TOC ▲';
+            } else {
+                tocBoxes.style.display = 'none';
+                toggleBtn.textContent = 'Show TOC ▼';
+            }
+        });
 
-// Auto-collapse when TOC item is clicked
-document.querySelectorAll('.toc-item').forEach(item => {
-    const originalClick = item.onclick;
-    item.addEventListener('click', () => {
-        tocVisible = false;
-        tocBoxes.style.display = 'none';
-        toggleBtn.textContent = 'Show TOC ▼';
-    });
-});
+        // Auto-collapse when TOC item is clicked
+        document.querySelectorAll('.toc-item').forEach(item => {
+            item.addEventListener('click', () => {
+                tocVisible = false;
+                tocBoxes.style.display = 'none';
+                toggleBtn.textContent = 'Show TOC ▼';
+            });
+        });
     </script>
 </body>
 </html>
