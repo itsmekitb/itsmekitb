@@ -293,64 +293,66 @@
 </style>
 </head>
 <body>
-    <div class="flipbook-container">
-        <!-- TOC Section -->
-        <h3 style="margin: 0; border: none; padding: 0; text-align: center; margin-bottom: 1rem;">
-    Portfolio Samples
-</h3>
-        
-            <div class="toc-boxes">
-                <!-- Box 1 -->
-                <div class="toc-box">
-                    <h4>🎓 Program & Session Design</h4>
-                    <div class="toc-box-items">
-                        <div class="toc-item" data-page="0">Instructor Guide</div>
-                        <div class="toc-item" data-page="1">Weekly Structure & Pacing</div>
-                    </div>
-                </div>
+  <div class="flipbook-container">
 
-                <!-- Box 2 -->
-                <div class="toc-box">
-                    <h4>🗺️ Curriculum Maps & Overviews</h4>
-                    <div class="toc-box-items">
-                        <div class="toc-item" data-page="2">Learning Outcomes Map</div>
-                        <div class="toc-item" data-page="3">Weekly Overviews</div>
-                    </div>
-                </div>
+    <!-- TOC Section (always visible) -->
+    <div class="toc-header">
+      
 
-                <!-- Box 3 -->
-                <div class="toc-box">
-                    <h4>📊 Assessment & Evaluation</h4>
-                    <div class="toc-box-items">
-                        <div class="toc-item" data-page="4">Diagnostic Assessment</div>
-                        <div class="toc-item" data-page="5">Writing Rubric</div>
-                        <div class="toc-item" data-page="6">Growth Tracking System</div>
-                    </div>
-                </div>
-
-                <!-- Box 4 -->
-                <div class="toc-box">
-                    <h4>📎 Learner-Facing Materials</h4>
-                    <div class="toc-box-items">
-                        <div class="toc-item" data-page="7">Learner Expectations</div>
-                        <div class="toc-item" data-page="8">Worksheets & Handouts</div>
-                        <div class="toc-item" data-page="9">Final Project Planner</div>
-                    </div>
-                </div>
-            </div>
+      <div class="toc-boxes">
+        <!-- Box 1 -->
+        <div class="toc-box">
+          <h4>🎓 Program & Session Design</h4>
+          <div class="toc-box-items">
+            <div class="toc-item" data-page="0">Instructor Guide</div>
+            <div class="toc-item" data-page="1">Weekly Structure & Pacing</div>
+          </div>
         </div>
 
-        <!-- Main Content -->
-        <div class="main-content">
-            <div class="content-display" id="contentDisplay"></div>
-            
-            <div class="nav-bar">
-                <button class="nav-btn" id="prevBtn">← Previous</button>
-                <div><span id="currentPage">1</span> / <span id="totalPages">10</span></div>
-                <button class="nav-btn" id="nextBtn">Next →</button>
-            </div>
+        <!-- Box 2 -->
+        <div class="toc-box">
+          <h4>🗺️ Curriculum Maps & Overviews</h4>
+          <div class="toc-box-items">
+            <div class="toc-item" data-page="2">Learning Outcomes Map</div>
+            <div class="toc-item" data-page="3">Weekly Overviews</div>
+          </div>
         </div>
+
+        <!-- Box 3 -->
+        <div class="toc-box">
+          <h4>📊 Assessment & Evaluation</h4>
+          <div class="toc-box-items">
+            <div class="toc-item" data-page="4">Diagnostic Assessment</div>
+            <div class="toc-item" data-page="5">Writing Rubric</div>
+            <div class="toc-item" data-page="6">Growth Tracking System</div>
+          </div>
+        </div>
+
+        <!-- Box 4 -->
+        <div class="toc-box">
+          <h4>📎 Learner-Facing Materials</h4>
+          <div class="toc-box-items">
+            <div class="toc-item" data-page="7">Learner Expectations</div>
+            <div class="toc-item" data-page="8">Worksheets & Handouts</div>
+            <div class="toc-item" data-page="9">Final Project Planner</div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="content-display" id="contentDisplay"></div>
+
+      <div class="nav-bar">
+        <button class="nav-btn" id="prevBtn">← Previous</button>
+        <div><span id="currentPage">1</span> / <span id="totalPages">10</span></div>
+        <button class="nav-btn" id="nextBtn">Next →</button>
+      </div>
+    </div>
+
+  </div>
+
 
     <script>
         const pages = [
