@@ -57,36 +57,78 @@
         padding-bottom: 0.5rem;
     }
 
-    /* TOC grid: always 4, 2, or 1 columns (never 3+1) */
-.toc-boxes {
-    display: grid;
+/* === Flipbook TOC: Category pill navigation === */
+
+.toc-pills-wrap {
+    display: flex;
+    flex-direction: column;
     gap: 0.75rem;
+    padding: 1rem;
+    background: var(--light);
+    border-bottom: 2px solid #dee2e6;
 }
 
+.toc-group {
+    border-radius: 999px;
+}
 
-    .toc-box {
-        background: white;
-        padding: 1rem;
-        border-radius: 8px;
-        border-top: 4px solid var(--accent);
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
+.toc-group summary {
+    list-style: none;
+    cursor: pointer;
+}
 
-    .toc-box h4 {
-        color: var(--primary);
-        font-size: 0.85rem;
-        margin-bottom: 0.75rem;
-        text-align: center;
-        font-weight: 700;
-        padding-bottom: 0.5rem;
-        border-bottom: 1px solid var(--light);
-    }
+.toc-group summary::-webkit-details-marker {
+    display: none;
+}
 
-    .toc-box-items {
+.toc-group-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    background: white;
+    border: 2px solid var(--accent);
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--primary);
+    transition: all 0.2s ease;
+}
+
+.toc-group[open] .toc-group-pill {
+    background: var(--accent);
+    color: white;
+}
+
+.toc-group-items {
+    margin-top: 0.5rem;
     display: flex;
-    flex-wrap: wrap;              /* allow items to wrap */
-    gap: 0.4rem;                  /* space between pills */
-    justify-content: center;      /* center them in the box */
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    justify-content: flex-start;
+}
+
+.toc-pill {
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    background: white;
+    border: 1px solid #e1e5ea;
+    color: var(--dark);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.toc-pill:hover {
+    background: var(--accent);
+    color: white;
+}
+
+.toc-pill.active {
+    background: var(--primary);
+    color: white;
+    font-weight: 600;
+
 }
 
 .toc-item {
@@ -361,50 +403,45 @@
 <body>
   <div class="flipbook-container">
 
-    <!-- TOC Section (always visible) -->
-    <div class="toc-header">
-      
+    <!-- TOC Categories as pill buttons (always visible) -->
+<div class="toc-pills-wrap" aria-label="Portfolio sample navigation">
 
-      <div class="toc-boxes">
-        <!-- Box 1 -->
-        <div class="toc-box">
-          <h4>🎓 Program & Session Design</h4>
-          <div class="toc-box-items">
-            <div class="toc-item" data-page="0">Instructor Guide</div>
-            <div class="toc-item" data-page="1">Weekly Structure & Pacing</div>
-          </div>
-        </div>
-
-        <!-- Box 2 -->
-        <div class="toc-box">
-          <h4>🗺️ Curriculum Maps & Overviews</h4>
-          <div class="toc-box-items">
-            <div class="toc-item" data-page="2">Learning Outcomes Map</div>
-            <div class="toc-item" data-page="3">Weekly Overviews</div>
-          </div>
-        </div>
-
-        <!-- Box 3 -->
-        <div class="toc-box">
-          <h4>📊 Assessment & Evaluation</h4>
-          <div class="toc-box-items">
-            <div class="toc-item" data-page="4">Diagnostic Assessment</div>
-            <div class="toc-item" data-page="5">Writing Rubric</div>
-            <div class="toc-item" data-page="6">Growth Tracking System</div>
-          </div>
-        </div>
-
-        <!-- Box 4 -->
-        <div class="toc-box">
-          <h4>📎 Learner-Facing Materials</h4>
-          <div class="toc-box-items">
-            <div class="toc-item" data-page="7">Learner Expectations</div>
-            <div class="toc-item" data-page="8">Worksheets & Handouts</div>
-            <div class="toc-item" data-page="9">Final Project Planner</div>
-          </div>
-        </div>
-      </div>
+  <details class="toc-group" open>
+    <summary class="toc-group-pill">🎓 Program & Session Design</summary>
+    <div class="toc-group-items">
+      <button class="toc-pill toc-item" data-page="0" type="button">Instructor Guide</button>
+      <button class="toc-pill toc-item" data-page="1" type="button">Weekly Structure & Pacing</button>
     </div>
+  </details>
+
+  <details class="toc-group">
+    <summary class="toc-group-pill">🗺️ Curriculum Maps & Overviews</summary>
+    <div class="toc-group-items">
+      <button class="toc-pill toc-item" data-page="2" type="button">Learning Outcomes Map</button>
+      <button class="toc-pill toc-item" data-page="3" type="button">Weekly Overviews</button>
+    </div>
+  </details>
+
+  <details class="toc-group">
+    <summary class="toc-group-pill">📊 Assessment & Evaluation</summary>
+    <div class="toc-group-items">
+      <button class="toc-pill toc-item" data-page="4" type="button">Diagnostic Assessment</button>
+      <button class="toc-pill toc-item" data-page="5" type="button">Writing Rubric</button>
+      <button class="toc-pill toc-item" data-page="6" type="button">Growth Tracking System</button>
+    </div>
+  </details>
+
+  <details class="toc-group">
+    <summary class="toc-group-pill">📎 Learner-Facing Materials</summary>
+    <div class="toc-group-items">
+      <button class="toc-pill toc-item" data-page="7" type="button">Learner Expectations</button>
+      <button class="toc-pill toc-item" data-page="8" type="button">Worksheets & Handouts</button>
+      <button class="toc-pill toc-item" data-page="9" type="button">Final Project Planner</button>
+    </div>
+  </details>
+
+</div>
+
 
     <!-- Main Content -->
     <div class="main-content">
