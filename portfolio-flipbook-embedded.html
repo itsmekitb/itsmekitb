@@ -24,22 +24,25 @@
     }
 
     body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        color: var(--dark);
-        line-height: 1.6;
-        height: 100%;
-        overflow: hidden; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--dark);
+  line-height: 1.6;
+  height: 100%;
+  overflow: hidden; /* keep no page scroll inside the iframe */
+        
     }
 
     /* Main Container */
     .flipbook-container {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-    }
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
 
     /* TOC Header Section */
     .toc-header {
@@ -220,12 +223,13 @@
 
     /* PDF Viewer */
     .pdf-viewer {
-        height: 70vh;
-        border: 2px solid var(--light);
-        border-radius: 8px;
-        overflow: hidden;
-        background: #f5f5f5;
-    }
+  flex: 1 1 auto;
+  min-height: 320px;
+  border: 2px solid var(--light);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f5f5f5;
+}
 
     .pdf-viewer object,
     .pdf-viewer iframe {
@@ -453,206 +457,170 @@
 
 
     <script>
-        const pages = [
-            /* 0 – Instructor Guide */
-            {
-                section: "🎓 Program & Session Design",
-                title: "Instructor Guide: Introductory Digital Literacy Session",
-                file: "https://itsmekitb.github.io/itsmekitb/PortSamp6.pdf",
-                caption: "A trauma-informed, facilitator-ready guide for true beginners in digital skills.",
-                blurb: "This guide demonstrates how I create accessible lessons for adults with little or no digital experience. It includes minute-by-minute pacing, facilitator language, troubleshooting support, and instructional cues rooted in psychological safety. My focus is always on reducing anxiety and building early confidence.",
-                why: "Shows I can create instructor-facing materials that support both teaching effectiveness and learner dignity; critical for facilitator training, faculty development, and train-the-trainer programs."
-            },
+  const pages = [
+    /* 0 – Instructor Guide */
+    {
+      section: "🎓 Program & Session Design",
+      title: "Instructor Guide: Introductory Digital Literacy Session",
+      file: "https://itsmekitb.github.io/itsmekitb/PortSamp6.pdf",
+      caption: "A trauma-informed, facilitator-ready guide for true beginners in digital skills.",
+      blurb: "This guide demonstrates how I create accessible lessons for adults with little or no digital experience. It includes minute-by-minute pacing, facilitator language, troubleshooting support, and instructional cues rooted in psychological safety. My focus is always on reducing anxiety and building early confidence.",
+      why: "Shows I can create instructor-facing materials that support both teaching effectiveness and learner dignity; critical for facilitator training, faculty development, and train-the-trainer programs."
+    },
+    {
+      section: "🎓 Program & Session Design",
+      title: "Weekly Learning Structure & Pacing Guide",
+      file: "https://itsmekitb.github.io/itsmekitb/PortSamp5.pdf",
+      caption: "A predictable weekly rhythm designed to balance cognitive and emotional load.",
+      blurb: "This weekly structure illustrates how I design a consistent, grounding learning rhythm across a multi-month program. The pacing supports cognitive load, emotional safety, and alignment of multiple content areas without overwhelming learners.",
+      why: "Demonstrates long-form curriculum planning and thoughtful sequencing."
+    },
+    {
+      section: "🗺️ Curriculum & Learning Design",
+      title: "Learning Outcomes Map",
+      file: "https://itsmekitb.github.io/itsmekitb/PortSamp1.pdf",
+      caption: "A backward-designed outcomes map aligning an interdisciplinary adult-education program.",
+      blurb: "This outcomes map demonstrates backward design across three domains of learning. I created layered knowledge, skill, and application outcomes to guide a 12-week program. These outcomes ensured instructional alignment between lessons, assessments, and each learner's developmental arc.",
+      why: "Demonstrates ability to architect multi-domain learning experiences with clear, measurable outcomes. Applicable to program design, curriculum mapping, and competency-based training across contexts."
+    },
+    {
+      section: "🗺️ Curriculum & Learning Design",
+      title: "Weekly Overview Sheets (Instruction + Expectations)",
+      file: "https://itsmekitb.github.io/itsmekitb/PortSamp4.pdf",
+      caption: "Clear, learner-centered week plans supporting confidence and preparedness.",
+      blurb: "These weekly overview sheets show how I organize instruction across multiple topics while keeping expectations transparent and manageable. Each overview blends pacing, learning goals, and homework guidance to help learners stay oriented and confident.",
+      why: "Shows my ability to design navigable, supportive structures for adult learners."
+    },
+    {
+      section: "📊 Assessment & Evaluation Design",
+      title: "Competency-Based Diagnostic Assessment",
+      file: "https://itsmekitb.github.io/itsmekitb/PortSamp11.pdf",
+      caption: "A multi-domain diagnostic designed to meet learners where they are.",
+      blurb: "This diagnostic assessment evaluates reading comprehension, writing skills, digital literacy, and personal readiness in a calm, non-shaming framework. I created the competency definitions, item prompts, and rubric to support equitable, growth-centered evaluation for adults beginning a new learning journey.",
+      why: "Assessment design is a high-impact design skill. This demonstrates I can create evaluations that are both rigorous and compassionate. Applicable to pre-assessments, skills validation, placement testing, or onboarding diagnostics."
+    },
+    {
+      section: "📊 Assessment & Evaluation Design",
+      title: "Reflective Writing Rubric",
+      file: "https://itsmekitb.github.io/itsmekitb/PortSamp3.pdf",
+      caption: "An emotionally intelligent rubric that supports depth and authentic reflection.",
+      blurb: "This rubric was designed to encourage thoughtful, vulnerable, and growth-oriented reflection. It rewards engagement rather than perfection and gives learners a clear, compassionate structure for talking about their development.",
+      why: "Shows my ability to design assessments that honor the emotional dimensions of learning."
+    },
+    {
+      section: "📊 Assessment & Evaluation Design",
+      title: "Weekly Growth-Tracking & Portfolio Evaluation System",
+      file: "https://itsmekitb.github.io/itsmekitb/PortSamp7.pdf",
+      caption: "A holistic assessment system that documents progress rather than penalizing struggle.",
+      blurb: "This system combines weekly observational assessments, simple homework verification, and a portfolio-based final evaluation. It gives instructors an efficient framework for tracking progress, while offering learners a motivating, low-pressure way to see their growth over time.",
+      why: "Demonstrates full-cycle assessment design that's transparent, humane, and scalable. Applicable to learning journeys, performance tracking, competency progressions, or portfolio-based evaluation in any context."
+    },
+    {
+      section: "📎 Learner-Facing Materials",
+      title: "Learner Expectations, Policies, and Success Supports",
+      file: "https://itsmekitb.github.io/itsmekitb/PortSamp2.pdf",
+      caption: "Warm, clear communication that sets structure without shame.",
+      blurb: "These learner-facing pages show how I communicate expectations with clarity and compassion. The tone is supportive rather than punitive and reinforces belonging, accountability, and mutual respect in the learning environment.",
+      why: "Demonstrates my mastery of learner-facing microcopy and tone — one of my strongest skills."
+    },
+    {
+      section: "📎 Learner-Facing Materials",
+      title: "Digital Literacy Worksheets & Handouts (Selected Samples)",
+      file: "https://itsmekitb.github.io/itsmekitb/PortSamp9.pdf",
+      caption: "Friendly, plain-language materials that help digital beginners build confidence.",
+      blurb: "These worksheets reflect my approach to making technical learning feel accessible and doable. Each handout blends clear instructions, practical skill-building, and psychologically supportive framing. The design is simple, visual, and welcoming for learners who are new to computers.",
+      why: "Demonstrates ability to reduce cognitive load and design for learner anxiety. Applicable to tech training, software onboarding, digital tool adoption, or any context where new systems or skills create overwhelm."
+    },
+    {
+      section: "📎 Learner-Facing Materials",
+      title: "Final Project Showcase Planner & Presentation Guide",
+      file: "https://itsmekitb.github.io/itsmekitb/PortSamp8.pdf",
+      caption: "A supportive scaffold for preparing and presenting a learner's final project.",
+      blurb: "This planning guide helps learners articulate their progress, organize their work, and present their learning in a structured, confidence-building way. It supports both metacognition and communication skills without adding pressure or complexity.",
+      why: "Demonstrates ability to design capstone experiences and metacognitive reflection activities. Applicable to program culminations, professional development portfolios, or project-based learning in any context."
+    }
+  ];
 
-            /* 1 – Weekly Structure & Pacing */
-            {
-                section: "🎓 Program & Session Design",
-                title: "Weekly Learning Structure & Pacing Guide",
-                file: "https://itsmekitb.github.io/itsmekitb/PortSamp5.pdf",
-                caption: "A predictable weekly rhythm designed to balance cognitive and emotional load.",
-                blurb: "This weekly structure illustrates how I design a consistent, grounding learning rhythm across a multi-month program. The pacing supports cognitive load, emotional safety, and alignment of multiple content areas without overwhelming learners.",
-                why: "Demonstrates long-form curriculum planning and thoughtful sequencing."
-            },
+  let currentPage = 0;
 
-            /* 2 – Learning Outcomes Map */
-            {
-                section: "🗺️ Curriculum & Learning Design",
-                title: "Learning Outcomes Map",
-                file: "https://itsmekitb.github.io/itsmekitb/PortSamp1.pdf",
-                caption: "A backward-designed outcomes map aligning an interdisciplinary adult-education program.",
-                blurb: "This outcomes map demonstrates backward design across three domains of learning. I created layered knowledge, skill, and application outcomes to guide a 12-week program. These outcomes ensured instructional alignment between lessons, assessments, and each learner's developmental arc.",
-                why: "Demonstrates ability to architect multi-domain learning experiences with clear, measurable outcomes. Applicable to program design, curriculum mapping, and competency-based training across contexts."
-            },
+  // Cache TOC elements FIRST (so loadPage can safely use them)
+  const menus = document.querySelectorAll('.toc-menu');
+  const menuButtons = document.querySelectorAll('.toc-menu-btn');
+  const tocLinks = document.querySelectorAll('.toc-link');
 
-            /* 3 – Weekly Overview Sheets */
-            {
-                section: "🗺️ Curriculum & Learning Design",
-                title: "Weekly Overview Sheets (Instruction + Expectations)",
-                file: "https://itsmekitb.github.io/itsmekitb/PortSamp4.pdf",
-                caption: "Clear, learner-centered week plans supporting confidence and preparedness.",
-                blurb: "These weekly overview sheets show how I organize instruction across multiple topics while keeping expectations transparent and manageable. Each overview blends pacing, learning goals, and homework guidance to help learners stay oriented and confident.",
-                why: "Shows my ability to design navigable, supportive structures for adult learners."
-            },
-
-            /* 4 – Diagnostic Assessment */
-            {
-                section: "📊 Assessment & Evaluation Design",
-                title: "Competency-Based Diagnostic Assessment",
-                file: "https://itsmekitb.github.io/itsmekitb/PortSamp11.pdf",
-                caption: "A multi-domain diagnostic designed to meet learners where they are.",
-                blurb: "This diagnostic assessment evaluates reading comprehension, writing skills, digital literacy, and personal readiness in a calm, non-shaming framework. I created the competency definitions, item prompts, and rubric to support equitable, growth-centered evaluation for adults beginning a new learning journey.",
-                why: "Assessment design is a high-impact design skill. This demonstrates I can create evaluations that are both rigorous and compassionate. Applicable to pre-assessments, skills validation, placement testing, or onboarding diagnostics."
-            },
-
-            /* 5 – Reflective Writing Rubric */
-            {
-                section: "📊 Assessment & Evaluation Design",
-                title: "Reflective Writing Rubric",
-                file: "https://itsmekitb.github.io/itsmekitb/PortSamp3.pdf",
-                caption: "An emotionally intelligent rubric that supports depth and authentic reflection.",
-                blurb: "This rubric was designed to encourage thoughtful, vulnerable, and growth-oriented reflection. It rewards engagement rather than perfection and gives learners a clear, compassionate structure for talking about their development.",
-                why: "Shows my ability to design assessments that honor the emotional dimensions of learning."
-            },
-
-            /* 6 – Weekly Growth-Tracking System */
-            {
-                section: "📊 Assessment & Evaluation Design",
-                title: "Weekly Growth-Tracking & Portfolio Evaluation System",
-                file: "https://itsmekitb.github.io/itsmekitb/PortSamp7.pdf",
-                caption: "A holistic assessment system that documents progress rather than penalizing struggle.",
-                blurb: "This system combines weekly observational assessments, simple homework verification, and a portfolio-based final evaluation. It gives instructors an efficient framework for tracking progress, while offering learners a motivating, low-pressure way to see their growth over time.",
-                why: "Demonstrates full-cycle assessment design that's transparent, humane, and scalable. Applicable to learning journeys, performance tracking, competency progressions, or portfolio-based evaluation in any context."
-            },
-
-            /* 7 – Learner Expectations */
-            {
-                section: "📎 Learner-Facing Materials",
-                title: "Learner Expectations, Policies, and Success Supports",
-                file: "https://itsmekitb.github.io/itsmekitb/PortSamp2.pdf",
-                caption: "Warm, clear communication that sets structure without shame.",
-                blurb: "These learner-facing pages show how I communicate expectations with clarity and compassion. The tone is supportive rather than punitive and reinforces belonging, accountability, and mutual respect in the learning environment.",
-                why: "Demonstrates my mastery of learner-facing microcopy and tone — one of my strongest skills."
-            },
-
-            /* 8 – Worksheets & Handouts */
-            {
-                section: "📎 Learner-Facing Materials",
-                title: "Digital Literacy Worksheets & Handouts (Selected Samples)",
-                file: "https://itsmekitb.github.io/itsmekitb/PortSamp9.pdf",
-                caption: "Friendly, plain-language materials that help digital beginners build confidence.",
-                blurb: "These worksheets reflect my approach to making technical learning feel accessible and doable. Each handout blends clear instructions, practical skill-building, and psychologically supportive framing. The design is simple, visual, and welcoming for learners who are new to computers.",
-                why: "Demonstrates ability to reduce cognitive load and design for learner anxiety. Applicable to tech training, software onboarding, digital tool adoption, or any context where new systems or skills create overwhelm."
-            },
-
-            /* 9 – Final Project Planner */
-            {
-                section: "📎 Learner-Facing Materials",
-                title: "Final Project Showcase Planner & Presentation Guide",
-                file: "https://itsmekitb.github.io/itsmekitb/PortSamp8.pdf",
-                caption: "A supportive scaffold for preparing and presenting a learner's final project.",
-                blurb: "This planning guide helps learners articulate their progress, organize their work, and present their learning in a structured, confidence-building way. It supports both metacognition and communication skills without adding pressure or complexity.",
-                why: "Demonstrates ability to design capstone experiences and metacognitive reflection activities. Applicable to program culminations, professional development portfolios, or project-based learning in any context."
-            }
-        ];
-
-        let currentPage = 0;
-
-        function loadPage(index) {
-            const page = pages[index];
-            const display = document.getElementById('contentDisplay');
-            
-            display.innerHTML = `
-                <div class="content-header">
-                    <div class="section-label">${page.section}</div>
-                    <h2>${page.title}</h2>
-                    <p class="caption">${page.caption}</p>
-                </div>
-                <div class="content-body">
-                    <p class="blurb">${page.blurb}</p>
-                    <div class="why-box"><strong>Why this matters:</strong> ${page.why}</div>
-                    <div class="pdf-viewer">
-                        <object data="${page.file}" type="application/pdf">
-                            <iframe src="${page.file}"></iframe>
-                        </object>
-                    </div>
-                </div>
-            `;
-            
-            currentPage = index;
-            document.getElementById('currentPage').textContent = index + 1;
-            document.getElementById('prevBtn').disabled = index === 0;
-            document.getElementById('nextBtn').disabled = index === pages.length - 1;
-            
-            // Highlight active TOC link
-tocLinks.forEach(link => link.classList.remove('active'));
-
-const activeLink = document.querySelector(
-  `.toc-link[data-page="${index}"]`
-);
-
-if (activeLink) {
-  activeLink.classList.add('active');
-}
-
-        }
-
-        document.getElementById('totalPages').textContent = pages.length;
-        
-        document.getElementById('prevBtn').addEventListener('click', () => {
-            if (currentPage > 0) loadPage(currentPage - 1);
-        });
-        
-        document.getElementById('nextBtn').addEventListener('click', () => {
-            if (currentPage < pages.length - 1) loadPage(currentPage + 1);
-        });
-        
-        document.querySelectorAll('.toc-item').forEach(item => {
-            item.addEventListener('click', () => {
-                loadPage(parseInt(item.dataset.page));
-            });
-        });
-        
-        loadPage(0);
-
-        // === TOC nav dropdown behavior ===
-const menus = document.querySelectorAll('.toc-menu');
-const menuButtons = document.querySelectorAll('.toc-menu-btn');
-const tocLinks = document.querySelectorAll('.toc-link');
-
-// toggle dropdown
-menuButtons.forEach((btn) => {
-  btn.addEventListener('click', (e) => {
-    const menu = e.target.closest('.toc-menu');
-
-    // close others
-    menus.forEach(m => { if (m !== menu) m.classList.remove('open'); });
-
-    // toggle this one
-    menu.classList.toggle('open');
-  });
-});
-
-// click a link -> load page + highlight + close dropdowns
-tocLinks.forEach((link) => {
-  link.addEventListener('click', () => {
-    const pageIndex = parseInt(link.dataset.page, 10);
-    loadPage(pageIndex);
-
-    tocLinks.forEach(l => l.classList.remove('active'));
-    link.classList.add('active');
-
-    menus.forEach(m => m.classList.remove('open'));
-  });
-});
-
-// close dropdown if clicking outside
-document.addEventListener('click', (e) => {
-  if (!e.target.closest('.toc-nav')) {
-    menus.forEach(m => m.classList.remove('open'));
+  function setActiveLink(index) {
+    tocLinks.forEach(link => link.classList.remove('active'));
+    const activeLink = document.querySelector(`.toc-link[data-page="${index}"]`);
+    if (activeLink) activeLink.classList.add('active');
   }
-});
 
+  function loadPage(index) {
+    const page = pages[index];
+    const display = document.getElementById('contentDisplay');
 
-    </script>
+    display.innerHTML = `
+      <div class="content-header">
+        <div class="section-label">${page.section}</div>
+        <h2>${page.title}</h2>
+        <p class="caption">${page.caption}</p>
+      </div>
+
+      <div class="content-body">
+        <p class="blurb">${page.blurb}</p>
+        <div class="why-box"><strong>Why this matters:</strong> ${page.why}</div>
+
+        <div class="pdf-viewer">
+          <iframe src="${page.file}" title="${page.title}"></iframe>
+        </div>
+      </div>
+    `;
+
+    currentPage = index;
+    document.getElementById('currentPage').textContent = index + 1;
+    document.getElementById('prevBtn').disabled = index === 0;
+    document.getElementById('nextBtn').disabled = index === pages.length - 1;
+
+    setActiveLink(index);
+  }
+
+  document.getElementById('totalPages').textContent = pages.length;
+
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentPage > 0) loadPage(currentPage - 1);
+  });
+
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    if (currentPage < pages.length - 1) loadPage(currentPage + 1);
+  });
+
+  // Dropdown toggles
+  menuButtons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const menu = e.target.closest('.toc-menu');
+      menus.forEach(m => { if (m !== menu) m.classList.remove('open'); });
+      menu.classList.toggle('open');
+    });
+  });
+
+  // Click a link -> load page + close dropdowns
+  tocLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      const pageIndex = parseInt(link.dataset.page, 10);
+      loadPage(pageIndex);
+      menus.forEach(m => m.classList.remove('open'));
+    });
+  });
+
+  // Close if clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.toc-nav')) {
+      menus.forEach(m => m.classList.remove('open'));
+    }
+  });
+
+  // Initial load
+  loadPage(0);
+</script>
+
 </body>
 </html>
