@@ -123,9 +123,14 @@
   flex-direction: column;    /* KEY: dropdown sits under its button */
 }
 
-.toc-nav,
-.toc-nav-inner {
-  overflow: visible;
+/* Allow dropdowns to expand vertically, but keep horizontal scrolling */
+.toc-nav { overflow: visible; }
+
+.toc-nav-inner{
+  overflow-x: auto;      /* keep swipe scroll */
+  overflow-y: visible;   /* allow dropdown to show */
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;   /* helps mobile treat this as a horizontal scroller */
 }
 
 .toc-menu.open .toc-dropdown {
