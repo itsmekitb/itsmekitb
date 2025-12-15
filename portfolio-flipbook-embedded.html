@@ -57,104 +57,96 @@
         padding-bottom: 0.5rem;
     }
 
-/* === Flipbook TOC: Category pill navigation === */
+/* === TOC NAV BAR with dropdowns === */
+.toc-nav {
+  background: var(--light);
+  border-bottom: 2px solid #dee2e6;
+  padding: 0.75rem 1rem;
+}
 
-.toc-pills-wrap {
-    display: flex;
+.toc-nav-inner {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;          /* allows wrapping on smaller screens */
+  align-items: center;
+}
+
+.toc-menu {
+  position: relative;
+}
+
+.toc-menu-btn {
+  background: white;
+  border: 2px solid var(--accent);
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.toc-dropdown {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.4rem);
+  background: white;
+  border: 1px solid #e1e5ea;
+  border-radius: 10px;
+  padding: 0.5rem;
+  min-width: 220px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  z-index: 1000;
+}
+
+.toc-menu.open .toc-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.toc-link {
+  text-align: left;
+  background: #f8f9fa;
+  border: 1px solid #e1e5ea;
+  border-radius: 8px;
+  padding: 0.45rem 0.6rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.toc-link:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.toc-link.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* Mobile: make dropdowns full-width-ish so they’re usable */
+@media (max-width: 699px) {
+  .toc-nav-inner {
     flex-direction: column;
-    gap: 0.75rem;
-    padding: 1rem;
-    background: var(--light);
-    border-bottom: 2px solid #dee2e6;
+    align-items: stretch;
+  }
+
+  .toc-menu-btn {
+    width: 100%;
+    text-align: left;
+  }
+
+  .toc-dropdown {
+    position: static;
+    min-width: unset;
+    margin-top: 0.4rem;
+  }
 }
 
-.toc-group {
-    border-radius: 999px;
-}
-
-.toc-group summary {
-    list-style: none;
-    cursor: pointer;
-}
-
-.toc-group summary::-webkit-details-marker {
-    display: none;
-}
-
-.toc-group-pill {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem 1rem;
-    border-radius: 999px;
-    background: white;
-    border: 2px solid var(--accent);
-    font-weight: 600;
-    font-size: 0.85rem;
-    color: var(--primary);
-    transition: all 0.2s ease;
-}
-
-.toc-group[open] .toc-group-pill {
-    background: var(--accent);
-    color: white;
-}
-
-.toc-group-items {
-    margin-top: 0.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    justify-content: flex-start;
-}
-
-.toc-pill {
-    padding: 0.35rem 0.75rem;
-    border-radius: 999px;
-    font-size: 0.8rem;
-    background: white;
-    border: 1px solid #e1e5ea;
-    color: var(--dark);
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.toc-pill:hover {
-    background: var(--accent);
-    color: white;
-}
-
-.toc-pill.active {
-    background: var(--primary);
-    color: white;
-    font-weight: 600;
-
-}
-
-.toc-item {
-    padding: 0.35rem 0.75rem;
-    cursor: pointer;
-    border-radius: 999px;         /* pill shape */
-    font-size: 0.8rem;
-    transition: all 0.2s;
-    color: var(--dark);
-    text-align: center;
-    background: #f8f9fa;
-    border: 1px solid #e1e5ea;
-    flex: 0 1 auto;               /* shrink-to-fit pills */
-}
-
-
-    .toc-item:hover {
-        background: var(--light);
-        color: var(--primary);
-    }
-
-    .toc-item.active {
-        background: var(--accent);
-        color: white;
-        font-weight: 600;
-    }
 
     /* Main Content Area */
     .main-content {
@@ -403,44 +395,47 @@
 <body>
   <div class="flipbook-container">
 
-    <!-- TOC Categories as pill buttons (always visible) -->
-<div class="toc-pills-wrap" aria-label="Portfolio sample navigation">
+   <!-- TOC NAV BAR -->
+<div class="toc-nav">
+  <div class="toc-nav-inner">
 
-  <details class="toc-group" open>
-    <summary class="toc-group-pill">🎓 Program & Session Design</summary>
-    <div class="toc-group-items">
-      <button class="toc-pill toc-item" data-page="0" type="button">Instructor Guide</button>
-      <button class="toc-pill toc-item" data-page="1" type="button">Weekly Structure & Pacing</button>
+    <div class="toc-menu">
+      <button class="toc-menu-btn" type="button">🎓 Program & Session Design</button>
+      <div class="toc-dropdown">
+        <button class="toc-link" data-page="0" type="button">Instructor Guide</button>
+        <button class="toc-link" data-page="1" type="button">Weekly Structure & Pacing</button>
+      </div>
     </div>
-  </details>
 
-  <details class="toc-group">
-    <summary class="toc-group-pill">🗺️ Curriculum Maps & Overviews</summary>
-    <div class="toc-group-items">
-      <button class="toc-pill toc-item" data-page="2" type="button">Learning Outcomes Map</button>
-      <button class="toc-pill toc-item" data-page="3" type="button">Weekly Overviews</button>
+    <div class="toc-menu">
+      <button class="toc-menu-btn" type="button">🗺️ Curriculum Maps & Overviews</button>
+      <div class="toc-dropdown">
+        <button class="toc-link" data-page="2" type="button">Learning Outcomes Map</button>
+        <button class="toc-link" data-page="3" type="button">Weekly Overviews</button>
+      </div>
     </div>
-  </details>
 
-  <details class="toc-group">
-    <summary class="toc-group-pill">📊 Assessment & Evaluation</summary>
-    <div class="toc-group-items">
-      <button class="toc-pill toc-item" data-page="4" type="button">Diagnostic Assessment</button>
-      <button class="toc-pill toc-item" data-page="5" type="button">Writing Rubric</button>
-      <button class="toc-pill toc-item" data-page="6" type="button">Growth Tracking System</button>
+    <div class="toc-menu">
+      <button class="toc-menu-btn" type="button">📊 Assessment & Evaluation</button>
+      <div class="toc-dropdown">
+        <button class="toc-link" data-page="4" type="button">Diagnostic Assessment</button>
+        <button class="toc-link" data-page="5" type="button">Writing Rubric</button>
+        <button class="toc-link" data-page="6" type="button">Growth Tracking System</button>
+      </div>
     </div>
-  </details>
 
-  <details class="toc-group">
-    <summary class="toc-group-pill">📎 Learner-Facing Materials</summary>
-    <div class="toc-group-items">
-      <button class="toc-pill toc-item" data-page="7" type="button">Learner Expectations</button>
-      <button class="toc-pill toc-item" data-page="8" type="button">Worksheets & Handouts</button>
-      <button class="toc-pill toc-item" data-page="9" type="button">Final Project Planner</button>
+    <div class="toc-menu">
+      <button class="toc-menu-btn" type="button">📎 Learner-Facing Materials</button>
+      <div class="toc-dropdown">
+        <button class="toc-link" data-page="7" type="button">Learner Expectations</button>
+        <button class="toc-link" data-page="8" type="button">Worksheets & Handouts</button>
+        <button class="toc-link" data-page="9" type="button">Final Project Planner</button>
+      </div>
     </div>
-  </details>
 
+  </div>
 </div>
+
 
 
     <!-- Main Content -->
@@ -588,8 +583,17 @@
             document.getElementById('prevBtn').disabled = index === 0;
             document.getElementById('nextBtn').disabled = index === pages.length - 1;
             
-            document.querySelectorAll('.toc-item').forEach(item => item.classList.remove('active'));
-            document.querySelector(`[data-page="${index}"]`).classList.add('active');
+            // Highlight active TOC link
+tocLinks.forEach(link => link.classList.remove('active'));
+
+const activeLink = document.querySelector(
+  `.toc-link[data-page="${index}"]`
+);
+
+if (activeLink) {
+  activeLink.classList.add('active');
+}
+
         }
 
         document.getElementById('totalPages').textContent = pages.length;
@@ -609,6 +613,45 @@
         });
         
         loadPage(0);
+
+        // === TOC nav dropdown behavior ===
+const menus = document.querySelectorAll('.toc-menu');
+const menuButtons = document.querySelectorAll('.toc-menu-btn');
+const tocLinks = document.querySelectorAll('.toc-link');
+
+// toggle dropdown
+menuButtons.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    const menu = e.target.closest('.toc-menu');
+
+    // close others
+    menus.forEach(m => { if (m !== menu) m.classList.remove('open'); });
+
+    // toggle this one
+    menu.classList.toggle('open');
+  });
+});
+
+// click a link -> load page + highlight + close dropdowns
+tocLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    const pageIndex = parseInt(link.dataset.page, 10);
+    loadPage(pageIndex);
+
+    tocLinks.forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+
+    menus.forEach(m => m.classList.remove('open'));
+  });
+});
+
+// close dropdown if clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.toc-nav')) {
+    menus.forEach(m => m.classList.remove('open'));
+  }
+});
+
 
     </script>
 </body>
