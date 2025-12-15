@@ -60,45 +60,61 @@
         padding-bottom: 0.5rem;
     }
 
-/* === TOC NAV BAR with dropdowns === */
+/* === Flipbook TOC styled like main site nav (not sticky) === */
 .toc-nav {
-  background: var(--light);
-  border-bottom: 2px solid #dee2e6;
-  padding: 0.75rem 1rem;
+  background: #ffffff;
+  border-bottom: 1px solid #e9ecef;
+  padding: 0.6rem 0.75rem;
 }
 
 .toc-nav-inner {
   display: flex;
+  flex-wrap: nowrap;             /* single row */
+  overflow-x: auto;              /* swipe to scroll */
+  -webkit-overflow-scrolling: touch;
   gap: 0.75rem;
-  flex-wrap: wrap;          /* allows wrapping on smaller screens */
   align-items: center;
 }
 
+/* Each category = "nav item" that opens a dropdown */
 .toc-menu {
   position: relative;
+  flex: 0 0 auto;
 }
 
+/* Make category buttons look like nav links (no pill) */
 .toc-menu-btn {
-  background: white;
-  border: 2px solid var(--accent);
+  background: transparent;
+  border: none;
   color: var(--primary);
-  font-weight: 700;
-  font-size: 0.85rem;
-  padding: 0.5rem 0.9rem;
-  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.35rem 0.15rem;
   cursor: pointer;
+  border-bottom: 2px solid transparent;  /* underline behavior */
+  white-space: nowrap;
 }
 
+.toc-menu-btn:hover {
+  border-bottom-color: var(--accent);
+}
+
+/* Optional: indicate “open” state like active nav */
+.toc-menu.open .toc-menu-btn {
+  border-bottom-color: var(--accent);
+}
+
+/* Dropdown panel */
 .toc-dropdown {
   display: none;
   position: absolute;
   left: 0;
-  top: calc(100% + 0.4rem);
+  top: calc(100% + 0.5rem);
   background: white;
   border: 1px solid #e1e5ea;
   border-radius: 10px;
   padding: 0.5rem;
-  min-width: 220px;
+  min-width: 240px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.12);
   z-index: 1000;
 }
@@ -109,6 +125,7 @@
   gap: 0.35rem;
 }
 
+/* Dropdown links (keep these button-based, just not pill-y) */
 .toc-link {
   text-align: left;
   background: #f8f9fa;
@@ -116,7 +133,8 @@
   border-radius: 8px;
   padding: 0.45rem 0.6rem;
   cursor: pointer;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  color: var(--dark);
 }
 
 .toc-link:hover {
@@ -131,16 +149,10 @@
   border-color: var(--primary);
 }
 
-/* Mobile: make dropdowns full-width-ish so they’re usable */
+/* Mobile behavior: dropdown becomes “inline panel” under the category */
 @media (max-width: 699px) {
   .toc-nav-inner {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .toc-menu-btn {
-    width: 100%;
-    text-align: left;
+    padding-bottom: 0.25rem;
   }
 
   .toc-dropdown {
