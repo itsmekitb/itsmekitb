@@ -289,6 +289,72 @@
     text-align: center;
     flex: 0 1 auto !important;
 }
+
+        /* --- Mobile TOC shrink (compact mode) --- */
+@media (max-width: 699px) {
+
+  /* tighten the whole top area */
+  .toc-header {
+    padding: 0.75rem !important;
+  }
+
+  /* if you're NOT using .toc-header wrapper right now, this still helps */
+  .flipbook-container > h3 {
+    font-size: 0.95rem !important;
+    margin: 0.5rem 0 0.5rem !important;
+  }
+
+  /* make the TOC grid tighter */
+  .toc-boxes {
+    gap: 0.5rem !important;
+  }
+
+  /* shrink each TOC box */
+  .toc-box {
+    padding: 0.6rem !important;
+    border-radius: 8px !important;
+  }
+
+  /* shrink the TOC box headings */
+  .toc-box h4 {
+    font-size: 0.75rem !important;
+    margin-bottom: 0.45rem !important;
+    padding-bottom: 0.35rem !important;
+  }
+
+  /* make the pills smaller + reduce wrapping space */
+  .toc-box-items {
+    gap: 0.3rem !important;
+  }
+
+  .toc-item {
+    font-size: 0.72rem !important;
+    padding: 0.22rem 0.55rem !important;
+    border-radius: 999px !important;
+  }
+
+  /* optional: give the content more room on mobile */
+  .content-display {
+    padding: 1rem !important;
+  }
+
+  .content-header h2 {
+    font-size: 1.25rem !important;
+  }
+
+  .pdf-viewer {
+    height: 55vh !important;
+  }
+
+  .nav-bar {
+    padding: 0.75rem 1rem !important;
+  }
+
+  .nav-btn {
+    padding: 0.5rem 1rem !important;
+  }
+}
+
         
 </style>
 </head>
