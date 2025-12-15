@@ -482,6 +482,19 @@
     height: 75vh !important; /* was 1800px */
   }
 }
+       /* Flipbook iframe sizing */
+.flipbook-embed {
+  width: 100%;
+  height: 1800px; /* desktop baseline (already matches your inline style) */
+}
+
+/* Mobile: give the flipbook way more vertical real estate */
+@media (max-width: 768px) {
+  .flipbook-embed {
+    height: 2600px; /* bump up; adjust later if you want */
+  }
+}
+
 
        
 </style>
@@ -1328,10 +1341,11 @@
     <p>While the settings vary, the instructional design principles remain consistent: clarity, alignment, accessibility, and human-centered learning—principles that transfer directly to corporate L&D, faculty development, and employee onboarding.</p>
     <p>Explore the selected work samples in the interactive viewer below, each contextualized to highlight the instructional problem, design approach, and learning impact.</p>
     <iframe 
-        src="portfolio-flipbook-embedded.html" 
-        style="width: 100%; height: 1800px; border: none; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"
-        title="Portfolio Work Samples">
-    </iframe>
+  class="flipbook-embed"
+  src="portfolio-flipbook-embedded.html" 
+  style="width: 100%; height: 1800px; border: none; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"
+  title="Portfolio Work Samples">
+</iframe>
     <p style="margin-top: 1rem; text-align: center;">
         <a href="portfolio-flipbook-embedded.html" target="_blank" style="color: var(--accent);">Open in full screen →</a>
     </p>
