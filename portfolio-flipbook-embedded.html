@@ -107,16 +107,25 @@
 /* Dropdown panel */
 .toc-dropdown {
   display: none;
-  position: absolute;
-  left: 0;
-  top: calc(100% + 0.5rem);
+  position: static;          /* KEY: let it expand the nav */
+  margin-top: 0.4rem;
   background: white;
   border: 1px solid #e1e5ea;
   border-radius: 10px;
   padding: 0.5rem;
-  min-width: 240px;
+  min-width: 220px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-  z-index: 1000;
+}
+
+.toc-menu {
+  position: relative;
+  display: flex;
+  flex-direction: column;    /* KEY: dropdown sits under its button */
+}
+
+.toc-nav,
+.toc-nav-inner {
+  overflow: visible;
 }
 
 .toc-menu.open .toc-dropdown {
