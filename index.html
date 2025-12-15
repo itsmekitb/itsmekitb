@@ -495,6 +495,30 @@
   }
 }
 
+       .flipbook-embed {
+  width: 100%;
+  height: 1800px;             /* desktop default (matches what you liked) */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-top: 1.5rem;
+}
+
+.flipbook-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* Mobile: make it viewport-based so it actually gets taller */
+@media (max-width: 768px) {
+  .flipbook-embed {
+    height: 92vh;              /* “stretch that iframe, baby” */
+  }
+}
+
+
 
        
 </style>
@@ -1340,12 +1364,14 @@
     <p>A curated collection of curriculum artifacts, assessment tools, and learner-facing materials drawn from nonprofit education, workforce development, and higher education contexts.</p>
     <p>While the settings vary, the instructional design principles remain consistent: clarity, alignment, accessibility, and human-centered learning—principles that transfer directly to corporate L&D, faculty development, and employee onboarding.</p>
     <p>Explore the selected work samples in the interactive viewer below, each contextualized to highlight the instructional problem, design approach, and learning impact.</p>
-    <iframe 
-  class="flipbook-embed"
-  src="portfolio-flipbook-embedded.html" 
-  style="width: 100%; height: 1800px; border: none; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"
-  title="Portfolio Work Samples">
-</iframe>
+   <div class="flipbook-embed">
+  <iframe 
+    src="portfolio-flipbook-embedded.html"
+    title="Portfolio Work Samples"
+    loading="lazy">
+  </iframe>
+</div>
+
     <p style="margin-top: 1rem; text-align: center;">
         <a href="portfolio-flipbook-embedded.html" target="_blank" style="color: var(--accent);">Open in full screen →</a>
     </p>
