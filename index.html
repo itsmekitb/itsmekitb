@@ -20,31 +20,24 @@
         --gray: #6c757d;
     }
 
-   body {
+ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.7;
   color: var(--dark);
 
-/* Background fallback color */
-  background-color: #ffffff;
-       
-  /* Background image (no overlay here) */
-  background-image: url('https://itsmekitb.github.io/itsmekitb/pexels-suzyhazelwood-1629236.jpg');
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.55),
+      rgba(255, 255, 255, 0.55)
+    ),
+    url('https://itsmekitb.github.io/itsmekitb/pexels-suzyhazelwood-1629236.jpg');
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 
   position: relative;
-}
-
-       body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.25); /* lighter so image shows */
-  z-index: 0;
-  pointer-events: none;
 }
 
 body > * {
