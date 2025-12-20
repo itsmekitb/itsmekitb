@@ -30,7 +30,7 @@
       rgba(255, 255, 255, 0.45),
       rgba(255, 255, 255, 0.45)
     ),
-    url('https://itsmekitb.github.io/itsmekitb/pexels-suzyhazelwood-1629236.jpg');
+    url('https://itsmekitb.github.io/itsmekitb/pexels-steve-1509534.jpg');
 
   background-size: cover;
   background-position: center;
@@ -554,7 +554,16 @@ header p {
         /* overflow-x removed from here */
         gap: 0.75rem;
         align-items: center;
-        justify-content: center;
+
+        .site-nav .nav-links {
+  display: inline-flex;
+  gap: 0.75rem;
+  align-items: center;
+  white-space: nowrap;
+  width: max-content;
+  margin: 0 auto;
+}
+
 
 
         /* Important so items don't wrap and force scroll */
@@ -752,12 +761,14 @@ body::before { display: none !important; }
     <!-- Top Navigation -->
     <nav class="site-nav">
         <div class="nav-inner">
+            <div class="nav-links">
             <a href="#l4l-case-study"><strong>L4L Case Study</strong></a>
             <a href="#upset-customers-storyline">Storyline Module</a>
             <a href="#email-course">Rise Micro Course</a>
             <a href="#task-module">H5P Branching Scenario</a>
             <a href="#work-samples">Work Samples Flipbook</a>
             <a href="#contact">Contact</a>
+            </div>
         </div>
     </nav>
 
