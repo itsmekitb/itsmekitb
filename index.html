@@ -25,14 +25,48 @@
         line-height: 1.7;
         color: var(--dark);
         background-color: #ffffff;
+        background-image: url('https://itsmekitb.github.io/itsmekitb/pexels-zaktech90-8906870.jpg');
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+
+    /* Subtle white overlay so content remains readable */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.92);
+        z-index: -1;
+        pointer-events: none;
     }
 
     /* Header / Hero Section */
     header {
-        background: linear-gradient(135deg, var(--primary) 0%, #1a4558 100%);
+        background: linear-gradient(135deg, rgba(44, 95, 124, 0.95) 0%, rgba(26, 69, 88, 0.95) 100%);
         color: white;
         padding: 4rem 2rem;
         text-align: center;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+    }
+
+    /* Subtle decorative element in header */
+    header::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -10%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(23, 162, 184, 0.15) 0%, transparent 70%);
+        border-radius: 50%;
     }
 
     header h1 {
@@ -74,6 +108,22 @@
         color: var(--primary);
         border-left: 5px solid var(--accent);
         padding-left: 1rem;
+        position: relative;
+    }
+
+    /* Subtle accent behind section headers */
+    section h2::before {
+        content: "";
+        position: absolute;
+        left: -2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        background: var(--accent);
+        opacity: 0.1;
+        border-radius: 50%;
+        z-index: -1;
     }
 
     /* About Section */
@@ -93,12 +143,29 @@
         border-color: rgba(23, 162, 184, 0.55);
         background: linear-gradient(180deg, rgba(23, 162, 184, 0.06) 0%, rgba(255,255,255,1) 40%);
         box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        position: relative;
+    }
+
+    /* Subtle accent line on featured item */
+    .portfolio-item.featured::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
+        border-radius: 8px 8px 0 0;
     }
 
        
     /* Portfolio Section */
     #portfolio {
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0.7);
+        background-image: 
+            radial-gradient(circle at 20% 50%, rgba(23, 162, 184, 0.03) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(44, 95, 124, 0.02) 0%, transparent 50%);
+        backdrop-filter: blur(20px);
     }
 
     .portfolio-grid {
@@ -109,16 +176,17 @@
     }
 
     .portfolio-item {
-        background: white;
+        background: rgba(255, 255, 255, 0.95);
         border: 2px solid #e9ecef;
         border-radius: 8px;
         padding: 2rem;
         transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
     }
 
     .portfolio-item:hover {
         border-color: var(--accent);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        box-shadow: 0 8px 20px rgba(23, 162, 184, 0.15);
         transform: translateY(-3px);
     }
 
@@ -231,7 +299,8 @@
        
     /* Skills Section */
     #skills {
-        background-color: var(--light);
+        background-color: rgba(248, 249, 250, 0.8);
+        backdrop-filter: blur(20px);
     }
 
     .skills-grid {
@@ -495,22 +564,44 @@
             padding: 0.25rem 0.65rem;
         }
 
+        /* CRITICAL: Horizontal scroll for nav */
         .site-nav .nav-inner {
-            flex-wrap: nowrap;
+            flex-wrap: nowrap !important;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
             gap: 0.75rem;
             padding: 0.6rem 1rem;
+        }
+
+        /* Hide scrollbar but keep functionality */
+        .site-nav .nav-inner::-webkit-scrollbar {
+            height: 3px;
+        }
+
+        .site-nav .nav-inner::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .site-nav .nav-inner::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 10px;
         }
 
         .site-nav a {
             white-space: nowrap;
             font-size: 0.9rem;
-            padding: 0.35rem 0.25rem;
+            padding: 0.35rem 0.5rem;
+            flex-shrink: 0;
         }
 
         .embed-container {
             height: 70vh;
+        }
+
+        /* Reduce background blur on mobile for performance */
+        body::before {
+            background: rgba(255, 255, 255, 0.95);
         }
     }
 
@@ -1542,7 +1633,7 @@
             <p>I'd love to talk about your next curriculum project, content refresh, or learning experience challenge. Whether you're in higher education, corporate L&D, or mission-driven work, I'm passionate about creating instruction that works for real people, in real contexts.</p>
             <p>Drop me a line. I'm always up for a good conversation.</p>
             <p>
-                <a href="mailto:itsmekitb@gmail.com">itsmekitb@gmail.com</a>
+                <a href="/cdn-cgi/l/email-protection#afc6dbdcc2cac4c6dbcdefc8c2cec6c381ccc0c2"><span class="__cf_email__" data-cfemail="0b627f78666e60627f694b6c666a626725686466">[email&#160;protected]</span></a>
             </p>
         </div>
     </section>
