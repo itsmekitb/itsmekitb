@@ -328,8 +328,6 @@
     .flipbook-container {
         height: auto;
     }
-}
-
 
 
 /* --- TOC layout override: make items horizontal pills --- */
@@ -419,6 +417,27 @@
   }
 }
 
+        /* GLOBAL SCROLLBAR STYLING */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(23, 162, 184, 0.08);
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #17A2B8, #2C5F7C);
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #2C5F7C, #17A2B8);
+}
+}
         
 </style>
 </head>
