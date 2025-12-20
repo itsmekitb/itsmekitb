@@ -702,6 +702,31 @@ body > * {
 *::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, var(--primary), var(--accent));
 }
+
+       /* SHOW BACKGROUND IMAGE IN THE SIDE GUTTERS (keep cards solid) */
+
+/* 1) Remove the white overlay layer entirely */
+body::before { 
+  display: none !important; 
+}
+
+/* 2) Stop full-width section backgrounds from covering the gutters */
+#about,
+#portfolio,
+#skills {
+  background: transparent !important;
+  backdrop-filter: none !important;
+}
+
+/* 3) Keep your actual content surfaces solid white (so image is NOT seen through them) */
+#portfolio .container,
+#skills .container,
+#about .container {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
        
 </style>
 
