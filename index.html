@@ -27,7 +27,7 @@
 
 
   /* Background image (no overlay here) */
-  background-image: url('https://itsmekitb.github.io/itsmekitb/pexels-matheusnatan-3394939.jpg');
+  background-image: url('https://itsmekitb.github.io/itsmekitb/pexels-suzyhazelwood-1629236.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -40,7 +40,7 @@
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(255, 255, 255, 0.00); /* lighter so image shows */
+  background: rgba(255, 255, 255, 0.15); /* lighter so image shows */
   z-index: 0;
   pointer-events: none;
 }
@@ -703,14 +703,9 @@ body > * {
   background: linear-gradient(180deg, var(--primary), var(--accent));
 }
 
-       /* SHOW BACKGROUND IMAGE IN THE SIDE GUTTERS (keep cards solid) */
+       /* Background visible in side gutters, without adding a section-wide white box */
+body::before { display: none !important; }
 
-/* 1) Remove the white overlay layer entirely */
-body::before { 
-  display: none !important; 
-}
-
-/* 2) Stop full-width section backgrounds from covering the gutters */
 #about,
 #portfolio,
 #skills {
@@ -718,14 +713,6 @@ body::before {
   backdrop-filter: none !important;
 }
 
-/* 3) Keep your actual content surfaces solid white (so image is NOT seen through them) */
-#portfolio .container,
-#skills .container,
-#about .container {
-  background: #ffffff;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
 
        
 </style>
