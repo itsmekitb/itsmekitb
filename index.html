@@ -1,1628 +1,1407 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kit Berry - Instructional Designer, Educator, Writer. Portfolio showcasing accessible, equity-centered learning design.">
-    <title>Kit Berry | Instructional Designer</title>
-   <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kit Berry - Instructional Designer, Educator, Writer. Portfolio showcasing accessible, equity-centered learning design.">
+  <title>Kit Berry | Instructional Designer</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-        --primary: #2C5F7C;
-        --accent: #17A2B8;
-        --dark: #1a1a1a;
-        --light: #f8f9fa;
-        --gray: #6c757d;
+      --primary: #2C5F7C;
+      --accent: #17A2B8;
+      --dark: #1a1a1a;
+      --light: #f8f9fa;
+      --gray: #6c757d;
+
+      /* consistent embed heights */
+      --embed-h: 560px;
+      --embed-h-mobile: 70vh;
     }
 
- body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.7;
-  color: var(--dark);
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.7;
+      color: var(--dark);
 
-  background:
-    linear-gradient(
-      rgba(255, 255, 255, 0.45),
-      rgba(255, 255, 255, 0.45)
-    ),
-    url('https://itsmekitb.github.io/itsmekitb/pexels-steve-1509534.jpg');
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)),
+        url('https://itsmekitb.github.io/itsmekitb/pexels-steve-1509534.jpg');
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
 
-  position: relative;
-}
+      position: relative;
+    }
 
-body > * {
-  position: relative;
-  z-index: 1;
-}
-
+    body > * { position: relative; z-index: 1; }
 
     /* Header / Hero Section */
     header {
-  background: linear-gradient(
-    135deg,
-    rgba(44, 95, 124, 0.80) 0%,
-    rgba(26, 69, 88, 0.80) 100%
-  );
-  color: white;
-  padding: 0.5rem 2rem;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(6px); /* optional but lovely */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-}
+      background: linear-gradient(
+        135deg,
+        rgba(44, 95, 124, 0.80) 0%,
+        rgba(26, 69, 88, 0.80) 100%
+      );
+      color: white;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
 
-    /* Multiple decorative elements for depth */
     header::before {
-        content: "";
-        position: absolute;
-        top: -30%;
-        right: -5%;
-        width: 500px;
-        height: 500px;
-        background: radial-gradient(circle, rgba(23, 162, 184, 0.25) 0%, transparent 70%);
-        border-radius: 50%;
-        animation: float 20s ease-in-out infinite;
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -5%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(23, 162, 184, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 20s ease-in-out infinite;
     }
 
     header::after {
-        content: "";
-        position: absolute;
-        bottom: -20%;
-        left: -5%;
-        width: 400px;
-        height: 400px;
-        background: radial-gradient(circle, rgba(23, 162, 184, 0.15) 0%, transparent 70%);
-        border-radius: 50%;
-        animation: float 25s ease-in-out infinite reverse;
+      content: "";
+      position: absolute;
+      bottom: -20%;
+      left: -5%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(23, 162, 184, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 25s ease-in-out infinite reverse;
     }
 
-header {
-  padding: 2.5rem 2rem;
-}
-
-header h1 {
-  margin-bottom: 0.3rem;
-}
-
-header .subtitle {
-  margin-bottom: 0.6rem;
-}
-
-header p {
-  margin: 0.4rem auto;
-  line-height: 1.5;
-  font-size: 1.05rem;
-}
-
-
     @keyframes float {
-        0%, 100% {
-            transform: translate(0, 0);
-        }
-        50% {
-            transform: translate(30px, -30px);
-        }
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(30px, -30px); }
     }
 
     header h1 {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-        font-weight: 700;
-        position: relative;
-        z-index: 1;
+      font-size: 2.5rem;
+      margin-bottom: 0.3rem;
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
     }
 
     header .subtitle {
-        font-size: 1.3rem;
-        color: #e8f1f5;
-        margin-bottom: 1rem;
-        font-weight: 300;
-        position: relative;
-        z-index: 1;
+      font-size: 1.3rem;
+      color: #e8f1f5;
+      margin-bottom: 0.6rem;
+      font-weight: 300;
+      position: relative;
+      z-index: 1;
     }
 
     header p {
-        max-width: 700px;
-        margin: 1rem auto;
-        font-size: 1.1rem;
-        line-height: 1.6;
-        color: #e8f1f5;
-        position: relative;
-        z-index: 1;
+      max-width: 700px;
+      margin: 0.4rem auto;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      color: #e8f1f5;
+      position: relative;
+      z-index: 1;
     }
 
     /* Container */
     .container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
     }
 
-    /* Section Styling */
-    section {
-        padding: 4rem 0;
-    }
+    section { padding: 4rem 0; }
 
     section h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-        color: var(--primary);
-        border-left: 5px solid var(--accent);
-        padding-left: 1rem;
-        position: relative;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--primary);
+      border-left: 5px solid var(--accent);
+      padding-left: 1rem;
+      position: relative;
     }
 
-    /* Subtle accent behind section headers */
     section h2::before {
-        content: "";
-        position: absolute;
-        left: -2rem;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 40px;
-        height: 40px;
-        background: var(--accent);
-        opacity: 0.1;
-        border-radius: 50%;
-        z-index: -1;
+      content: "";
+      position: absolute;
+      left: -2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background: var(--accent);
+      opacity: 0.1;
+      border-radius: 50%;
+      z-index: -1;
     }
 
-    /* About Section */
-    #about {
-        background-color: var(--light);
-    }
-
-    #about p {
-        font-size: 1.1rem;
-        margin-bottom: 1rem;
-        line-height: 1.8;
-    }
-
-    
-    /* Featured case study styling */
-    .portfolio-item.featured {
-        border-color: rgba(23, 162, 184, 0.55);
-        background: linear-gradient(180deg, rgba(23, 162, 184, 0.25) 0%, rgba(255,255,255,1) 40%);
-        box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-        position: relative;
-    }
-
-    /* Subtle accent line on featured item */
-    .portfolio-item.featured::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
-        border-radius: 8px 8px 0 0;
-    }
-
-       
     /* Portfolio Section */
     #portfolio {
-        background-color: rgba(255, 255, 255, 0.7);
-        background-image: radial-gradient(circle at 20% 50%, rgba(23, 162, 184, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(44, 95, 124, 0.02) 0%, transparent 50%);
-        backdrop-filter: blur(20px);
+      background-color: rgba(255, 255, 255, 0.7);
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(23, 162, 184, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(44, 95, 124, 0.02) 0%, transparent 50%);
+      backdrop-filter: blur(20px);
     }
 
     .portfolio-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
     }
 
     .portfolio-item {
-        background: rgba(255, 255, 255, 0.95);
-        border: 2px solid #e9ecef;
-        border-radius: 8px;
-        padding: 2rem;
-        transition: all 0.3s ease;
-        backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.95);
+      border: 2px solid #e9ecef;
+      border-radius: 8px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
     }
 
     .portfolio-item:hover {
-        border-color: var(--accent);
-        box-shadow: 0 8px 20px rgba(23, 162, 184, 0.15);
-        transform: translateY(-3px);
+      border-color: var(--accent);
+      box-shadow: 0 8px 20px rgba(23, 162, 184, 0.15);
+      transform: translateY(-3px);
     }
 
     .portfolio-item h3 {
-        color: var(--primary);
-        margin-bottom: 1rem;
-        font-size: 1.4rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
     }
 
     .portfolio-item p {
-        color: var(--gray);
-        margin-bottom: 1rem;
-        line-height: 1.6;
+      color: var(--gray);
+      margin-bottom: 1rem;
+      line-height: 1.6;
     }
 
-    /* NEW: Utility classes for description text */
     .portfolio-description {
-        font-style: italic;
-        color: var(--gray);
-        margin-bottom: 1rem;
+      font-style: italic;
+      color: var(--gray);
+      margin-bottom: 1rem;
     }
 
     .portfolio-item .tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-bottom: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
     }
 
     .tag {
-        background-color: var(--light);
-        color: var(--primary);
-        padding: 0.4rem 0.9rem;
-        border-radius: 20px;
-        font-size: 0.85rem;
-        font-weight: 500;
-        white-space: nowrap;
+      background-color: var(--light);
+      color: var(--primary);
+      padding: 0.4rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      white-space: nowrap;
     }
 
-    /* NEW: Utility class for full-width items */
-    .full-width {
-        grid-column: 1 / -1;
+    .full-width { grid-column: 1 / -1; }
+
+    /* Featured case study styling */
+    .portfolio-item.featured {
+      border-color: rgba(23, 162, 184, 0.55);
+      background: linear-gradient(180deg, rgba(23, 162, 184, 0.25) 0%, rgba(255,255,255,1) 40%);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      position: relative;
     }
 
-    /* NEW: Embed container utility */
-    .embed-container {
-        width: 100%;
-        height: 90vh;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        margin-top: 1.5rem;
+    .portfolio-item.featured::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
+      border-radius: 8px 8px 0 0;
     }
 
-    .embed-container iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
+    .case-study-accordion p { margin: 0.5rem 0 0.75rem; line-height: 1.7; }
+    .case-study-accordion ul, .case-study-accordion ol {
+      margin: 0.1rem 0 1.1rem 1.25rem;
+      padding-left: 1.25rem;
     }
 
-    /* NEW: Embed link utility */
+    .case-study-accordion details {
+      border-top: 1px solid #e9ecef;
+      padding: 0.75rem 0;
+    }
+
+    .case-study-accordion details:last-child {
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .case-study-accordion summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--primary);
+      list-style: none;
+    }
+
+    .case-study-accordion summary::-webkit-details-marker { display: none; }
+
+    .case-study-accordion summary::before {
+      content: "▸";
+      display: inline-block;
+      margin-right: 0.5rem;
+      color: var(--accent);
+      transition: transform 0.2s ease;
+    }
+
+    .case-study-accordion details[open] summary::before { transform: rotate(90deg); }
+
+    .case-study-accordion p, .case-study-accordion ul {
+      margin-top: 0.5rem;
+      color: var(--gray);
+      font-size: 0.97rem;
+    }
+
+    .case-study-accordion ul { padding-left: 1.25rem; }
+    .case-study-accordion li { margin-bottom: 0.25rem; }
+
+    .accordion-intro {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin-bottom: 1rem;
+    }
+
+    /* =========================
+       NEW: Two-card project rows
+       ========================= */
+    .project-row {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .project-copy { /* left card */ }
+    .project-embed { /* right card */ }
+
+    .embed-frame {
+      width: 100%;
+      height: var(--embed-h);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin-top: 1rem;
+      background: #fff;
+      border: 1px solid #e9ecef;
+    }
+
+    .embed-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
     .embed-link {
-        margin-top: 1rem;
-        text-align: center;
-        font-size: 0.9rem;
-        color: var(--gray);
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--gray);
     }
 
     .embed-link a {
-        color: var(--accent);
-        text-decoration: underline;
+      color: var(--accent);
+      text-decoration: underline;
     }
 
-    .btn {
-        display: inline-block;
-        background-color: var(--accent);
-        color: white;
-        padding: 0.8rem 1.8rem;
-        text-decoration: none;
-        border-radius: 5px;
-        font-weight: 600;
-        transition: all 0.3s ease;
+    /* =========================
+       NAV: centered on desktop,
+       scrollable on small screens
+       ========================= */
+    .site-nav {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e9ecef;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
     }
 
-    .btn:hover {
-        background-color: #12899b;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(23, 162, 184, 0.25);
+    .site-nav .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.75rem 2rem;
+      display: flex;
+      justify-content: flex-start; /* mobile / narrow default */
+      align-items: center;
     }
 
-    .btn-secondary {
-        background-color: var(--primary);
+    .site-nav .nav-links {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      white-space: nowrap;
+      width: max-content;
     }
 
-    .btn-secondary:hover {
-        background-color: #1a4558;
+    /* Center the whole nav strip ONLY on larger screens */
+    @media (min-width: 900px) {
+      .site-nav .nav-inner {
+        justify-content: center;
+      }
     }
 
-    .case-study-accordion p {
-        margin: 0.5rem 0 0.75rem;
-        line-height: 1.7;
+    .site-nav a {
+      font-size: 0.9rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.35rem 0.5rem;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+      flex-shrink: 0;
+      display: inline-block;
     }
 
-    .case-study-accordion ul,
-    .case-study-accordion ol {
-        margin: 0.1rem 0 1.1rem 1.25rem;
-        padding-left: 1.25rem;
-    }
+    .site-nav a:hover { border-bottom-color: var(--accent); }
 
-       
-    /* Skills Section */
-    #skills {
-        background-color: rgba(248, 249, 250, 0.8);
-        backdrop-filter: blur(20px);
+    /* NAV scrollbar styling */
+    .site-nav::-webkit-scrollbar { height: 6px; }
+    .site-nav::-webkit-scrollbar-track {
+      background: rgba(23, 162, 184, 0.05);
+      border-radius: 10px;
     }
-
-    .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-        margin-top: 1.5rem;
+    .site-nav::-webkit-scrollbar-thumb {
+      background: linear-gradient(90deg, var(--accent) 0%, var(--primary) 100%);
+      border-radius: 10px;
+      transition: background 0.3s ease;
     }
-
-    .skill-category h3 {
-        color: var(--primary);
-        font-size: 1rem;
-        margin-bottom: 0.75rem;
-        font-weight: 600;
-        border-bottom: 2px solid var(--accent);
-        padding-bottom: 0.5rem;
-        display: flex;
-        align-items: center;
-    }
-
-    .skill-category h3::before {
-        content: "▸";
-        color: var(--accent);
-        margin-right: 0.5rem;
-        font-weight: bold;
-    }
-
-    .skill-category ul {
-        list-style: none;
-        padding-left: 0;
-    }
-
-    .skill-category ul li {
-        padding-left: 1.25rem;
-        position: relative;
-        margin-bottom: 0.4rem;
-        font-size: 0.95rem;
-        line-height: 1.6;
-    }
-
-    .skill-category ul li:before {
-        content: "•";
-        color: var(--accent);
-        position: absolute;
-        left: 0;
-        font-weight: bold;
-    }
-
-    .skill-category.competency h3::before {
-        content: "";
-        margin-right: 0;
-    }
-
-    .skill-category.competency li {
-        border-bottom: none;
+    .site-nav::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
     }
 
     /* Contact Section */
     #contact {
-        background: linear-gradient(135deg, var(--primary) 0%, #1a4558 100%);
-        color: white;
-        text-align: center;
+      background: linear-gradient(135deg, var(--primary) 0%, #1a4558 100%);
+      color: white;
+      text-align: center;
     }
 
-    #contact h2 {
-        color: white;
-        border-left: 5px solid var(--accent);
-    }
-
-    #contact p {
-        font-size: 1.2rem;
-        margin: 2rem 0;
-    }
+    #contact h2 { color: white; border-left: 5px solid var(--accent); }
+    #contact p { font-size: 1.2rem; margin: 2rem 0; }
 
     #contact a {
-        color: white;
-        text-decoration: none;
-        font-weight: 600;
-        border-bottom: 2px solid var(--accent);
-        transition: all 0.3s ease;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 2px solid var(--accent);
+      transition: all 0.3s ease;
     }
 
-    #contact a:hover {
-        color: var(--accent);
-    }
+    #contact a:hover { color: var(--accent); }
 
-    /* Footer */
     footer {
-        background-color: var(--dark);
-        color: white;
-        text-align: center;
-        padding: 2rem;
-        font-size: 0.9rem;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        header h1 {
-            font-size: 2rem;
-        }
-
-        header .subtitle {
-            font-size: 1.1rem;
-        }
-
-        section h2 {
-            font-size: 1.6rem;
-        }
-
-        .portfolio-grid {
-            grid-template-columns: 1fr;
-        }
+      background-color: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
     }
 
     /* Accessibility */
-    a:focus,
-    button:focus {
-        outline: 3px solid var(--accent);
-        outline-offset: 2px;
+    a:focus, button:focus {
+      outline: 3px solid var(--accent);
+      outline-offset: 2px;
     }
 
     .visually-hidden {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: 0;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border: 0;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
-    /* Case study accordion styling */
-    .case-study-accordion details {
-        border-top: 1px solid #e9ecef;
-        padding: 0.75rem 0;
+    /* Global scrollbar styling — Chrome/Edge/Safari */
+    *::-webkit-scrollbar { width: 10px; height: 10px; }
+    *::-webkit-scrollbar-track {
+      background: rgba(23, 162, 184, 0.08);
+      border-radius: 999px;
+    }
+    *::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--accent), var(--primary));
+      border-radius: 999px;
+      border: 2px solid rgba(255, 255, 255, 0.6);
+    }
+    *::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, var(--primary), var(--accent));
     }
 
-    .case-study-accordion details:last-child {
-        border-bottom: 1px solid #e9ecef;
-    }
+    /* Responsive */
+    @media (max-width: 900px) {
+      .project-row {
+        grid-template-columns: 1fr;
+      }
 
-    .case-study-accordion summary {
-        cursor: pointer;
-        font-weight: 600;
-        color: var(--primary);
-        list-style: none;
-    }
-
-    .case-study-accordion summary::-webkit-details-marker {
-        display: none;
-    }
-
-    .case-study-accordion summary::before {
-        content: "▸";
-        display: inline-block;
-        margin-right: 0.5rem;
-        color: var(--accent);
-        transition: transform 0.2s ease;
-    }
-
-    .case-study-accordion details[open] summary::before {
-        transform: rotate(90deg);
-    }
-
-    .case-study-accordion p,
-    .case-study-accordion ul {
-        margin-top: 0.5rem;
-        color: var(--gray);
-        font-size: 0.97rem;
-    }
-
-    .case-study-accordion ul {
-        padding-left: 1.25rem;
-    }
-
-    .case-study-accordion li {
-        margin-bottom: 0.25rem;
-    }
-
-    /* ✅ NAV FIX: make .site-nav the scrolling container */
-    .site-nav {
-        background-color: #ffffff;
-        border-bottom: 1px solid #e9ecef;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-
-        overflow-x: auto;      /* ✅ this is the scroller now */
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .site-nav .nav-inner {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0.75rem 2rem;
-        display: flex;
-        flex-wrap: nowrap;
-        /* overflow-x removed from here */
-        gap: 0.75rem;
-        align-items: center;
-
-        .site-nav .nav-links {
-  display: inline-flex;
-  gap: 0.75rem;
-  align-items: center;
-  white-space: nowrap;
-  width: max-content;
-  margin: 0 auto;
-}
-
-
-
-        /* Important so items don't wrap and force scroll */
-        white-space: nowrap;
-    }
-
-    /* ✅ NAV SCROLLBAR: target .site-nav (the scroller) */
-    .site-nav::-webkit-scrollbar {
-        height: 6px;
-    }
-
-    .site-nav::-webkit-scrollbar-track {
-        background: rgba(23, 162, 184, 0.05);
-        border-radius: 10px;
-    }
-
-    .site-nav::-webkit-scrollbar-thumb {
-        background: linear-gradient(90deg, var(--accent) 0%, var(--primary) 100%);
-        border-radius: 10px;
-        transition: background 0.3s ease;
-    }
-
-    .site-nav::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
-    }
-
-    .site-nav a {
-        font-size: 0.9rem;
-        color: var(--primary);
-        text-decoration: none;
-        font-weight: 500;
-        padding: 0.35rem 0.5rem;
-        border-bottom: 2px solid transparent;
-        white-space: nowrap;
-        flex-shrink: 0;
-        display: inline-block;
-    }
-
-    .site-nav a:hover {
-        border-bottom-color: var(--accent);
-    }
-
-    /* Mobile tightening */
-    @media (max-width: 768px) {
-        .container {
-            padding: 0 1.25rem;
-        }
-
-        header {
-            padding: 2.5rem 1rem;
-        }
-
-        header h1 {
-            font-size: 2rem;
-        }
-
-        header .subtitle {
-            font-size: 1.05rem;
-        }
-
-        header p {
-            font-size: 1rem;
-            line-height: 1.55;
-        }
-
-        section {
-            padding: 2.5rem 0;
-        }
-
-        section h2 {
-            font-size: 1.6rem;
-        }
-
-        .portfolio-item {
-            padding: 1.5rem;
-            border-radius: 10px;
-        }
-
-        .portfolio-item h3 {
-            font-size: 1.25rem;
-        }
-
-        .portfolio-item p {
-            font-size: 0.98rem;
-        }
-
-        .tag {
-            font-size: 0.8rem;
-            padding: 0.25rem 0.65rem;
-        }
-
-        .site-nav .nav-inner {
-            padding: 0.6rem 1rem;
-        }
-
-        .embed-container {
-            height: 70vh;
-        }
-    }
-
-    /* Flipbook iframe sizing */
-    .flipbook-embed {
-        width: 100%;
-        height: 1800px;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        margin-top: 1.5rem;
-    }
-
-    .flipbook-embed iframe {
-        width: 100%;
-        height: 100%;
-        border: 0;
-        display: block;
+      .embed-frame {
+        height: var(--embed-h-mobile);
+      }
     }
 
     @media (max-width: 768px) {
-        .flipbook-embed {
-            height: 140vh;
-            min-height: 1400px;
-        }
+      .container { padding: 0 1.25rem; }
+
+      header { padding: 2.5rem 1rem; }
+      header h1 { font-size: 2rem; }
+      header .subtitle { font-size: 1.05rem; }
+      header p { font-size: 1rem; line-height: 1.55; }
+
+      section { padding: 2.5rem 0; }
+      section h2 { font-size: 1.6rem; }
+
+      .portfolio-item { padding: 1.5rem; border-radius: 10px; }
+      .portfolio-item h3 { font-size: 1.25rem; }
+      .portfolio-item p { font-size: 0.98rem; }
+      .tag { font-size: 0.8rem; padding: 0.25rem 0.65rem; }
+
+      .site-nav .nav-inner { padding: 0.6rem 1rem; }
     }
 
-    /* H5P Module specific sizing */
-    .h5p-embed {
-        width: 100%;
-        height: 800px;
-        border: 2px solid #e9ecef;
-        border-radius: 8px;
-        margin-top: 1.5rem;
-        display: block;
+    /* Keep background visible outside content blocks */
+    body::before { display: none !important; }
+
+    #portfolio {
+      background: transparent !important;
+      backdrop-filter: none !important;
     }
 
-    @media (max-width: 768px) {
-        .h5p-embed {
-            height: 70vh;
-        }
-    }
-
-    /* Accordion intro text */
-    .accordion-intro {
-        font-size: 0.9rem;
-        color: var(--gray);
-        margin-bottom: 1rem;
-    }
-
-       /* GLOBAL SCROLLBAR STYLING — Chrome / Edge / Safari */
-*::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
-*::-webkit-scrollbar-track {
-  background: rgba(23, 162, 184, 0.08);
-  border-radius: 999px;
-}
-
-*::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--accent), var(--primary));
-  border-radius: 999px;
-  border: 2px solid rgba(255, 255, 255, 0.6);
-}
-
-*::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, var(--primary), var(--accent));
-}
-
-       /* Background visible in side gutters, without adding a section-wide white box */
-body::before { display: none !important; }
-
-#about,
-#portfolio,
-#skills {
-  background: transparent !important;
-  backdrop-filter: none !important;
-}
-
-
-       
-</style>
-
+  </style>
 </head>
+
 <body>
 
-    <!-- Header / Hero -->
-    <header>
-        <h1>Kit Berry</h1>
-        <p class="subtitle">Instructional Designer, Educator, Writer</p>
-        <p>I design and build human-centered learning experiences that turn complex ideas into usable skills, with a focus on equity-centered learning, SME collaboration, and outcomes-driven instructional design.</p>
-        <p>My work is guided by empathy, instructional rigor, and measurable impact — whether designing for lifelong learners or for those starting over, starting from scratch, or starting to believe they can.</p>
-    </header>
+  <!-- Header / Hero -->
+  <header>
+    <h1>Kit Berry</h1>
+    <p class="subtitle">Instructional Designer, Educator, Writer</p>
+    <p>I design and build human-centered learning experiences that turn complex ideas into usable skills, with a focus on equity-centered learning, SME collaboration, and outcomes-driven instructional design.</p>
+    <p>My work is guided by empathy, instructional rigor, and measurable impact — whether designing for lifelong learners or for those starting over, starting from scratch, or starting to believe they can.</p>
+  </header>
 
+  <!-- Top Navigation -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <div class="nav-links">
+        <a href="#l4l-case-study"><strong>L4L Case Study</strong></a>
+        <a href="#upset-customers-storyline">Storyline Module</a>
+        <a href="#email-course">Rise Micro Course</a>
+        <a href="#task-module">H5P Branching Scenario</a>
+        <a href="#work-samples">Work Samples Flipbook</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Top Navigation -->
-    <nav class="site-nav">
-        <div class="nav-inner">
-            <div class="nav-links">
-            <a href="#l4l-case-study"><strong>L4L Case Study</strong></a>
-            <a href="#upset-customers-storyline">Storyline Module</a>
-            <a href="#email-course">Rise Micro Course</a>
-            <a href="#task-module">H5P Branching Scenario</a>
-            <a href="#work-samples">Work Samples Flipbook</a>
-            <a href="#contact">Contact</a>
-            </div>
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <div class="container">
+      <h2>Portfolio</h2>
+
+      <div class="portfolio-grid">
+
+        <!-- L4L CASE STUDY (UNCHANGED) -->
+        <div class="portfolio-item featured full-width" id="l4l-case-study">
+          <h3>📖 L4L Case Study: Building Leadership for Life</h3>
+          <p class="portfolio-description">
+            How I designed a full-time instructional foundation and coordinated a coherent learning ecosystem across a year-long workforce development program.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Program Architecture</span>
+            <span class="tag">Trauma-Informed Design</span>
+            <span class="tag">Full-Time Learning Ecosystem</span>
+          </div>
+
+          <p>
+            Leadership for Life (L4L) was a 12-week, full-time (40 hrs/week) foundational program for formerly incarcerated adults entering a year-long tech career pathway. I served as the sole instructional designer and design lead for Pillar 1, co-facilitating instruction to observe learner response, iterate on design decisions, and ensure the system functioned under full-time conditions.
+          </p>
+          <p>
+            In parallel, I partnered closely with SMEs leading Pillars 2 and 3 to align competencies, instructional assumptions, and learner readiness across the full year-long program.
+          </p>
+          <p>
+            It started as a three-day seminar and a lot of hope. What it became was a stable, humane instructional system that could hold learners through a full year of transformation.
+          </p>
+
+          <p class="accordion-intro">
+            Expand the sections below to explore the full case study.
+          </p>
+
+          <div class="case-study-accordion">
+            <!-- (your accordion content is unchanged; keeping exactly what you pasted) -->
+
+            <!-- 1. Context -->
+            <details>
+              <summary>1. Context: The "We Had a Dream" Phase</summary>
+
+              <p><strong>CROP hired me at a moment when they had:</strong></p>
+              <ul>
+                <li>a three-day leadership seminar</li>
+                <li>extremely passionate goals</li>
+                <li>a vision for a full-time, year-long "Pillar" program sketched mostly in spirit</li>
+                <li>no actual curriculum beyond the initial seminar</li>
+              </ul>
+
+              <p><strong>They essentially said:</strong><br>
+                "We want to teach leadership, digital literacy, financial wellness, mindset, professional skills, reading, writing, sales, and UX design — all of it — to formerly incarcerated adults trying to rebuild their lives."
+              </p>
+
+              <p><strong>I said:</strong><br>
+                "Okay… so basically you want to teach dreams right now?"
+              </p>
+
+              <p>Laughter was exchanged. Then the real work began.</p>
+
+              <p>
+                At that point, the organization had vision without infrastructure. There was no instructional sequence, no pacing logic, no defined learner readiness assumptions, and no system capable of sustaining full-time learning without burnout or collapse.
+              </p>
+
+              <p>
+                SMEs were later brought in to lead Pillars 2, 3, and 4. I served as the sole instructional designer and design lead for Pillar 1, while also overseeing cross-Pillar instructional coherence across the full year-long program.
+              </p>
+
+              <p>
+                This meant translating aspiration into architecture — and building a foundation stable enough for everything that followed.
+              </p>
+
+              <p>
+                Objectively, this was a senior-level scope. I was fresh enough not to know that at the time — which may be why it worked. I didn't know it was supposed to be impossible.
+              </p>
+
+              <p>
+                And for what it's worth: I can never again hear "we're building the plane as we fly it" without thinking of the founders who trusted me to figure out how to build their plane — while learners were already onboard.
+              </p>
+            </details>
+
+            <!-- 2. Translating Vision Into Structure -->
+            <details>
+              <summary>2. Translating Vision Into Structure</summary>
+
+              <p>
+                My first design task was taking a large, luminous cloud of aspiration and turning it into instruction that could actually function.
+              </p>
+
+              <p><strong>That meant translating vision into:</strong></p>
+              <ul>
+                <li>concrete, observable learning outcomes</li>
+                <li>a coherent instructional sequence</li>
+                <li>a full-time learning plan that real humans could complete without collapsing under cognitive overload</li>
+              </ul>
+
+              <p><strong>Practically, this required:</strong></p>
+              <ul>
+                <li>identifying the instructional through-line of the entire year-long program</li>
+                <li>defining the specific role Pillar 1 needed to play within that system</li>
+                <li>deciding what "success" realistically looked like at the 12-week mark</li>
+                <li>carving an overwhelming volume of content into structured, climbable learning hills</li>
+              </ul>
+
+              <p><strong>Pillar 1 could not be everything.</strong><br>
+                It needed to be the foundation — the place where learners built stability, skill, and confidence before being asked to absorb technical complexity or navigate professional pressure.
+              </p>
+
+              <p><strong>Every design decision at this stage was shaped by one core question:</strong><br>
+                What do learners need to be able to do, believe, and sustain in order to survive what comes next?
+              </p>
+            </details>
+
+            <!-- 3. Learners -->
+            <details>
+              <summary>3. Learners: Adults With Complex Lives and Incredible Potential</summary>
+
+              <p><strong>My learners were adults reentering society after incarceration who often faced:</strong></p>
+              <ul>
+                <li>disrupted or incomplete formal education</li>
+                <li>limited digital literacy</li>
+                <li>unstable housing or employment</li>
+                <li>trauma histories</li>
+                <li>immediate practical and emotional pressures</li>
+              </ul>
+
+              <p>This context shaped every instructional decision.</p>
+
+              <p><strong>The curriculum needed to be:</strong></p>
+              <ul>
+                <li>trauma-informed without being permissive</li>
+                <li>confidence-building without being condescending</li>
+                <li>flexible without sacrificing structure</li>
+                <li>low-barrier with a high bar for growth</li>
+                <li>immediately applicable to learners' real lives</li>
+                <li>human-centered rather than content-centered</li>
+              </ul>
+
+              <p>
+                This is why I designed the program around small wins, visible progress, and learner agency. Early success stabilized confidence. Clear structure reduced anxiety. Choice and relevance increased engagement. Together, these elements allowed learners to persist through full-time intensity without disengaging or burning out.
+              </p>
+
+              <p>
+                The goal was not to make learning easier — it was to make growth possible.
+              </p>
+            </details>
+
+            <!-- 4. Program Architecture -->
+            <details>
+              <summary>4. Program Architecture: Does Anybody Know How to Fly This Thing?</summary>
+
+              <p><strong>L4L wasn’t a “once-a-week” program.</strong><br>
+                It was a full-time, immersive learning environment: 9am–4pm, five days a week, for twelve weeks.
+              </p>
+
+              <p>
+                That meant I wasn’t designing a collection of lessons — I was designing an entire daily learning ecosystem capable of holding real humans, with real histories, for forty hours a week without breaking them or burning them out.
+              </p>
+
+              <p><strong>The architecture had to be:</strong></p>
+              <ul>
+                <li>digestible and predictable</li>
+                <li>scaffolded without being rigid</li>
+                <li>emotionally safe without lowering expectations</li>
+                <li>cognitively sustainable at full-time intensity</li>
+                <li>realistic for instructors to facilitate</li>
+                <li>survivable — and ultimately transformative — for learners</li>
+              </ul>
+
+              <p>
+                The 12-week structure emerged from what learners needed and what the full-time format demanded. Rather than treating topics as discrete units, I designed L4L as a three-part instructional architecture, with each component reinforcing the others and supporting the daily rhythm of the program.
+              </p>
+
+              <h4>A. Digital Literacy (Foundational Competence)</h4>
+              <p><em>“Let’s get your hands on the tools and build confidence.”</em></p>
+
+              <p>
+                At forty hours a week, technology exposure couldn’t be a one-off lesson. It had to be woven into the daily structure so familiarity — and confidence — accumulated naturally.
+              </p>
+
+              <p><strong>Daily design elements included:</strong></p>
+              <ul>
+                <li>guided device setup and digital safety practice</li>
+                <li>multi-hour, hands-on productivity labs (Docs, Drive, Sheets, file structure)</li>
+                <li>micro-tasks embedded throughout the day for low-stakes repetition</li>
+              </ul>
+
+              <p>
+                Digital literacy came first because learners needed technical fluency to participate fully in every other Pillar — and because confidence with tools stabilized emotional bandwidth for learning overall.
+              </p>
+
+              <h4>B. Financial Wellness (Practical Stability)</h4>
+              <p><em>“Let’s demystify money and build agency.”</em></p>
+
+              <p>
+                At full-time intensity, financial content could not be overwhelming or shame-inducing. It needed to be paced, revisited, and integrated into the daily flow rather than isolated as a single unit.
+              </p>
+
+              <p><strong>Daily design elements included:</strong></p>
+              <ul>
+                <li>iterative budgeting work (learn → apply → refine)</li>
+                <li>values-based conversations embedded as warm-ups or cool-downs</li>
+                <li>scenario activities modeled on real-life financial decision points</li>
+              </ul>
+
+              <p>
+                Financial literacy grounded learners in real-world stability, providing clarity and agency in an otherwise high-cognitive-load environment.
+              </p>
+
+              <h4>C. Leadership Development (The Core of the Program)</h4>
+              <p><em>“Let’s turn knowledge, mindset, and skills into self-direction.”</em></p>
+
+              <p>
+                Leadership Development formed the emotional and instructional center of the program — and carried the largest share of instructional time.
+              </p>
+
+              <p><strong>This domain included:</strong></p>
+              <ul>
+                <li>professional communication (email writing, tone calibration, revision)</li>
+                <li>mindset and motivation (task management, resilience, habit formation)</li>
+                <li>reading and writing practice (discussion, summaries, expressive writing)</li>
+                <li>life-navigation strategies (decision-making, time management, values alignment)</li>
+                <li>agency and radical accountability — learning to take responsibility without collapsing</li>
+              </ul>
+
+              <p>
+                Because this work was emotionally demanding and practiced daily, pacing was critical. I designed each day to alternate between cognitive load, emotional depth, structured practice, and recovery.
+              </p>
+
+              <p><strong>Daily design elements included:</strong></p>
+              <ul>
+                <li>extended mindset workshops with built-in reflection periods</li>
+                <li>professional communication practice embedded between heavier sessions</li>
+                <li>reading and writing blocks designed to build stamina without overwhelm</li>
+                <li>leadership circles that balanced vulnerability with psychological safety</li>
+              </ul>
+
+              <p>
+                This domain received the most instructional time because it supported both job readiness and personal autonomy — and because learners needed a steady, containered environment to practice this level of growth.
+              </p>
+
+              <h4>System-Level Architecture (What Held the Whole Program Together)</h4>
+
+              <p>
+                Designing twelve weeks of full-time instruction required designing the entire infrastructure around the content.
+              </p>
+
+              <p><strong>That infrastructure included:</strong></p>
+              <ul>
+                <li>rubrics for consistent evaluation across instructors and days</li>
+                <li>daily facilitator guides with pacing, scripts, trauma-informed notes, and troubleshooting</li>
+                <li>performance and formative assessments embedded into weekly flow</li>
+                <li>trauma-informed design baked into lesson sequencing, activity choice, and facilitation language</li>
+                <li>learner support systems to stabilize navigation through full-time intensity</li>
+                <li>integration of accessible tools (Google Classroom, digital skills platforms, etc.)</li>
+                <li>badge-based microcredentials that made daily and weekly progress visible</li>
+                <li>learner analytics to identify disengagement early</li>
+                <li>scenario-based communication practice distributed across the week</li>
+                <li>asynchronous modules to support differentiated pacing and makeup learning</li>
+              </ul>
+
+              <p>
+                Cross-Pillar alignment was part of the architecture from the beginning. I learned the technical content taught in later Pillars and reverse-engineered the competencies learners would need by the time they arrived there.
+              </p>
+
+              <p><strong>That meant taking some learners from:</strong><br>
+                “I have never used a smartphone”<br>
+                to building websites in Figma and learning basic code — within a single full-time quarter.
+              </p>
+
+              <p><strong>This outcome wasn’t accidental.</strong><br>
+                It was the result of a coherent, intentionally designed system built to develop capacity, confidence, and stability at scale.
+              </p>
+
+              <h4>Putting It All Together</h4>
+
+              <p><strong>Everything was sequenced so that:</strong></p>
+              <ul>
+                <li>each component built on the last</li>
+                <li>each skill connected to a higher-level outcome</li>
+                <li>each day followed a clear cognitive and emotional logic</li>
+                <li>instructors had the structure they needed to facilitate sustainably</li>
+                <li>learners had the support they needed to grow without breaking</li>
+              </ul>
+
+              <p><strong>The result wasn’t just a twelve-week program.</strong><br>
+                It was a daily instructional ecosystem, designed to hold people through real transformation on a real schedule with real stakes.
+              </p>
+            </details>
+
+            <!-- 4.5 Backward Design -->
+            <details>
+              <summary>4.5 Backward Design in Action: Preparing Learners for the Reality of Tech Careers</summary>
+
+              <p><strong>The ultimate goal of the program was clear:</strong><br>
+                By the end of Pillar 3, learners needed to secure and sustain employment in the tech industry.
+              </p>
+
+              <p>
+                Not just get a job — but function within it, navigate its demands, withstand pressure, and remain employed long-term after a lifetime shaped by incarceration, instability, or interrupted education.
+              </p>
+
+              <p>That end goal shaped every instructional decision upstream.</p>
+
+              <h4>Pillar 3: Job Search + Career Stability</h4>
+              <p><strong>What Learners Needed</strong></p>
+
+              <p>
+                To survive the intensity of the tech job search — and later, the realities of a tech work environment — learners needed far more than technical skill.
+              </p>
+
+              <p><strong>They needed:</strong></p>
+              <ul>
+                <li>emotional stability under stress</li>
+                <li>clear, professional communication</li>
+                <li>consistent follow-through</li>
+                <li>confidence in the face of rejection</li>
+                <li>the ability to self-regulate under pressure</li>
+                <li>resilience after years of institutionalization and trauma</li>
+              </ul>
+
+              <p><strong>These were not “soft skills” or nice-to-haves.</strong><br>
+                They were survival skills.
+              </p>
+
+              <h4>Pillar 2: UX Design + Technical Fluency</h4>
+              <p><strong>What Learners Needed Before Technical Training Could Succeed</strong></p>
+
+              <p><strong>Before learners could meaningfully engage with UX tools or technical instruction, they needed:</strong></p>
+              <ul>
+                <li>foundational digital literacy</li>
+                <li>file management fluency</li>
+                <li>comfort navigating multiple platforms</li>
+                <li>stamina for full-time technical learning</li>
+                <li>the ability to troubleshoot independently</li>
+                <li>confidence to experiment, fail, and try again</li>
+              </ul>
+
+              <p>
+                Without these foundations, the entire UX sequence would have collapsed under cognitive overload. The tech SMEs were highly skilled and their content was rigorous — but it assumed a baseline level of digital fluency many learners simply did not yet have.
+              </p>
+
+              <h4>What Pillar 1 Had to Do</h4>
+
+              <p><strong>To make Pillars 2 and 3 viable, Pillar 1 needed to produce learners who were:</strong></p>
+              <ul>
+                <li>digitally competent enough to enter a UX bootcamp-style environment</li>
+                <li>emotionally regulated enough to withstand intensive technical learning</li>
+                <li>resilient enough to face the job search without collapsing</li>
+                <li>stable enough to transition into full-time employment</li>
+                <li>confident enough to see themselves as someone who belongs in tech</li>
+              </ul>
+
+              <p><strong>This meant Pillar 1 was not “introductory.”</strong><br>
+                It was foundational, structural, and non-negotiable for the success of the entire year-long program.
+              </p>
+
+              <p>
+                Every digital literacy lab, mindset exercise, leadership session, communication task, and reflective practice in Pillar 1 was designed with these downstream requirements in mind.
+              </p>
+
+              <p><strong>Pillar 1 wasn’t just first.</strong><br>
+                It was the launchpad — emotionally, cognitively, and technically.
+              </p>
+
+              <h4>The Result</h4>
+
+              <p><strong>By reverse-engineering the competencies of Pillars 2 and 3 into Pillar 1, we were able to take learners who entered the program with:</strong></p>
+              <ul>
+                <li>no digital skills</li>
+                <li>no experience with professional writing</li>
+                <li>no emotional scaffolding for sustained learning</li>
+                <li>no familiarity with tech tools</li>
+                <li>little internal or external stability</li>
+              </ul>
+
+              <p><strong>…and prepare them for:</strong></p>
+              <ul>
+                <li>full-time UX training</li>
+                <li>intensive job search preparation</li>
+                <li>life-changing work in the tech industry</li>
+              </ul>
+
+              <p>
+                This is Backward Design not as a classroom strategy, but as an architectural backbone for human transformation.
+              </p>
+            </details>
+
+            <!-- 5. SME Collaboration -->
+            <details>
+              <summary>5. SME Collaboration: Instructional Designer as Interpreter, Editor, and Air-Traffic Controller</summary>
+
+              <p>
+                CROP’s instructors and leaders brought deep content expertise — but not instructional architecture, and not experience designing for a full-time learning environment that required daily pacing, emotional containment, and cross-Pillar alignment.
+              </p>
+
+              <p>
+                My role quickly expanded beyond traditional “ID support.” It became a systems-level partnership focused on translating expertise into instruction that could actually function in real classrooms, at full-time intensity.
+              </p>
+
+              <p><strong>That work included:</strong></p>
+              <ul>
+                <li>extracting ideas from SMEs and shaping them into teachable sequences</li>
+                <li>translating expert language into accessible, learner-ready steps</li>
+                <li>cutting or reshaping content that didn’t align to defined outcomes</li>
+                <li>facilitating Backward Design sessions to clarify competencies across all Pillars</li>
+                <li>reverse-engineering Pillar 1 to prepare learners for the technical intensity of Pillar 2</li>
+                <li>creating shared templates for lessons, assessments, and instructor scripts</li>
+                <li>managing scope creep while maintaining trust and momentum</li>
+                <li>ensuring coherence across instructors with vastly different teaching styles</li>
+                <li>coaching instructors on how to facilitate emotionally heavy content without overwhelming learners</li>
+              </ul>
+
+              <h4>Pillar 2: Technical Instruction (UX, Coding, Digital Design)</h4>
+
+              <p>
+                The Pillar 2 SMEs were highly skilled — experts in UX, coding, and digital design. What they needed was not remediation, but instructional structure.
+              </p>
+
+              <p><strong>I partnered with them to:</strong></p>
+              <ul>
+                <li>map expert knowledge into teachable, sequenced learning progressions</li>
+                <li>align their content with the foundational competencies developed in Pillar 1</li>
+                <li>define daily pacing appropriate for a full-time learning environment</li>
+                <li>maintain technical rigor without overwhelming learners still stabilizing</li>
+              </ul>
+
+              <p>
+                This collaboration ensured that technical instruction remained challenging, coherent, and accessible — rather than unintentionally exclusionary.
+              </p>
+
+              <h4>Pillar 3: Professional Development</h4>
+
+              <p>
+                Pillar 3 required a different kind of support. The instructor brought strong intentions and lived experience, but lacked a structured instructional framework.
+              </p>
+
+              <p><strong>Together, we rebuilt the Pillar from the ground up, including:</strong></p>
+              <ul>
+                <li>defining clear learning outcomes</li>
+                <li>sequencing content for skill development and confidence-building</li>
+                <li>designing assessments aligned to real-world application</li>
+                <li>creating learner-centered activities</li>
+                <li>building instructor confidence and facilitation clarity</li>
+              </ul>
+
+              <p>
+                This work transformed Pillar 3 from a collection of ideas into a functional, teachable curriculum.
+              </p>
+
+              <h4>Coaching SMEs to Coach Learners</h4>
+
+              <p>
+                Because leadership development content was emotionally demanding and practiced daily, I also supported SMEs in the facilitation layer of their work. This included coaching them on:
+              </p>
+
+              <ul>
+                <li>facilitating vulnerability without retraumatizing learners</li>
+                <li>pacing emotionally heavy material within a full-time schedule</li>
+                <li>maintaining psychological safety while still holding learners accountable</li>
+                <li>responding skillfully when learners began practicing agency in complex, imperfect ways</li>
+              </ul>
+
+              <p>
+                This work required trust, emotional intelligence, and constant calibration. It was instructional design as diplomacy. It was also project management.
+              </p>
+
+              <p>
+                And while I am not an air-traffic controller — I often served as the stabilizing force that allowed the system to keep functioning. And in the end, we all landed that plane together.
+              </p>
+            </details>
+
+            <!-- 6. Frameworks -->
+            <details>
+              <summary>6. Design Frameworks I Used Before I Knew What to Call Them</summary>
+
+              <p><strong>The instructional decisions behind L4L were grounded in established learning design principles, including:</strong></p>
+              <ul>
+                <li>ADDIE for overall structure and iteration</li>
+                <li>Backward Design for outcomes mapping and alignment</li>
+                <li>Universal Design for Learning (UDL) for accessibility and learner choice</li>
+                <li>Trauma-informed pedagogy for emotional safety and engagement</li>
+                <li>Mayer’s Principles to manage cognitive load in dense learning environments</li>
+                <li>Adult Learning Theory to ensure relevance, autonomy, and immediate application</li>
+              </ul>
+
+              <p>
+                At the time, I wasn’t thinking in terms of frameworks or formal labels. I was solving real instructional problems for real people, in real conditions.
+              </p>
+
+              <p>
+                If needed, I could easily translate this work into academic language and citations. But the truth is simpler: I built a system that worked — and continued to work — for learners navigating complexity, pressure, and change.
+              </p>
+
+              <p>
+                That outcome matters more than whether I knew the names at the time.
+              </p>
+            </details>
+
+            <!-- 7. Development Highlights -->
+            <details>
+              <summary>7. Development Highlights: The Actual Making of It All</summary>
+
+              <p><strong>This work included designing and developing:</strong></p>
+              <ul>
+                <li>a full 12-week, full-time instructional sequence (40 hours per week)</li>
+                <li>daily facilitator guides with pacing, timing, trauma-informed notes, and troubleshooting</li>
+                <li>slide decks for lessons, labs, workshops, and leadership circles</li>
+                <li>learner handouts, practice tasks, and structured activity flows</li>
+                <li>troubleshooting plans for both technical failures and emotional dysregulation</li>
+                <li>performance and formative assessments aligned to cross-Pillar outcomes</li>
+                <li>learner reflection tools designed to build emotional awareness and agency</li>
+                <li>cross-lesson scaffolding to maintain coherence across content domains</li>
+                <li>intentional integration points with Pillar 2 (UX design) and Pillar 3 (career readiness)</li>
+                <li>alignment documents, rubrics, and program-wide instructional templates</li>
+                <li>asynchronous modules for reinforcement and differentiated pacing</li>
+                <li>learner analytics tools to track progress and support instructors in real time</li>
+                <li>badge-based microcredentials that made daily and weekly growth visible</li>
+              </ul>
+
+              <p>
+                All of this had to function inside a full-time learning environment where emotional safety, cognitive load, and learner stamina mattered just as much as content coverage.
+              </p>
+
+              <p>
+                This is the point in the story where many instructional designers might say, “And that was a lot.”
+              </p>
+
+              <p><strong>But honestly? I loved it.</strong></p>
+
+              <p>
+                There is nothing quite like designing forty hours of learning a week to teach you what truly matters in instructional design.
+              </p>
+            </details>
+
+            <!-- 8. Challenges -->
+            <details>
+              <summary>8. Challenges and How I Solved Them (The Fun Part)</summary>
+
+              <p><strong>Challenge:</strong> “We want to teach everything.”<br>
+                <strong>Solution:</strong> I established outcome-aligned boundaries so “everything” became the right things, at the right time, for the right reasons.
+              </p>
+
+              <p><strong>Challenge:</strong> Learners arrived with wildly different starting points — from “never used a smartphone” to “already tech-curious.”<br>
+                <strong>Solution:</strong> I designed modular activities, layered scaffolds, differentiation pathways, and daily instructor notes so all learners could progress without comparison or shame.
+              </p>
+
+              <p><strong>Challenge:</strong> The program ran full-time (40 hours/week). Learners needed growth without burnout.<br>
+                <strong>Solution:</strong> I structured each day around cognitive pacing and emotional logic: challenge → support → practice → recovery → repeat.
+              </p>
+
+              <p><strong>Challenge:</strong> Leadership content was emotionally heavy and practiced daily.<br>
+                <strong>Solution:</strong> I coached instructors on facilitation strategies that allowed vulnerability without overwhelm — regulating group energy while still building accountability and agency.
+              </p>
+
+              <p><strong>Challenge:</strong> Pillar 2 SMEs were brilliant but needed coherence with the rest of the program.<br>
+                <strong>Solution:</strong> I used Backward Design to align Pillar 1 with their UX competencies and built clear structural bridges into their curriculum.
+              </p>
+
+              <p><strong>Challenge:</strong> Pillar 3 required a complete instructional rebuild.<br>
+                <strong>Solution:</strong> I partnered with the instructor to redesign the Pillar from the ground up — outcomes, sequencing, activities, and assessments — so it could actually prepare learners for the job search.
+              </p>
+
+              <p><strong>Challenge:</strong> Instructor confidence varied widely.<br>
+                <strong>Solution:</strong> I created scripts, flexible pacing guides, troubleshooting notes, and built-in reflection tools so every instructor could facilitate skillfully, regardless of background.
+              </p>
+
+              <p><strong>Challenge:</strong> No pre-existing materials.<br>
+                <strong>Solution:</strong> I made the materials. All of them.
+              </p>
+
+              <p><strong>Challenge:</strong> The program needed to function as a coherent, emotionally safe, multi-Pillar ecosystem.<br>
+                <strong>Solution:</strong> I designed Pillar 1 as the backbone — building the emotional, technical, and cognitive stability required for learners to survive and thrive in Pillars 2 and 3.
+              </p>
+            </details>
+
+            <!-- 9. Stan -->
+            <details>
+              <summary>9. A Note on Impact: Stan</summary>
+
+              <p>
+                Some outcomes can’t be captured in metrics. They live in the people who move through the system.
+              </p>
+
+              <p><strong>Stan was one of them.</strong></p>
+
+              <p>
+                When he entered Pillar 1, his digital literacy was effectively nonexistent. He was a kind, gentle man — the sort of person who should have been retired on a beach in Hawaii — but instead had spent most of his life behind bars. Starting from scratch would have been overwhelming for many people.
+              </p>
+
+              <p><strong>Stan didn’t flinch.</strong></p>
+
+              <p>
+                He showed up every day ready to learn, ready to try, ready to struggle, and ready to try again. He engaged fully with the structure of the program — not because it was easy, but because he refused to be anything other than fully alive in the opportunity he’d been given.
+              </p>
+
+              <p>
+                By mid–Pillar 3, he pulled me aside with quiet pride and showed me an app he had built on his phone. The joy on his face — that moment of <em>I did this</em> — is the reason this kind of instructional design matters.
+              </p>
+
+              <p>
+                Before the end of the program, Stan landed a job. He moved into an apartment with another learner from his cohort. He began building a life that reflected who he had always been, long before the system allowed him to show it.
+              </p>
+
+              <p>
+                Stan passed away recently, on the ferry between San Francisco and the East Bay — his favorite place in the world. A few months before he died, he texted me to say he had started setting reminders on his phone to reach out to the people he cared about.
+              </p>
+
+              <p><strong>I was one of those people.</strong></p>
+
+              <p>
+                He thanked me for being a mentor. But the truth is, the honor was mine.
+              </p>
+
+              <p>
+                Stan’s story is not an outlier. It is an example of what becomes possible when learners are met with systems designed for their realities — their histories, their strengths, and their futures.
+              </p>
+
+              <p>
+                He is one of the clearest reasons I do this work.
+              </p>
+            </details>
+
+            <!-- 10. Outcomes -->
+            <details>
+              <summary>10. Outcomes, Impact, and Reflection</summary>
+
+              <h4>Measurable Outcomes</h4>
+
+              <p>
+                While much of this work centered on confidence, agency, and identity, the outcomes were also concrete and measurable.
+              </p>
+
+              <ul>
+                <li>12 learners enrolled in the first cohort</li>
+                <li>100% completed the full year-long program</li>
+                <li>100% secured paid employment, either during Pillar 4 or within three months of completion</li>
+              </ul>
+
+              <p><strong>Post-program outcomes included:</strong></p>
+              <ul>
+                <li>Tech roles in Silicon Valley</li>
+                <li>Tech-adjacent roles (including tech sales)</li>
+                <li>Stable nonprofit positions leveraging newly acquired technical skills</li>
+                <li>Continued education through college or trade programs</li>
+              </ul>
+
+              <p>
+                By the end of the program, learners who entered with little or no digital experience were building and designing websites in Figma, navigating complex digital systems independently, and sustaining full-time learning intensity across a year-long program.
+              </p>
+
+              <p>
+                Equally important were the behavioral outcomes. Learners demonstrated marked growth in feedback tolerance, follow-through, emotional regulation, and resilience — capacities essential for long-term success in both technical training and the workplace.
+              </p>
+
+              <p>
+                Instructors also reported increased confidence facilitating challenging content and credited the program’s structure with making rigorous, emotionally demanding instruction sustainable over time.
+              </p>
+
+              <h4>Reflection: What This Project Taught Me</h4>
+
+              <p><strong>This project taught me:</strong></p>
+              <ul>
+                <li>that I can build full instructional ecosystems from scratch — not just courses</li>
+                <li>how to lead SMEs with clarity, kindness, and backbone</li>
+                <li>how to design for adults whose skills, histories, and emotional worlds vary dramatically</li>
+                <li>how to build emotional scaffolding into cognitively demanding work</li>
+                <li>how to balance structure with flexibility at a daily, hourly, moment-to-moment level</li>
+                <li>how to translate a vision into a system — and a system into real human transformation</li>
+              </ul>
+
+              <p>
+                I didn’t walk away from this project thinking about what I would do differently next time. I walked away knowing what I am capable of doing now.
+              </p>
+
+              <p>
+                As the program evolved, I expanded its infrastructure — adding analytics, badge systems, scenario-based practice, instructor tools, alignment documents, and asynchronous modules — not as enhancements, but as necessities for a system operating at full-time intensity.
+              </p>
+
+              <p>
+                This project didn’t just teach me what instructional design is. It clarified the kind of instructional designer I am.
+              </p>
+
+              <p>
+                And I’m ready to bring that same approach — strategic, human-centered, and unafraid of complexity — to the next challenge.
+              </p>
+            </details>
+          </div>
         </div>
-    </nav>
 
-
-
-    <!-- Portfolio Section -->
-    <section id="portfolio">
-        <div class="container">
-            <h2>Portfolio</h2>
-            
-            <div class="portfolio-grid">
-
-                               
-                <!-- L4L CASE STUDY -->
-                <div class="portfolio-item featured full-width" id="l4l-case-study">
-                    <h3>📖 L4L Case Study: Building Leadership for Life</h3>
-                    <p class="portfolio-description">
-                        How I designed a full-time instructional foundation and coordinated a coherent learning ecosystem across a year-long workforce development program.
-                    </p>
-
-                    <div class="tags">
-                        <span class="tag">Program Architecture</span>
-                        <span class="tag">Trauma-Informed Design</span>
-                        <span class="tag">Full-Time Learning Ecosystem</span>
-                    </div>
-
-                    <p>
-                        Leadership for Life (L4L) was a 12-week, full-time (40 hrs/week) foundational program for formerly incarcerated adults entering a year-long tech career pathway. I served as the sole instructional designer and design lead for Pillar 1, co-facilitating instruction to observe learner response, iterate on design decisions, and ensure the system functioned under full-time conditions.
-                    </p>
-                    <p>
-                        In parallel, I partnered closely with SMEs leading Pillars 2 and 3 to align competencies, instructional assumptions, and learner readiness across the full year-long program.
-                    </p>
-                    <p>
-                        It started as a three-day seminar and a lot of hope. What it became was a stable, humane instructional system that could hold learners through a full year of transformation.
-                    </p>
-
-                    <p class="accordion-intro">
-                        Expand the sections below to explore the full case study.
-                    </p>
-
-                    <div class="case-study-accordion">
-                        <!-- 1. Context -->
-                        <details>
-                          <summary>1. Context: The "We Had a Dream" Phase</summary>
-
-                          <p><strong>CROP hired me at a moment when they had:</strong></p>
-                          <ul>
-                            <li>a three-day leadership seminar</li>
-                            <li>extremely passionate goals</li>
-                            <li>a vision for a full-time, year-long "Pillar" program sketched mostly in spirit</li>
-                            <li>no actual curriculum beyond the initial seminar</li>
-                          </ul>
-
-                          <p><strong>They essentially said:</strong><br>
-                            "We want to teach leadership, digital literacy, financial wellness, mindset, professional skills, reading, writing, sales, and UX design — all of it — to formerly incarcerated adults trying to rebuild their lives."
-                          </p>
-
-                          <p><strong>I said:</strong><br>
-                            "Okay… so basically you want to teach dreams right now?"
-                          </p>
-
-                          <p>Laughter was exchanged. Then the real work began.</p>
-
-                          <p>
-                            At that point, the organization had vision without infrastructure. There was no instructional sequence, no pacing logic, no defined learner readiness assumptions, and no system capable of sustaining full-time learning without burnout or collapse.
-                          </p>
-
-                          <p>
-                            SMEs were later brought in to lead Pillars 2, 3, and 4. I served as the sole instructional designer and design lead for Pillar 1, while also overseeing cross-Pillar instructional coherence across the full year-long program.
-                          </p>
-
-                          <p>
-                            This meant translating aspiration into architecture — and building a foundation stable enough for everything that followed.
-                          </p>
-
-                          <p>
-                            Objectively, this was a senior-level scope. I was fresh enough not to know that at the time — which may be why it worked. I didn't know it was supposed to be impossible.
-                          </p>
-
-                          <p>
-                            And for what it's worth: I can never again hear "we're building the plane as we fly it" without thinking of the founders who trusted me to figure out how to build their plane — while learners were already onboard.
-                          </p>
-                        </details>
-
-                        <!-- 2. Translating Vision Into Structure -->
-                        <details>
-                          <summary>2. Translating Vision Into Structure</summary>
-
-                          <p>
-                            My first design task was taking a large, luminous cloud of aspiration and turning it into instruction that could actually function.
-                          </p>
-
-                          <p><strong>That meant translating vision into:</strong></p>
-                          <ul>
-                            <li>concrete, observable learning outcomes</li>
-                            <li>a coherent instructional sequence</li>
-                            <li>a full-time learning plan that real humans could complete without collapsing under cognitive overload</li>
-                          </ul>
-
-                          <p><strong>Practically, this required:</strong></p>
-                          <ul>
-                            <li>identifying the instructional through-line of the entire year-long program</li>
-                            <li>defining the specific role Pillar 1 needed to play within that system</li>
-                            <li>deciding what "success" realistically looked like at the 12-week mark</li>
-                            <li>carving an overwhelming volume of content into structured, climbable learning hills</li>
-                          </ul>
-
-                          <p><strong>Pillar 1 could not be everything.</strong><br>
-                            It needed to be the foundation — the place where learners built stability, skill, and confidence before being asked to absorb technical complexity or navigate professional pressure.
-                          </p>
-
-                          <p><strong>Every design decision at this stage was shaped by one core question:</strong><br>
-                            What do learners need to be able to do, believe, and sustain in order to survive what comes next?
-                          </p>
-                        </details>
-
-                        <!-- 3. Learners -->
-                        <details>
-                          <summary>3. Learners: Adults With Complex Lives and Incredible Potential</summary>
-
-                          <p><strong>My learners were adults reentering society after incarceration who often faced:</strong></p>
-                          <ul>
-                            <li>disrupted or incomplete formal education</li>
-                            <li>limited digital literacy</li>
-                            <li>unstable housing or employment</li>
-                            <li>trauma histories</li>
-                            <li>immediate practical and emotional pressures</li>
-                          </ul>
-
-                          <p>This context shaped every instructional decision.</p>
-
-                          <p><strong>The curriculum needed to be:</strong></p>
-                          <ul>
-                            <li>trauma-informed without being permissive</li>
-                            <li>confidence-building without being condescending</li>
-                            <li>flexible without sacrificing structure</li>
-                            <li>low-barrier with a high bar for growth</li>
-                            <li>immediately applicable to learners' real lives</li>
-                            <li>human-centered rather than content-centered</li>
-                          </ul>
-
-                          <p>
-                            This is why I designed the program around small wins, visible progress, and learner agency. Early success stabilized confidence. Clear structure reduced anxiety. Choice and relevance increased engagement. Together, these elements allowed learners to persist through full-time intensity without disengaging or burning out.
-                          </p>
-
-                          <p>
-                            The goal was not to make learning easier — it was to make growth possible.
-                          </p>
-                        </details>
-
-                        <!-- 4. Program Architecture -->
-                        <details>
-                          <summary>4. Program Architecture: Does Anybody Know How to Fly This Thing?</summary>
-
-                          <p><strong>L4L wasn’t a “once-a-week” program.</strong><br>
-                            It was a full-time, immersive learning environment: 9am–4pm, five days a week, for twelve weeks.
-                          </p>
-
-                          <p>
-                            That meant I wasn’t designing a collection of lessons — I was designing an entire daily learning ecosystem capable of holding real humans, with real histories, for forty hours a week without breaking them or burning them out.
-                          </p>
-
-                          <p><strong>The architecture had to be:</strong></p>
-                          <ul>
-                            <li>digestible and predictable</li>
-                            <li>scaffolded without being rigid</li>
-                            <li>emotionally safe without lowering expectations</li>
-                            <li>cognitively sustainable at full-time intensity</li>
-                            <li>realistic for instructors to facilitate</li>
-                            <li>survivable — and ultimately transformative — for learners</li>
-                          </ul>
-
-                          <p>
-                            The 12-week structure emerged from what learners needed and what the full-time format demanded. Rather than treating topics as discrete units, I designed L4L as a three-part instructional architecture, with each component reinforcing the others and supporting the daily rhythm of the program.
-                          </p>
-
-                          <h4>A. Digital Literacy (Foundational Competence)</h4>
-                          <p><em>“Let’s get your hands on the tools and build confidence.”</em></p>
-
-                          <p>
-                            At forty hours a week, technology exposure couldn’t be a one-off lesson. It had to be woven into the daily structure so familiarity — and confidence — accumulated naturally.
-                          </p>
-
-                          <p><strong>Daily design elements included:</strong></p>
-                          <ul>
-                            <li>guided device setup and digital safety practice</li>
-                            <li>multi-hour, hands-on productivity labs (Docs, Drive, Sheets, file structure)</li>
-                            <li>micro-tasks embedded throughout the day for low-stakes repetition</li>
-                          </ul>
-
-                          <p>
-                            Digital literacy came first because learners needed technical fluency to participate fully in every other Pillar — and because confidence with tools stabilized emotional bandwidth for learning overall.
-                          </p>
-
-                          <h4>B. Financial Wellness (Practical Stability)</h4>
-                          <p><em>“Let’s demystify money and build agency.”</em></p>
-
-                          <p>
-                            At full-time intensity, financial content could not be overwhelming or shame-inducing. It needed to be paced, revisited, and integrated into the daily flow rather than isolated as a single unit.
-                          </p>
-
-                          <p><strong>Daily design elements included:</strong></p>
-                          <ul>
-                            <li>iterative budgeting work (learn → apply → refine)</li>
-                            <li>values-based conversations embedded as warm-ups or cool-downs</li>
-                            <li>scenario activities modeled on real-life financial decision points</li>
-                          </ul>
-
-                          <p>
-                            Financial literacy grounded learners in real-world stability, providing clarity and agency in an otherwise high-cognitive-load environment.
-                          </p>
-
-                          <h4>C. Leadership Development (The Core of the Program)</h4>
-                          <p><em>“Let’s turn knowledge, mindset, and skills into self-direction.”</em></p>
-
-                          <p>
-                            Leadership Development formed the emotional and instructional center of the program — and carried the largest share of instructional time.
-                          </p>
-
-                          <p><strong>This domain included:</strong></p>
-                          <ul>
-                            <li>professional communication (email writing, tone calibration, revision)</li>
-                            <li>mindset and motivation (task management, resilience, habit formation)</li>
-                            <li>reading and writing practice (discussion, summaries, expressive writing)</li>
-                            <li>life-navigation strategies (decision-making, time management, values alignment)</li>
-                            <li>agency and radical accountability — learning to take responsibility without collapsing</li>
-                          </ul>
-
-                          <p>
-                            Because this work was emotionally demanding and practiced daily, pacing was critical. I designed each day to alternate between cognitive load, emotional depth, structured practice, and recovery.
-                          </p>
-
-                          <p><strong>Daily design elements included:</strong></p>
-                          <ul>
-                            <li>extended mindset workshops with built-in reflection periods</li>
-                            <li>professional communication practice embedded between heavier sessions</li>
-                            <li>reading and writing blocks designed to build stamina without overwhelm</li>
-                            <li>leadership circles that balanced vulnerability with psychological safety</li>
-                          </ul>
-
-                          <p>
-                            This domain received the most instructional time because it supported both job readiness and personal autonomy — and because learners needed a steady, containered environment to practice this level of growth.
-                          </p>
-
-                          <h4>System-Level Architecture (What Held the Whole Program Together)</h4>
-
-                          <p>
-                            Designing twelve weeks of full-time instruction required designing the entire infrastructure around the content.
-                          </p>
-
-                          <p><strong>That infrastructure included:</strong></p>
-                          <ul>
-                            <li>rubrics for consistent evaluation across instructors and days</li>
-                            <li>daily facilitator guides with pacing, scripts, trauma-informed notes, and troubleshooting</li>
-                            <li>performance and formative assessments embedded into weekly flow</li>
-                            <li>trauma-informed design baked into lesson sequencing, activity choice, and facilitation language</li>
-                            <li>learner support systems to stabilize navigation through full-time intensity</li>
-                            <li>integration of accessible tools (Google Classroom, digital skills platforms, etc.)</li>
-                            <li>badge-based microcredentials that made daily and weekly progress visible</li>
-                            <li>learner analytics to identify disengagement early</li>
-                            <li>scenario-based communication practice distributed across the week</li>
-                            <li>asynchronous modules to support differentiated pacing and makeup learning</li>
-                          </ul>
-
-                          <p>
-                            Cross-Pillar alignment was part of the architecture from the beginning. I learned the technical content taught in later Pillars and reverse-engineered the competencies learners would need by the time they arrived there.
-                          </p>
-
-                          <p><strong>That meant taking some learners from:</strong><br>
-                            “I have never used a smartphone”<br>
-                            to building websites in Figma and learning basic code — within a single full-time quarter.
-                          </p>
-
-                          <p><strong>This outcome wasn’t accidental.</strong><br>
-                            It was the result of a coherent, intentionally designed system built to develop capacity, confidence, and stability at scale.
-                          </p>
-
-                          <h4>Putting It All Together</h4>
-
-                          <p><strong>Everything was sequenced so that:</strong></p>
-                          <ul>
-                            <li>each component built on the last</li>
-                            <li>each skill connected to a higher-level outcome</li>
-                            <li>each day followed a clear cognitive and emotional logic</li>
-                            <li>instructors had the structure they needed to facilitate sustainably</li>
-                            <li>learners had the support they needed to grow without breaking</li>
-                          </ul>
-
-                          <p><strong>The result wasn’t just a twelve-week program.</strong><br>
-                            It was a daily instructional ecosystem, designed to hold people through real transformation on a real schedule with real stakes.
-                          </p>
-                        </details>
-
-                        <!-- 4.5 Backward Design -->
-                        <details>
-                          <summary>4.5 Backward Design in Action: Preparing Learners for the Reality of Tech Careers</summary>
-
-                          <p><strong>The ultimate goal of the program was clear:</strong><br>
-                            By the end of Pillar 3, learners needed to secure and sustain employment in the tech industry.
-                          </p>
-
-                          <p>
-                            Not just get a job — but function within it, navigate its demands, withstand pressure, and remain employed long-term after a lifetime shaped by incarceration, instability, or interrupted education.
-                          </p>
-
-                          <p>That end goal shaped every instructional decision upstream.</p>
-
-                          <h4>Pillar 3: Job Search + Career Stability</h4>
-                          <p><strong>What Learners Needed</strong></p>
-
-                          <p>
-                            To survive the intensity of the tech job search — and later, the realities of a tech work environment — learners needed far more than technical skill.
-                          </p>
-
-                          <p><strong>They needed:</strong></p>
-                          <ul>
-                            <li>emotional stability under stress</li>
-                            <li>clear, professional communication</li>
-                            <li>consistent follow-through</li>
-                            <li>confidence in the face of rejection</li>
-                            <li>the ability to self-regulate under pressure</li>
-                            <li>resilience after years of institutionalization and trauma</li>
-                          </ul>
-
-                          <p><strong>These were not “soft skills” or nice-to-haves.</strong><br>
-                            They were survival skills.
-                          </p>
-
-                          <h4>Pillar 2: UX Design + Technical Fluency</h4>
-                          <p><strong>What Learners Needed Before Technical Training Could Succeed</strong></p>
-
-                          <p><strong>Before learners could meaningfully engage with UX tools or technical instruction, they needed:</strong></p>
-                          <ul>
-                            <li>foundational digital literacy</li>
-                            <li>file management fluency</li>
-                            <li>comfort navigating multiple platforms</li>
-                            <li>stamina for full-time technical learning</li>
-                            <li>the ability to troubleshoot independently</li>
-                            <li>confidence to experiment, fail, and try again</li>
-                          </ul>
-
-                          <p>
-                            Without these foundations, the entire UX sequence would have collapsed under cognitive overload. The tech SMEs were highly skilled and their content was rigorous — but it assumed a baseline level of digital fluency many learners simply did not yet have.
-                          </p>
-
-                          <h4>What Pillar 1 Had to Do</h4>
-
-                          <p><strong>To make Pillars 2 and 3 viable, Pillar 1 needed to produce learners who were:</strong></p>
-                          <ul>
-                            <li>digitally competent enough to enter a UX bootcamp-style environment</li>
-                            <li>emotionally regulated enough to withstand intensive technical learning</li>
-                            <li>resilient enough to face the job search without collapsing</li>
-                            <li>stable enough to transition into full-time employment</li>
-                            <li>confident enough to see themselves as someone who belongs in tech</li>
-                          </ul>
-
-                          <p><strong>This meant Pillar 1 was not “introductory.”</strong><br>
-                            It was foundational, structural, and non-negotiable for the success of the entire year-long program.
-                          </p>
-
-                          <p>
-                            Every digital literacy lab, mindset exercise, leadership session, communication task, and reflective practice in Pillar 1 was designed with these downstream requirements in mind.
-                          </p>
-
-                          <p><strong>Pillar 1 wasn’t just first.</strong><br>
-                            It was the launchpad — emotionally, cognitively, and technically.
-                          </p>
-
-                          <h4>The Result</h4>
-
-                          <p><strong>By reverse-engineering the competencies of Pillars 2 and 3 into Pillar 1, we were able to take learners who entered the program with:</strong></p>
-                          <ul>
-                            <li>no digital skills</li>
-                            <li>no experience with professional writing</li>
-                            <li>no emotional scaffolding for sustained learning</li>
-                            <li>no familiarity with tech tools</li>
-                            <li>little internal or external stability</li>
-                          </ul>
-
-                          <p><strong>…and prepare them for:</strong></p>
-                          <ul>
-                            <li>full-time UX training</li>
-                            <li>intensive job search preparation</li>
-                            <li>life-changing work in the tech industry</li>
-                          </ul>
-
-                          <p>
-                            This is Backward Design not as a classroom strategy, but as an architectural backbone for human transformation.
-                          </p>
-                        </details>
-
-                        <!-- 5. SME Collaboration -->
-                        <details>
-                          <summary>5. SME Collaboration: Instructional Designer as Interpreter, Editor, and Air-Traffic Controller</summary>
-
-                          <p>
-                            CROP’s instructors and leaders brought deep content expertise — but not instructional architecture, and not experience designing for a full-time learning environment that required daily pacing, emotional containment, and cross-Pillar alignment.
-                          </p>
-
-                          <p>
-                            My role quickly expanded beyond traditional “ID support.” It became a systems-level partnership focused on translating expertise into instruction that could actually function in real classrooms, at full-time intensity.
-                          </p>
-
-                          <p><strong>That work included:</strong></p>
-                          <ul>
-                            <li>extracting ideas from SMEs and shaping them into teachable sequences</li>
-                            <li>translating expert language into accessible, learner-ready steps</li>
-                            <li>cutting or reshaping content that didn’t align to defined outcomes</li>
-                            <li>facilitating Backward Design sessions to clarify competencies across all Pillars</li>
-                            <li>reverse-engineering Pillar 1 to prepare learners for the technical intensity of Pillar 2</li>
-                            <li>creating shared templates for lessons, assessments, and instructor scripts</li>
-                            <li>managing scope creep while maintaining trust and momentum</li>
-                            <li>ensuring coherence across instructors with vastly different teaching styles</li>
-                            <li>coaching instructors on how to facilitate emotionally heavy content without overwhelming learners</li>
-                          </ul>
-
-                          <h4>Pillar 2: Technical Instruction (UX, Coding, Digital Design)</h4>
-
-                          <p>
-                            The Pillar 2 SMEs were highly skilled — experts in UX, coding, and digital design. What they needed was not remediation, but instructional structure.
-                          </p>
-
-                          <p><strong>I partnered with them to:</strong></p>
-                          <ul>
-                            <li>map expert knowledge into teachable, sequenced learning progressions</li>
-                            <li>align their content with the foundational competencies developed in Pillar 1</li>
-                            <li>define daily pacing appropriate for a full-time learning environment</li>
-                            <li>maintain technical rigor without overwhelming learners still stabilizing</li>
-                          </ul>
-
-                          <p>
-                            This collaboration ensured that technical instruction remained challenging, coherent, and accessible — rather than unintentionally exclusionary.
-                          </p>
-
-                          <h4>Pillar 3: Professional Development</h4>
-
-                          <p>
-                            Pillar 3 required a different kind of support. The instructor brought strong intentions and lived experience, but lacked a structured instructional framework.
-                          </p>
-
-                          <p><strong>Together, we rebuilt the Pillar from the ground up, including:</strong></p>
-                          <ul>
-                            <li>defining clear learning outcomes</li>
-                            <li>sequencing content for skill development and confidence-building</li>
-                            <li>designing assessments aligned to real-world application</li>
-                            <li>creating learner-centered activities</li>
-                            <li>building instructor confidence and facilitation clarity</li>
-                          </ul>
-
-                          <p>
-                            This work transformed Pillar 3 from a collection of ideas into a functional, teachable curriculum.
-                          </p>
-
-                          <h4>Coaching SMEs to Coach Learners</h4>
-
-                          <p>
-                            Because leadership development content was emotionally demanding and practiced daily, I also supported SMEs in the facilitation layer of their work. This included coaching them on:
-                          </p>
-
-                          <ul>
-                            <li>facilitating vulnerability without retraumatizing learners</li>
-                            <li>pacing emotionally heavy material within a full-time schedule</li>
-                            <li>maintaining psychological safety while still holding learners accountable</li>
-                            <li>responding skillfully when learners began practicing agency in complex, imperfect ways</li>
-                          </ul>
-
-                          <p>
-                            This work required trust, emotional intelligence, and constant calibration. It was instructional design as diplomacy. It was also project management.
-                          </p>
-
-                          <p>
-                            And while I am not an air-traffic controller — I often served as the stabilizing force that allowed the system to keep functioning. And in the end, we all landed that plane together.
-                          </p>
-                        </details>
-
-                        <!-- 6. Frameworks -->
-                        <details>
-                          <summary>6. Design Frameworks I Used Before I Knew What to Call Them</summary>
-
-                          <p><strong>The instructional decisions behind L4L were grounded in established learning design principles, including:</strong></p>
-                          <ul>
-                            <li>ADDIE for overall structure and iteration</li>
-                            <li>Backward Design for outcomes mapping and alignment</li>
-                            <li>Universal Design for Learning (UDL) for accessibility and learner choice</li>
-                            <li>Trauma-informed pedagogy for emotional safety and engagement</li>
-                            <li>Mayer’s Principles to manage cognitive load in dense learning environments</li>
-                            <li>Adult Learning Theory to ensure relevance, autonomy, and immediate application</li>
-                          </ul>
-
-                          <p>
-                            At the time, I wasn’t thinking in terms of frameworks or formal labels. I was solving real instructional problems for real people, in real conditions.
-                          </p>
-
-                          <p>
-                            If needed, I could easily translate this work into academic language and citations. But the truth is simpler: I built a system that worked — and continued to work — for learners navigating complexity, pressure, and change.
-                          </p>
-
-                          <p>
-                            That outcome matters more than whether I knew the names at the time.
-                          </p>
-                        </details>
-
-                        <!-- 7. Development Highlights -->
-                        <details>
-                          <summary>7. Development Highlights: The Actual Making of It All</summary>
-
-                          <p><strong>This work included designing and developing:</strong></p>
-                          <ul>
-                            <li>a full 12-week, full-time instructional sequence (40 hours per week)</li>
-                            <li>daily facilitator guides with pacing, timing, trauma-informed notes, and troubleshooting</li>
-                            <li>slide decks for lessons, labs, workshops, and leadership circles</li>
-                            <li>learner handouts, practice tasks, and structured activity flows</li>
-                            <li>troubleshooting plans for both technical failures and emotional dysregulation</li>
-                            <li>performance and formative assessments aligned to cross-Pillar outcomes</li>
-                            <li>learner reflection tools designed to build emotional awareness and agency</li>
-                            <li>cross-lesson scaffolding to maintain coherence across content domains</li>
-                            <li>intentional integration points with Pillar 2 (UX design) and Pillar 3 (career readiness)</li>
-                            <li>alignment documents, rubrics, and program-wide instructional templates</li>
-                            <li>asynchronous modules for reinforcement and differentiated pacing</li>
-                            <li>learner analytics tools to track progress and support instructors in real time</li>
-                            <li>badge-based microcredentials that made daily and weekly growth visible</li>
-                          </ul>
-
-                          <p>
-                            All of this had to function inside a full-time learning environment where emotional safety, cognitive load, and learner stamina mattered just as much as content coverage.
-                          </p>
-
-                          <p>
-                            This is the point in the story where many instructional designers might say, “And that was a lot.”
-                          </p>
-
-                          <p><strong>But honestly? I loved it.</strong></p>
-
-                          <p>
-                            There is nothing quite like designing forty hours of learning a week to teach you what truly matters in instructional design.
-                          </p>
-                        </details>
-
-                        <!-- 8. Challenges -->
-                        <details>
-                          <summary>8. Challenges and How I Solved Them (The Fun Part)</summary>
-
-                          <p><strong>Challenge:</strong> “We want to teach everything.”<br>
-                            <strong>Solution:</strong> I established outcome-aligned boundaries so “everything” became the right things, at the right time, for the right reasons.
-                          </p>
-
-                          <p><strong>Challenge:</strong> Learners arrived with wildly different starting points — from “never used a smartphone” to “already tech-curious.”<br>
-                            <strong>Solution:</strong> I designed modular activities, layered scaffolds, differentiation pathways, and daily instructor notes so all learners could progress without comparison or shame.
-                          </p>
-
-                          <p><strong>Challenge:</strong> The program ran full-time (40 hours/week). Learners needed growth without burnout.<br>
-                            <strong>Solution:</strong> I structured each day around cognitive pacing and emotional logic: challenge → support → practice → recovery → repeat.
-                          </p>
-
-                          <p><strong>Challenge:</strong> Leadership content was emotionally heavy and practiced daily.<br>
-                            <strong>Solution:</strong> I coached instructors on facilitation strategies that allowed vulnerability without overwhelm — regulating group energy while still building accountability and agency.
-                          </p>
-
-                          <p><strong>Challenge:</strong> Pillar 2 SMEs were brilliant but needed coherence with the rest of the program.<br>
-                            <strong>Solution:</strong> I used Backward Design to align Pillar 1 with their UX competencies and built clear structural bridges into their curriculum.
-                          </p>
-
-                          <p><strong>Challenge:</strong> Pillar 3 required a complete instructional rebuild.<br>
-                            <strong>Solution:</strong> I partnered with the instructor to redesign the Pillar from the ground up — outcomes, sequencing, activities, and assessments — so it could actually prepare learners for the job search.
-                          </p>
-
-                          <p><strong>Challenge:</strong> Instructor confidence varied widely.<br>
-                            <strong>Solution:</strong> I created scripts, flexible pacing guides, troubleshooting notes, and built-in reflection tools so every instructor could facilitate skillfully, regardless of background.
-                          </p>
-
-                          <p><strong>Challenge:</strong> No pre-existing materials.<br>
-                            <strong>Solution:</strong> I made the materials. All of them.
-                          </p>
-
-                          <p><strong>Challenge:</strong> The program needed to function as a coherent, emotionally safe, multi-Pillar ecosystem.<br>
-                            <strong>Solution:</strong> I designed Pillar 1 as the backbone — building the emotional, technical, and cognitive stability required for learners to survive and thrive in Pillars 2 and 3.
-                          </p>
-                        </details>
-
-                        <!-- 9. Stan -->
-                        <details>
-                          <summary>9. A Note on Impact: Stan</summary>
-
-                          <p>
-                            Some outcomes can’t be captured in metrics. They live in the people who move through the system.
-                          </p>
-
-                          <p><strong>Stan was one of them.</strong></p>
-
-                          <p>
-                            When he entered Pillar 1, his digital literacy was effectively nonexistent. He was a kind, gentle man — the sort of person who should have been retired on a beach in Hawaii — but instead had spent most of his life behind bars. Starting from scratch would have been overwhelming for many people.
-                          </p>
-
-                          <p><strong>Stan didn’t flinch.</strong></p>
-
-                          <p>
-                            He showed up every day ready to learn, ready to try, ready to struggle, and ready to try again. He engaged fully with the structure of the program — not because it was easy, but because he refused to be anything other than fully alive in the opportunity he’d been given.
-                          </p>
-
-                          <p>
-                            By mid–Pillar 3, he pulled me aside with quiet pride and showed me an app he had built on his phone. The joy on his face — that moment of <em>I did this</em> — is the reason this kind of instructional design matters.
-                          </p>
-
-                          <p>
-                            Before the end of the program, Stan landed a job. He moved into an apartment with another learner from his cohort. He began building a life that reflected who he had always been, long before the system allowed him to show it.
-                          </p>
-
-                          <p>
-                            Stan passed away recently, on the ferry between San Francisco and the East Bay — his favorite place in the world. A few months before he died, he texted me to say he had started setting reminders on his phone to reach out to the people he cared about.
-                          </p>
-
-                          <p><strong>I was one of those people.</strong></p>
-
-                          <p>
-                            He thanked me for being a mentor. But the truth is, the honor was mine.
-                          </p>
-
-                          <p>
-                            Stan’s story is not an outlier. It is an example of what becomes possible when learners are met with systems designed for their realities — their histories, their strengths, and their futures.
-                          </p>
-
-                          <p>
-                            He is one of the clearest reasons I do this work.
-                          </p>
-                        </details>
-
-                        <!-- 10. Outcomes -->
-                        <details>
-                          <summary>10. Outcomes, Impact, and Reflection</summary>
-
-                          <h4>Measurable Outcomes</h4>
-
-                          <p>
-                            While much of this work centered on confidence, agency, and identity, the outcomes were also concrete and measurable.
-                          </p>
-
-                          <ul>
-                            <li>12 learners enrolled in the first cohort</li>
-                            <li>100% completed the full year-long program</li>
-                            <li>100% secured paid employment, either during Pillar 4 or within three months of completion</li>
-                          </ul>
-
-                          <p><strong>Post-program outcomes included:</strong></p>
-                          <ul>
-                            <li>Tech roles in Silicon Valley</li>
-                            <li>Tech-adjacent roles (including tech sales)</li>
-                            <li>Stable nonprofit positions leveraging newly acquired technical skills</li>
-                            <li>Continued education through college or trade programs</li>
-                          </ul>
-
-                          <p>
-                            By the end of the program, learners who entered with little or no digital experience were building and designing websites in Figma, navigating complex digital systems independently, and sustaining full-time learning intensity across a year-long program.
-                          </p>
-
-                          <p>
-                            Equally important were the behavioral outcomes. Learners demonstrated marked growth in feedback tolerance, follow-through, emotional regulation, and resilience — capacities essential for long-term success in both technical training and the workplace.
-                          </p>
-
-                          <p>
-                            Instructors also reported increased confidence facilitating challenging content and credited the program’s structure with making rigorous, emotionally demanding instruction sustainable over time.
-                          </p>
-
-                          <h4>Reflection: What This Project Taught Me</h4>
-
-                          <p><strong>This project taught me:</strong></p>
-                          <ul>
-                            <li>that I can build full instructional ecosystems from scratch — not just courses</li>
-                            <li>how to lead SMEs with clarity, kindness, and backbone</li>
-                            <li>how to design for adults whose skills, histories, and emotional worlds vary dramatically</li>
-                            <li>how to build emotional scaffolding into cognitively demanding work</li>
-                            <li>how to balance structure with flexibility at a daily, hourly, moment-to-moment level</li>
-                            <li>how to translate a vision into a system — and a system into real human transformation</li>
-                          </ul>
-
-                          <p>
-                            I didn’t walk away from this project thinking about what I would do differently next time. I walked away knowing what I am capable of doing now.
-                          </p>
-
-                          <p>
-                            As the program evolved, I expanded its infrastructure — adding analytics, badge systems, scenario-based practice, instructor tools, alignment documents, and asynchronous modules — not as enhancements, but as necessities for a system operating at full-time intensity.
-                          </p>
-
-                          <p>
-                            This project didn’t just teach me what instructional design is. It clarified the kind of instructional designer I am.
-                          </p>
-
-                          <p>
-                            And I’m ready to bring that same approach — strategic, human-centered, and unafraid of complexity — to the next challenge.
-                          </p>
-                        </details>
-                    </div>
-                </div>
-
-
-                <!-- STORYLINE COURSE: UPSET CUSTOMERS -->
-                <div class="portfolio-item full-width" id="upset-customers-storyline">
-                    <h3>🎬 Storyline Module: The Moment That Matters — Navigating Upset Customers with Skill & Confidence</h3>
-
-                    <p class="portfolio-description">
-                        A decision-based learning module focused on emotional regulation, cognitive reframing, and intentional choice-making during high-pressure customer interactions.
-                    </p>
-
-                    <div class="tags">
-                        <span class="tag">Articulate Storyline 360</span>
-                        <span class="tag">Video Content Creation</span>
-                        <span class="tag">Behavioral Skill Building</span>
-                        <span class="tag">Customer Support Training</span>
-                    </div>
-
-                    <p>
-                        This interactive module teaches learners how to navigate upset customer interactions by first regulating their own reactions and then choosing a clear, solutions-oriented response. Rather than providing scripts, the experience focuses on the emotional and behavioral dynamics that shape customer conversations and empowers learners to take control of the situation by staying grounded themselves.
-                    </p>
-                    <p>
-                        Learners step through realistic customer moments and make decisions at key points in the interaction. Each choice highlights how tone, regulation, and intent influence the outcome of the exchange, reinforcing sound judgment under pressure.
-                    </p>
-                    <p>
-                        Built in Articulate Storyline 360 to support custom interaction design and scenario framing using visual and video elements. Storyline allows high levels of customization for focused decision moments and guided feedback without overwhelming the learner. Animated video elements built in Canva for simplicity and quick iteration.
-                    </p>
-
-                    <div class="embed-container">
-                        <iframe
-                            src="https://itsmekitb.github.io/itsmekitb/UpsetCustomersStoryline/story.html"
-                            title="The Moment That Matters: Navigating Upset Customers"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-
-                    <p class="embed-link">
-                        Prefer a bigger view?
-                        <a href="https://itsmekitb.github.io/itsmekitb/UpsetCustomersStoryline/story.html" target="_blank">
-                            Open this module in full screen →
-                        </a>
-                    </p>
-                </div>
-
-                
-                <!-- RISE 360 EMAIL COURSE -->
-                <div class="portfolio-item full-width" id="email-course">
-                    <h3>📧 Rise Micro Course: Write Emails People Actually Want to Read — Navigating Tricky Situations With Confidence</h3>
-                    <div class="tags">
-                        <span class="tag">Articulate Rise 360</span>
-                        <span class="tag">Scenario-Based Learning</span>
-                        <span class="tag">Interpersonal Communication</span>
-                        <span class="tag">Professional Skill Building</span>
-                    </div>
-                    <p>
-                        This self-paced micro-course helps learners recognize and correct common behavioral mistakes in workplace email — from tone misalignment to unclear asks and relationship breakdowns.
-                    </p>
-                    <p>
-                        Learners analyze ineffective examples, practice decision-making within realistic scenarios, see the consequences of less-effective responses, and then apply core communication principles to write their own emails. The course emphasizes judgment, emotional awareness, and relationship-centered communication over rigid templates or canned scripts.
-                    </p>
-                    <p>
-                        Built in Rise 360 to support scalable delivery, clean corporate presentation, and end-to-end learning — including guided practice, downloadable job aids, and learner feedback collection.
-                    </p>
-
-                    <div class="embed-container">
-                        <iframe
-                            src="rise-email-course/content/"
-                            title="Write Emails People Actually Want to Read – Interactive Course"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-
-                    <p class="embed-link">
-                        Prefer a bigger view?
-                        <a href="rise-email-course/content/" target="_blank">
-                            Open this course in full screen →
-                        </a>
-                    </p>
-                </div>
-
-                <!-- H5P MODULE -->
-                <div class="portfolio-item full-width" id="task-module">
-                    <h3>🧘 H5P Branching Scenario: Everything Is Due Yesterday — A Calm Survival Guide</h3>
-                    <div class="tags">
-                        <span class="tag">H5P</span>
-                        <span class="tag">Branching Scenario</span>
-                        <span class="tag">Trauma-Informed Design</span>
-                        <span class="tag">Task & Self-Regulation</span>
-                    </div>
-                    <p>
-                        This interactive branching scenario supports learners experiencing overwhelm, avoidance, or decision paralysis when multiple demands collide. Learners navigate realistic internal and external choice points, experience the consequences of different responses, and practice strategies that restore regulation and forward momentum.
-                    </p>
-                    <p>
-                        Designed to demonstrate learner-centered design, meaningful branching logic, and trauma-informed instructional flow. Applicable to student success programs, employee onboarding, workforce development, and wellness-adjacent learning contexts where self-regulation and follow-through matter as much as content mastery.
-                    </p>
-                    <p>
-                        Built in H5P to showcase interactive authoring, scenario design, and decision-based learning.
-                    </p>
-                    
-                    <iframe 
-                        src="https://itsmekitb.github.io/itsmekitb/BranchingScenario.html" 
-                        class="h5p-embed"
-                        title="Everything Is Due Yesterday Interactive Module"
-                        allow="fullscreen">
-                    </iframe>
-
-                    <p class="embed-link">
-                        <a href="https://itsmekitb.github.io/itsmekitb/BranchingScenario.html" target="_blank">
-                            Open in full screen →
-                        </a>
-                    </p>
-                </div>
-                
-                <!-- WORK SAMPLES FLIPBOOK -->
-                <div class="portfolio-item full-width" id="work-samples">
-                    <h3>📚 Work Samples Flipbook: Curated Collection</h3>
-                    <p>
-                        A curated collection of curriculum artifacts, assessment tools, and learner-facing materials drawn from nonprofit education, workforce development, and higher education contexts.
-                    </p>
-                    <p>
-                        While the settings vary, the instructional design principles remain consistent: clarity, alignment, accessibility, and human-centered learning—principles that transfer directly to corporate L&D, faculty development, and employee onboarding.
-                    </p>
-                    <p>
-                        Explore the selected work samples in the interactive viewer below, each contextualized to highlight the instructional problem, design approach, and learning impact.
-                    </p>
-
-                    <div class="flipbook-embed">
-                        <iframe 
-                            src="portfolio-flipbook-embedded.html"
-                            title="Portfolio Work Samples"
-                            loading="lazy">
-                        </iframe>
-                    </div>
-
-                    <p class="embed-link">
-                        <a href="portfolio-flipbook-embedded.html" target="_blank">
-                            Open in full screen →
-                        </a>
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2>Let's Connect</h2>
-            <p>Looking for an instructional designer who brings both technical expertise and deep empathy for learners?</p>
-            <p>I'd love to talk about your next curriculum project, content refresh, or learning experience challenge. Whether you're in higher education, corporate L&D, or mission-driven work, I'm passionate about creating instruction that works for real people, in real contexts.</p>
-            <p>Drop me a line. I'm always up for a good conversation.</p>
-            <p>
-                <a href="mailto:itsmekitb@gmail.com">itsmekitb@gmail.com</a>
+        <!-- =========================
+             STORYLINE (split into 2 cards)
+             ========================= -->
+        <div class="project-row" id="upset-customers-storyline">
+          <div class="portfolio-item project-copy">
+            <h3>🎬 Storyline Module: The Moment That Matters — Navigating Upset Customers with Skill & Confidence</h3>
+
+            <p class="portfolio-description">
+              A decision-based learning module focused on emotional regulation, cognitive reframing, and intentional choice-making during high-pressure customer interactions.
             </p>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Kit Berry. Designed with accessibility and inclusion in mind.</p>
-    </footer>
+            <div class="tags">
+              <span class="tag">Articulate Storyline 360</span>
+              <span class="tag">Video Content Creation</span>
+              <span class="tag">Behavioral Skill Building</span>
+              <span class="tag">Customer Support Training</span>
+            </div>
+
+            <p>
+              This interactive module teaches learners how to navigate upset customer interactions by first regulating their own reactions and then choosing a clear, solutions-oriented response. Rather than providing scripts, the experience focuses on the emotional and behavioral dynamics that shape customer conversations and empowers learners to take control of the situation by staying grounded themselves.
+            </p>
+            <p>
+              Learners step through realistic customer moments and make decisions at key points in the interaction. Each choice highlights how tone, regulation, and intent influence the outcome of the exchange, reinforcing sound judgment under pressure.
+            </p>
+            <p>
+              Built in Articulate Storyline 360 to support custom interaction design and scenario framing using visual and video elements. Storyline allows high levels of customization for focused decision moments and guided feedback without overwhelming the learner. Animated video elements built in Canva for simplicity and quick iteration.
+            </p>
+          </div>
+
+          <div class="portfolio-item project-embed">
+            <h3>Preview</h3>
+            <div class="embed-frame">
+              <iframe
+                src="https://itsmekitb.github.io/itsmekitb/UpsetCustomersStoryline/story.html"
+                title="The Moment That Matters: Navigating Upset Customers"
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <p class="embed-link">
+              Prefer a bigger view?
+              <a href="https://itsmekitb.github.io/itsmekitb/UpsetCustomersStoryline/story.html" target="_blank" rel="noopener">
+                Open this module in full screen →
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <!-- =========================
+             RISE (split into 2 cards)
+             ========================= -->
+        <div class="project-row" id="email-course">
+          <div class="portfolio-item project-copy">
+            <h3>📧 Rise Micro Course: Write Emails People Actually Want to Read — Navigating Tricky Situations With Confidence</h3>
+
+            <div class="tags">
+              <span class="tag">Articulate Rise 360</span>
+              <span class="tag">Scenario-Based Learning</span>
+              <span class="tag">Interpersonal Communication</span>
+              <span class="tag">Professional Skill Building</span>
+            </div>
+
+            <p>
+              This self-paced micro-course helps learners recognize and correct common behavioral mistakes in workplace email — from tone misalignment to unclear asks and relationship breakdowns.
+            </p>
+            <p>
+              Learners analyze ineffective examples, practice decision-making within realistic scenarios, see the consequences of less-effective responses, and then apply core communication principles to write their own emails. The course emphasizes judgment, emotional awareness, and relationship-centered communication over rigid templates or canned scripts.
+            </p>
+            <p>
+              Built in Rise 360 to support scalable delivery, clean corporate presentation, and end-to-end learning — including guided practice, downloadable job aids, and learner feedback collection.
+            </p>
+          </div>
+
+          <div class="portfolio-item project-embed">
+            <h3>Preview</h3>
+            <div class="embed-frame">
+              <iframe
+                src="rise-email-course/content/"
+                title="Write Emails People Actually Want to Read – Interactive Course"
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <p class="embed-link">
+              Prefer a bigger view?
+              <a href="rise-email-course/content/" target="_blank" rel="noopener">
+                Open this course in full screen →
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <!-- =========================
+             H5P (split into 2 cards)
+             ========================= -->
+        <div class="project-row" id="task-module">
+          <div class="portfolio-item project-copy">
+            <h3>🧘 H5P Branching Scenario: Everything Is Due Yesterday — A Calm Survival Guide</h3>
+
+            <div class="tags">
+              <span class="tag">H5P</span>
+              <span class="tag">Branching Scenario</span>
+              <span class="tag">Trauma-Informed Design</span>
+              <span class="tag">Task & Self-Regulation</span>
+            </div>
+
+            <p>
+              This interactive branching scenario supports learners experiencing overwhelm, avoidance, or decision paralysis when multiple demands collide. Learners navigate realistic internal and external choice points, experience the consequences of different responses, and practice strategies that restore regulation and forward momentum.
+            </p>
+            <p>
+              Designed to demonstrate learner-centered design, meaningful branching logic, and trauma-informed instructional flow. Applicable to student success programs, employee onboarding, workforce development, and wellness-adjacent learning contexts where self-regulation and follow-through matter as much as content mastery.
+            </p>
+            <p>
+              Built in H5P to showcase interactive authoring, scenario design, and decision-based learning.
+            </p>
+          </div>
+
+          <div class="portfolio-item project-embed">
+            <h3>Preview</h3>
+            <div class="embed-frame">
+              <iframe
+                src="https://itsmekitb.github.io/itsmekitb/BranchingScenario.html"
+                title="Everything Is Due Yesterday Interactive Module"
+                allow="fullscreen">
+              </iframe>
+            </div>
+
+            <p class="embed-link">
+              <a href="https://itsmekitb.github.io/itsmekitb/BranchingScenario.html" target="_blank" rel="noopener">
+                Open in full screen →
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <!-- =========================
+             FLIPBOOK (split into 2 cards)
+             ========================= -->
+        <div class="project-row" id="work-samples">
+          <div class="portfolio-item project-copy">
+            <h3>📚 Work Samples Flipbook: Curated Collection</h3>
+
+            <p>
+              A curated collection of curriculum artifacts, assessment tools, and learner-facing materials drawn from nonprofit education, workforce development, and higher education contexts.
+            </p>
+            <p>
+              While the settings vary, the instructional design principles remain consistent: clarity, alignment, accessibility, and human-centered learning—principles that transfer directly to corporate L&D, faculty development, and employee onboarding.
+            </p>
+            <p>
+              Explore the selected work samples in the interactive viewer below, each contextualized to highlight the instructional problem, design approach, and learning impact.
+            </p>
+          </div>
+
+          <div class="portfolio-item project-embed">
+            <h3>Preview</h3>
+            <div class="embed-frame">
+              <iframe
+                src="portfolio-flipbook-embedded.html"
+                title="Portfolio Work Samples"
+                loading="lazy">
+              </iframe>
+            </div>
+
+            <p class="embed-link">
+              <a href="portfolio-flipbook-embedded.html" target="_blank" rel="noopener">
+                Open in full screen →
+              </a>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2>Let's Connect</h2>
+      <p>Looking for an instructional designer who brings both technical expertise and deep empathy for learners?</p>
+      <p>I'd love to talk about your next curriculum project, content refresh, or learning experience challenge. Whether you're in higher education, corporate L&D, or mission-driven work, I'm passionate about creating instruction that works for real people, in real contexts.</p>
+      <p>Drop me a line. I'm always up for a good conversation.</p>
+      <p>
+        <a href="mailto:itsmekitb@gmail.com">itsmekitb@gmail.com</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Kit Berry. Designed with accessibility and inclusion in mind.</p>
+  </footer>
 
 </body>
 </html>
+
 
