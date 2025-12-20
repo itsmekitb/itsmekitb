@@ -215,7 +215,7 @@
     /* Featured case study styling */
     .portfolio-item.featured {
       border-color: rgba(23, 162, 184, 0.55);
-      background: linear-gradient(180deg, rgba(23, 162, 184, 0.25) 0%, rgba(255,255,255,1) 40%);
+      background: linear-gradient(180deg, rgba(23, 162, 184, 0.15) 0%, rgba(255,255,255,1) 30%);
       box-shadow: 0 6px 20px rgba(0,0,0,0.08);
       position: relative;
     }
@@ -491,6 +491,52 @@
       background: transparent !important;
       backdrop-filter: none !important;
     }
+
+    /* --- PAIRED PROJECT ROWS (text card + embed card) --- */
+.project-row {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr; /* text a bit narrower than embed */
+  gap: 2rem;
+  align-items: stretch; /* force equal height columns */
+  grid-column: 1 / -1; /* full width row inside the portfolio grid */
+}
+
+/* Stack on smaller screens */
+@media (max-width: 900px) {
+  .project-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Force cards to behave like equal-height columns */
+.project-row .portfolio-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Give every project row a consistent minimum height */
+.project-row {
+  min-height: 560px; /* adjust this number until it feels perfect */
+}
+
+/* Make embed areas consistent height (instead of 90vh) */
+.project-row .embed-container {
+  height: 420px;      /* consistent embed viewport */
+  margin-top: auto;   /* pushes embed down if text is short */
+}
+
+/* Same idea for H5P embed when it's in an embed card */
+.project-row .h5p-embed {
+  height: 420px;
+  margin-top: auto;
+}
+
+/* Optional: keep "Prefer a bigger view?" link pinned near bottom */
+.project-row .embed-link {
+  margin-top: 0.75rem;
+}
+
 
   </style>
 </head>
