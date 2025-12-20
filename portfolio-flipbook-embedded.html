@@ -4,85 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Samples</title>
-    <style>
-    :root {
-        --primary: #2C5F7C;
-        --accent: #17A2B8;
-        --light: #f8f9fa;
-        --dark: #212529;
-        --gray: #6c757d;
-    }
+   <style>
+/* ======================================================
+   ROOT + RESET
+====================================================== */
+:root {
+  --primary: #2C5F7C;
+  --accent: #17A2B8;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --gray: #6c757d;
+}
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    html, body {
-        height: 100%;
-    }
+html,
+body {
+  height: 100%;
+}
 
-    body {
+/* ======================================================
+   BODY (NO PAGE SCROLL — iframe-safe)
+====================================================== */
+body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--dark);
   line-height: 1.6;
   height: 100%;
-  overflow: hidden; /* keep no page scroll inside the iframe */
-        
-    }
+  overflow: hidden; /* 🔒 prevent iframe scroll */
+}
 
-    /* Main Container */
-    .flipbook-container {
+/* ======================================================
+   FLIPBOOK CONTAINER (FULL HEIGHT SHELL)
+====================================================== */
+.flipbook-container {
   height: 100%;
-  min-height: 100%;
   display: flex;
   flex-direction: column;
-  background: white;
+  background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 10px 40px rgba(0,0,0,0.15);
 }
 
-
-    /* TOC Header Section */
-    .toc-header {
-        background: var(--light);
-        padding: 1.5rem;
-        border-bottom: 2px solid #dee2e6;
-    }
-
-    .toc-header h3 {
-        color: var(--primary);
-        font-size: 1.1rem;
-        margin-bottom: 1rem;
-        text-align: center;
-        border-bottom: 3px solid var(--accent);
-        padding-bottom: 0.5rem;
-    }
-
-/* === Flipbook TOC styled like main site nav (not sticky) === */
+/* ======================================================
+   TOC NAV (HORIZONTAL SCROLL)
+====================================================== */
 .toc-nav {
   background: #ffffff;
   border-bottom: 1px solid #e9ecef;
   padding: 0.6rem 0.75rem;
+  overflow: visible;
 }
 
 .toc-nav-inner {
   display: flex;
-  flex-wrap: nowrap;             /* single row */
-  overflow-x: auto;              /* swipe to scroll */
-  -webkit-overflow-scrolling: touch;
   gap: 0.75rem;
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
   align-items: center;
 }
 
-/* Each category = "nav item" that opens a dropdown */
+/* TOC Menu Buttons */
 .toc-menu {
-  position: relative;
+  display: flex;
+  flex-direction: column;
   flex: 0 0 auto;
 }
 
-/* Make category buttons look like nav links (no pill) */
 .toc-menu-btn {
   background: transparent;
   border: none;
@@ -91,46 +85,25 @@
   font-size: 0.9rem;
   padding: 0.35rem 0.15rem;
   cursor: pointer;
-  border-bottom: 2px solid transparent;  /* underline behavior */
+  border-bottom: 2px solid transparent;
   white-space: nowrap;
 }
 
-.toc-menu-btn:hover {
-  border-bottom-color: var(--accent);
-}
-
-/* Optional: indicate “open” state like active nav */
+.toc-menu-btn:hover,
 .toc-menu.open .toc-menu-btn {
   border-bottom-color: var(--accent);
 }
 
-/* Dropdown panel */
+/* Dropdown */
 .toc-dropdown {
   display: none;
-  position: static;          /* KEY: let it expand the nav */
   margin-top: 0.4rem;
-  background: white;
+  background: #ffffff;
   border: 1px solid #e1e5ea;
   border-radius: 10px;
   padding: 0.5rem;
   min-width: 220px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-}
-
-.toc-menu {
-  position: relative;
-  display: flex;
-  flex-direction: column;    /* KEY: dropdown sits under its button */
-}
-
-/* Allow dropdowns to expand vertically, but keep horizontal scrolling */
-.toc-nav { overflow: visible; }
-
-.toc-nav-inner{
-  overflow-x: auto;      /* keep swipe scroll */
-  overflow-y: visible;   /* allow dropdown to show */
-  -webkit-overflow-scrolling: touch;
-  touch-action: pan-x;   /* helps mobile treat this as a horizontal scroller */
 }
 
 .toc-menu.open .toc-dropdown {
@@ -139,9 +112,7 @@
   gap: 0.35rem;
 }
 
-/* Dropdown links (keep these button-based, just not pill-y) */
 .toc-link {
-  text-align: left;
   background: #f8f9fa;
   border: 1px solid #e1e5ea;
   border-radius: 8px;
@@ -149,21 +120,136 @@
   cursor: pointer;
   font-size: 0.9rem;
   color: var(--dark);
+  text-align: left;
 }
 
 .toc-link:hover {
   background: var(--accent);
-  color: white;
-  border-color: var(--accent);
+  color: #ffffff;
 }
 
 .toc-link.active {
   background: var(--primary);
-  color: white;
-  border-color: var(--primary);
+  color: #ffffff;
 }
 
-        /* GLOBAL SCROLLBAR STYLING (this file) */
+/* ======================================================
+   MAIN CONTENT (SINGLE SCROLL REGION)
+====================================================== */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.content-display {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto; /* ✅ THE ONE SCROLLBAR */
+  min-height: 0;
+}
+
+.content-header {
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--light);
+}
+
+.section-label {
+  color: var(--gray);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.content-header h2 {
+  color: var(--primary);
+  font-size: 1.6rem;
+}
+
+.caption {
+  color: var(--accent);
+  font-style: italic;
+}
+
+/* ======================================================
+   CONTENT BODY
+====================================================== */
+.content-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.blurb {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+/* ======================================================
+   WHY BOX (OPTIONAL ACCORDION-READY)
+====================================================== */
+.why-box {
+  background: var(--light);
+  padding: 1rem;
+  border-radius: 6px;
+  border-left: 4px solid var(--accent);
+  margin-bottom: 1.25rem;
+  font-size: 0.95rem;
+}
+
+/* ======================================================
+   PDF VIEWER (KEY FIX)
+====================================================== */
+.pdf-viewer {
+  flex: 1 1 auto;
+  min-height: 420px; /* 🔑 guarantees usable viewport */
+  border: 2px solid var(--light);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.pdf-viewer iframe,
+.pdf-viewer object {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ======================================================
+   BOTTOM NAV
+====================================================== */
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--primary);
+  color: #ffffff;
+  border-top: 3px solid var(--accent);
+}
+
+.nav-btn {
+  background: #ffffff;
+  color: var(--primary);
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.nav-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* ======================================================
+   SCROLLBAR STYLING (GLOBAL)
+====================================================== */
 *::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -177,307 +263,31 @@
 *::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, var(--accent), var(--primary));
   border-radius: 999px;
-  border: 2px solid rgba(255, 255, 255, 0.6);
+  border: 2px solid rgba(255,255,255,0.6);
 }
 
 *::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, var(--primary), var(--accent));
 }
 
-        /* NAV scroller scrollbar (extra force) */
-.toc-nav-inner::-webkit-scrollbar {
-  height: 6px;
-}
-
-.toc-nav-inner::-webkit-scrollbar-track {
-  background: rgba(23, 162, 184, 0.08);
-  border-radius: 999px;
-}
-
-.toc-nav-inner::-webkit-scrollbar-thumb {
-  background: linear-gradient(90deg, var(--accent), var(--primary));
-  border-radius: 999px;
-  border: 2px solid rgba(255, 255, 255, 0.6);
-}
-
-
-/* Mobile behavior: dropdown becomes “inline panel” under the category */
-@media (max-width: 699px) {
-  .toc-nav-inner {
-    padding-bottom: 0.25rem;
-  }
-
-  .toc-dropdown {
-    position: static;
-    min-width: unset;
-    margin-top: 0.4rem;
-  }
-}
-
-
-    /* Main Content Area */
-    .main-content {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        min-height: 0;
-    }
-
-    .content-display {
-        flex: 1;
-        padding: 2rem;
-        display: flex;
-        flex-direction: column;
-        min-height: 0;
-    }
-
-    .content-header {
-        margin-bottom: 1.5rem;
-        padding-bottom: 1rem;
-        border-bottom: 2px solid var(--light);
-        flex-shrink: 0;
-    }
-
-    .content-header .section-label {
-        color: var(--gray);
-        font-size: 0.9rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 0.5rem;
-    }
-
-    .content-header h2 {
-        color: var(--primary);
-        font-size: 1.6rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .content-header .caption {
-        color: var(--accent);
-        font-style: italic;
-    }
-
-    .content-body {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        min-height: 0;
-    }
-
-    .blurb {
-        margin-bottom: 1rem;
-        line-height: 1.7;
-        flex-shrink: 0;
-    }
-
-    .why-box {
-        background: var(--light);
-        padding: 1rem;
-        border-radius: 5px;
-        border-left: 4px solid var(--accent);
-        margin-bottom: 1.5rem;
-        font-size: 0.95rem;
-        flex-shrink: 0;
-    }
-
-    .why-box strong {
-        color: var(--primary);
-    }
-
-    /* PDF Viewer */
-    .pdf-viewer {
-  flex: 1 1 auto;
-  min-height: 320px;
-  border: 2px solid var(--light);
-  border-radius: 8px;
-  overflow: hidden;
-  background: #f5f5f5;
-}
-
-    .pdf-viewer object,
-    .pdf-viewer iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-    }
-
-    /* Navigation */
-    .nav-bar {
-        position: sticky;
-        bottom: 0;
-        z-index: 10;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 2rem;
-        background: var(--primary);
-        color: white;
-        border-top: 3px solid var(--accent);
-        flex-shrink: 0;
-    }
-
-    .nav-btn {
-        background: white;
-        color: var(--primary);
-        border: none;
-        padding: 0.6rem 1.5rem;
-        border-radius: 5px;
-        cursor: pointer;
-        font-weight: 600;
-        transition: all 0.3s;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .nav-btn:hover:not(:disabled) {
-        background: var(--accent);
-        color: white;
-        transform: translateY(-2px);
-    }
-
-    .nav-btn:disabled {
-        opacity: 0.3;
-        cursor: not-allowed;
-    }
-
-    /* Mobile */
-   /* Wide: 4 across */
-@media (min-width: 1100px) {
-    .toc-boxes {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-/* Medium: 2 across */
-@media (min-width: 700px) and (max-width: 1099px) {
-    .toc-boxes {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Small: 1 per row */
-@media (max-width: 699px) {
-    .toc-boxes {
-        grid-template-columns: 1fr;
-    }
-
-    .flipbook-container {
-        height: auto;
-    }
-
-
-/* --- TOC layout override: make items horizontal pills --- */
-.toc-box-items {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 0.4rem !important;
-    justify-content: center !important;
-}
-
-.toc-item {
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-    padding: 0.35rem 0.75rem !important;
-    border-radius: 999px !important;  /* pill shape */
-    font-size: 0.8rem !important;
-    background: #f8f9fa !important;
-    border: 1px solid #e1e5ea !important;
-    color: var(--dark) !important;
-    text-align: center;
-    flex: 0 1 auto !important;
-}
-
-        /* --- Mobile TOC shrink (compact mode) --- */
-@media (max-width: 699px) {
-
-  /* tighten the whole top area */
-  .toc-header {
-    padding: 0.75rem !important;
-  }
-
-  /* if you're NOT using .toc-header wrapper right now, this still helps */
-  .flipbook-container > h3 {
-    font-size: 0.95rem !important;
-    margin: 0.5rem 0 0.5rem !important;
-  }
-
-  /* make the TOC grid tighter */
-  .toc-boxes {
-    gap: 0.5rem !important;
-  }
-
-  /* shrink each TOC box */
-  .toc-box {
-    padding: 0.6rem !important;
-    border-radius: 8px !important;
-  }
-
-  /* shrink the TOC box headings */
-  .toc-box h4 {
-    font-size: 0.75rem !important;
-    margin-bottom: 0.45rem !important;
-    padding-bottom: 0.35rem !important;
-  }
-
-  /* make the pills smaller + reduce wrapping space */
-  .toc-box-items {
-    gap: 0.3rem !important;
-  }
-
-  .toc-item {
-    font-size: 0.72rem !important;
-    padding: 0.22rem 0.55rem !important;
-    border-radius: 999px !important;
-  }
-
-  /* optional: give the content more room on mobile */
+/* ======================================================
+   MOBILE
+====================================================== */
+@media (max-width: 768px) {
   .content-display {
-    padding: 1rem !important;
-  }
-
-  .content-header h2 {
-    font-size: 1.25rem !important;
+    padding: 1rem;
   }
 
   .pdf-viewer {
-    height: 55vh !important;
+    min-height: 55vh;
   }
 
   .nav-bar {
-    padding: 0.75rem 1rem !important;
-  }
-
-  .nav-btn {
-    padding: 0.5rem 1rem !important;
+    padding: 0.75rem 1rem;
   }
 }
-
-        /* GLOBAL SCROLLBAR STYLING */
-*::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
-*::-webkit-scrollbar-track {
-  background: rgba(23, 162, 184, 0.08);
-  border-radius: 999px;
-}
-
-*::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #17A2B8, #2C5F7C);
-  border-radius: 999px;
-  border: 2px solid rgba(255, 255, 255, 0.6);
-}
-
-*::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #2C5F7C, #17A2B8);
-}
-}
-        
 </style>
+
 </head>
 <body>
   <div class="flipbook-container">
