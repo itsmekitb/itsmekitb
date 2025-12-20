@@ -298,6 +298,79 @@
     border-radius: 10px 10px 0 0;
   }
 
+    /* =========================
+   CASE STUDY: Accordion + Typography polish
+   ========================= */
+
+/* Summary label */
+.case-study-accordion summary {
+  cursor: pointer;
+  font-weight: 650;
+  color: var(--primary);        /* brand teal */
+  list-style: none;
+}
+
+.case-study-accordion summary::-webkit-details-marker { display: none; }
+
+.case-study-accordion summary::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 0.5rem;
+  color: var(--accent);
+  transition: transform 0.2s ease;
+}
+
+.case-study-accordion details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+/* Accordion structure + spacing */
+.case-study-accordion details {
+  border-top: 1px solid #e9ecef;
+  padding: 0.9rem 0;
+}
+
+.case-study-accordion details:last-child {
+  border-bottom: 1px solid #e9ecef;
+}
+
+/* Body text inside dropdowns */
+.case-study-accordion p,
+.case-study-accordion li {
+  color: var(--gray);           /* soft gray like the rest of your site */
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.case-study-accordion p { margin: 0.5rem 0 0.85rem; }
+
+.case-study-accordion ul,
+.case-study-accordion ol {
+  margin: 0.1rem 0 1.1rem 1.25rem;
+  padding-left: 1.25rem;
+}
+
+.case-study-accordion li { margin-bottom: 0.25rem; }
+
+/* Fix the “random black bold headings” problem */
+.case-study-accordion strong {
+  color: var(--primary);        /* brand teal for emphasized labels */
+  font-weight: 700;
+}
+
+/* Make h4 inside case study match your brand */
+.portfolio-item.featured .case-study-accordion h4 {
+  color: var(--primary);
+  font-size: 1.05rem;
+  margin: 0.9rem 0 0.45rem;
+  font-weight: 700;
+}
+
+/* Optional: italic bits don’t go pitch black */
+.case-study-accordion em {
+  color: #4f6b78;               /* slightly bluish-gray */
+}
+
   /* Accordion small helpers */
   .accordion-intro {
     font-size: 0.9rem;
