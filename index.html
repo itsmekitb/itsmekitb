@@ -401,6 +401,54 @@
     margin-bottom: 1rem;
   }
 
+    /* =====================================
+   Case Study Accordion – Hover Accents
+   ===================================== */
+
+.case-study-accordion summary {
+  position: relative;
+  padding: 0.35rem 0;
+  transition:
+    color 0.2s ease,
+    text-shadow 0.2s ease;
+}
+
+/* Soft accent cue on hover */
+.case-study-accordion summary:hover,
+.case-study-accordion summary:focus-visible {
+  color: var(--primary);
+  text-shadow: 0 0 8px rgba(23, 162, 184, 0.35);
+}
+
+/* Subtle animated underline */
+.case-study-accordion summary::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    transparent
+  );
+  transition: width 0.25s ease;
+}
+
+/* Reveal underline on hover/focus */
+.case-study-accordion summary:hover::after,
+.case-study-accordion summary:focus-visible::after {
+  width: 100%;
+}
+
+/* Keep open state calm (no re-trigger loop) */
+.case-study-accordion details[open] summary::after {
+  width: 100%;
+  opacity: 0.6;
+}
+
+
   /* =========================
      ✅ PROJECT ROWS (2 cards)
      ========================= */
