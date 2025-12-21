@@ -278,25 +278,21 @@
      L4L FEATURED (unchanged width)
      ========================= */
   .portfolio-item.featured {
-    border-color: rgba(23, 162, 184, 0.55);
-    background: #ffffff;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    position: relative;
-    z-index: 1;
+  border-color: rgba(23, 162, 184, 0.55);
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 
-    max-width: 1100px;
-    margin: 0 auto;
-  }
+  max-width: 1100px;
+  margin: 0 auto;
+}
 
-    .portfolio-item.featured::before {
+.portfolio-item.featured::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 130px; /* ← tweak this */
+  inset: 0 0 auto 0;          /* top only */
+  height: 130px;              /* tweak this */
   background: linear-gradient(
     180deg,
     rgba(23, 162, 184, 0.15) 0%,
@@ -306,17 +302,24 @@
   z-index: 0;
 }
 
+.portfolio-item.featured::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
+  border-radius: 10px 10px 0 0;
+  z-index: 2;
+}
 
-  .portfolio-item.featured::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
-    border-radius: 10px 10px 0 0;
-  }
+/* ✅ this is the actual fix */
+.portfolio-item.featured > * {
+  position: relative;
+  z-index: 1;
+}
+
 
     /* =========================
    CASE STUDY: Accordion + Typography polish
